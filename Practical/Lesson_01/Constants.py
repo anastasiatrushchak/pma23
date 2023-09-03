@@ -1,3 +1,3 @@
-input = 'inputMatrix1.txt'
+input = 'input.txt'
 output = 'output.txt'
 space = " "
