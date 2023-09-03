@@ -52,8 +52,6 @@ class Vector:
     def save_result(self, result_filename, result):
         if result is not None:
             np.savetxt(result_filename, result, fmt='%d')
-
-
 def main():
     choice = input("Matrix or Vector? (M or V):")
     result_filename = "output.txt"
@@ -69,7 +67,6 @@ def main():
         operation = input("Enter the operation (+, -, *, /): ")
         result = vector.perform_operation(operation)
         vector.save_result(result_filename, result)
-
     else:
         print("Invalid choice")
 if __name__ == "__main__":  #відбувається перевірка, чи код виконується  як головний програмний модуль
