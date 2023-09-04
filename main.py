@@ -1,16 +1,11 @@
-# This is a sample Python script.
+INPUT_CODE="input.txt"
+OUTPUT_CODE="output.txt"
+with open(INPUT_CODE, "r") as read_code:
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+ array_fibonacci = read_code.read().split("\n")
+array_fibonacci = [float(i) for i in array_fibonacci if i.isdigit()]
+for i in range(2, 10):
+    array_fibonacci.append((array_fibonacci[i - 2]) + array_fibonacci[i - 1])
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+with open(OUTPUT_CODE, "w") as output_file:
+    output_file.write(str(array_fibonacci))
