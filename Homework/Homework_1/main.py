@@ -11,13 +11,8 @@ print("Друга матриця:")
 mat2.print()
 
 
-matRes = mat.multiplication(mat2)
+
+matRes = mat.subtraction(mat2)
 if matRes:
-    print("Результат додавання:")
+    print("Результат віднімання:")
     matRes.print()
-
-
-# matRes = mat.division(mat2)
-# if matRes:
-#     print("Результат віднімання:")
-#     matRes.print()
