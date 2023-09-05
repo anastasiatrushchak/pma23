@@ -1,0 +1,10 @@
+import numpy as np
+
+vector1 = np.array([1, 2, 3, 4, 5])
+vector2 = np.array([2, 2, 2, 2, 2])
+
+result = vector1 / vector2
+
+
+print("Результат ділення вектора поелементно:")
+print(result)

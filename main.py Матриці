@@ -1,0 +1,19 @@
+import numpy as np
+
+matrix_A = np.array([[1, 2], [3, 4]])
+matrix_B = np.array([[5, 6], [7, 8]])
+
+matrix_sum = matrix_A + matrix_B        
+matrix_diff = matrix_A - matrix_B     
+matrix_product = np.dot(matrix_A, matrix_B)  
+
+matrix_inverse_B = np.linalg.inv(matrix_B)
+
+print("Сума матриць A і B:")
+print(matrix_sum)
+print("\nРізниця матриць A і B:")
+print(matrix_diff)
+print("\nДобуток матриць A і B:")
+print(matrix_product)
+print("\nОбернена матриця B:")
+print(matrix_inverse_B)
