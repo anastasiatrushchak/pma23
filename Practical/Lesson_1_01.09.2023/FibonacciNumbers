@@ -1,4 +1,4 @@
-Condition = "TextFile.txt"
+Condition = "ConditionFile.txt"
 Result = "TextFile2.txt"
 with open(Condition) as file_condition:
     line = file_condition.readline()
