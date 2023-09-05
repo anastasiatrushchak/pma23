@@ -1,7 +1,4 @@
 import numpy as np
-def print_matrix(matrix):
-    for i in matrix:
-        print(i)
 
 matrix1=[]
 matrix2=[]
@@ -27,23 +24,23 @@ try:
     matrix_rez=matrix1+matrix2
 
     print("Додавання: ")
-    print_matrix(matrix_rez)
+    print(matrix_rez)
 
     matrix_rez=matrix1-matrix2
     print("Віднімання: ")
-    print_matrix(matrix_rez)
+    print(matrix_rez)
 
 except:
     print("Не можливо додати і відняти ці матриці")
 try:
     matrix_rez=matrix1*matrix2
     print("Множення:")
-    print_matrix(matrix_rez)
+    print(matrix_rez)
 except:
     print("Не можливо помножити")
 try:
         matrix_rez=matrix1/matrix2
         print("Ділення:")
-        print_matrix(matrix_rez)
+        print(matrix_rez)
 except:
     print("Не можливо поділити матриці")

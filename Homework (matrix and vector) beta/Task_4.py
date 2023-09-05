@@ -1,7 +1,4 @@
 import numpy as np
-def print_matrix(matrix):
-    for i in matrix:
-        print(i)
 class Matrix:
 
    def __init__(self,matrix):
@@ -53,19 +50,19 @@ with open("matrix2.txt", "r") as lines:
 matrix1 = Matrix(file1)
 matrix2 = Matrix(file2)
 
-rez = matrix1+matrix2
+
 print("Додавання")
-print_matrix(rez)
+print(matrix1+matrix2)
 
-rez = matrix1-matrix2
+
 print("Віднімання")
-print_matrix(rez)
+print(matrix1-matrix2)
 
-rez = matrix1*matrix2
+
 print("Множення")
-print_matrix(rez)
+print(matrix1*matrix2)
 
-rez = matrix1/matrix2
+
 print("Ділення")
-print_matrix(rez)
+print(matrix1/matrix2)
 
