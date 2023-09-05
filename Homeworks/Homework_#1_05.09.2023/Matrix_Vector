@@ -1,0 +1,72 @@
+
+class Matrix:
+
+    def __init__(self, matrix_one, matrix_two):
+        self.matrix_one = matrix_one
+        self.matrix_two = matrix_two
+        self.length = len(self.matrix_one[0])
+        self.matrix_res = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+
+    def print_matrix(self, matrix):
+        for i in matrix:
+            print(i)
+
+    def add(self):
+        for i in range(self.length):
+            for j in range(self.length):
+                self.matrix_res[i][j]=self.matrix_one[i][j]+self.matrix_two[i][j]
+        self.print_matrix(self.matrix_res)
+
+    def minus(self):
+        for i in range(self.length):
+            for j in range(self.length):
+                self.matrix_res[i][j] = self.matrix_one[i][j] - self.matrix_two[i][j]
+        self.print_matrix(self.matrix_res)
+
+    def multy(self):
+        for i in range(self.length):
+            for j in range(self.length):
+                for k in range(self.length):
+                    self.matrix_res[i][j] += self.matrix_one[i][k] * self.matrix_two[k][j]
+        self.print_matrix(self.matrix_res)
+
+    def transpose(self, matrix):
+        result = [[matrix[j][i] for j in range(len(matrix[0]))] for i in range(len(matrix[0]))]
+        self.print_matrix(result)
+
+
+class Vector:
+    def __init__(self, vector_one, vector_two):
+        self.vector_one = vector_one
+        self.vector_two = vector_two
+        self.length = len(vector_one)
+        self.result = [0, 0, 0]
+
+    def add(self):
+        for i in range(self.length):
+            result = self.vector_one[i]+self.vector_two[i]
+        print(self.result)
+
+    def minus(self):
+        for i in range(self.length):
+            result = self.vector_one[i]-self.vector_two[i]
+        print(self.result)
+
+    def multy(self):
+        for i in range(self.length):
+            self.result = self.vector_one[i]*self.vector_two[i]
+        print(self.result)
+
+    def dividing(self):
+        for i in range(self.length):
+            result = self.vector_one[i]/self.vector_two[i]
+        print(self.result)
+
+
+matrix_1 = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+matrix_2 = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+matrix = Matrix(matrix_1,matrix_2)
+matrix.transpose(matrix_1)
+
+v1 = [1, 2, 3]
+v2 = [1, 2, 3]
