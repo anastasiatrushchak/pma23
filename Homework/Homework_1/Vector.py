@@ -9,3 +9,11 @@ class Vector:
         return cls(vector)
     def append(self, new_element):
         self.vector.append(new_element)
+    def __add__(self, other):
+        return  self.vector + other
+    def __sub__(self, other):
+        return  self.vector - other
+    def __mul__(self, other):
+        return self.vector * other
+    def __truediv__(self, other):
+        return  self.vector - other
