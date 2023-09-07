@@ -14,12 +14,29 @@ class Vector:
     def __str__(self):
         return self.vector.__str__();
     def append(self, new_element):
-        self.vector.append(new_element)
+        self.vector = np.append(self.vector, new_element)
+
     def __add__(self, other):
-        return  self.vector + other
+        if isinstance(other, Vector):
+            if self.size == other.size:
+                return Vector(self.vector + other.vector)
+        elif isinstance(other, (int, float)):
+            return Vector(self.vector + other)
     def __sub__(self, other):
-        return  self.vector - other
+        if isinstance(other, Vector):
+            if self.size == other.size:
+                return Vector(self.vector - other.vector)
+        elif isinstance(other, (int, float)):
+            return Vector(self.vector - other)
     def __mul__(self, other):
-        return self.vector * other
+        if isinstance(other, Vector):
+            if self.size == other.size:
+                return Vector(self.vector * other.vector)
+        elif isinstance(other, (int, float)):
+            return Vector(self.vector * other)
     def __truediv__(self, other):
-        return self.vector / other
+        if isinstance(other, Vector):
+            if self.size == other.size:
+                return Vector(self.vector / other.vector)
+        elif isinstance(other, (int, float)):
+            return Vector(self.vector / other)
