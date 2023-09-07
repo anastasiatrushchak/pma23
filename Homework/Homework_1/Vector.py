@@ -15,7 +15,6 @@ class Vector:
         return self.vector.__str__();
     def append(self, new_element):
         self.vector = np.append(self.vector, new_element)
-
     def __add__(self, other):
         if isinstance(other, Vector):
             if self.size == other.size:
