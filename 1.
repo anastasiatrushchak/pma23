@@ -1,0 +1,20 @@
+with open('input.txt', 'r') as input_file:
+    a, b = map(int, input_file.readline().split())
+
+with open('steps.txt', 'r') as steps_file:
+    steps = int(steps_file.readline())
+
+fibonacci_sequence = []
+
+for i in range(steps):
+    if i == 0:
+        fibonacci_sequence.append(a)
+    elif i == 1:
+        fibonacci_sequence.append(b)
+    else:
+        next_number = fibonacci_sequence[-1] + fibonacci_sequence[-2]
+        fibonacci_sequence.append(next_number)
+
+with open('output.txt', 'w') as output_file:
+    for number in fibonacci_sequence:
+        output_file.write(str(number) + '\n')
