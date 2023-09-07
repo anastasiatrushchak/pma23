@@ -20,7 +20,7 @@ class Matrix:
     def __str__(self):
         matrix_str = ""
         for row in self.matrix:
-            matrix_str += " ".join(map(str, row)) + "\n"
+            matrix_str += "\t".join(map(str, row)) + "\n"
         return matrix_str
     def __add__(self, other):
         if isinstance(other, Matrix):
