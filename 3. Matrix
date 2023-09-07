@@ -1,0 +1,31 @@
+import numpy as np
+def read_matrix(filename):
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+        matrix = []
+        for line in lines:
+            row = [float(x) for x in line.strip().split()]
+            matrix.append(row)
+        return np.array(matrix)
+
+def write_result(filename, operation, result):
+    with open(filename, 'a') as file:
+        file.write(f'{operation}:\n')
+        for row in result:
+            file.write(' '.join(map(str, row)) + '\n')
+
+matrix_A = read_matrix('input.txt')
+matrix_B = read_matrix('input.txt')
+
+result_add = matrix_A + matrix_B
+write_result('output.txt', 'Додавання', result_add)
+
+result_subtract = matrix_A - matrix_B
+write_result('output.txt', 'Віднімання', result_subtract)
+
+result_multiply = np.dot(matrix_A, matrix_B)
+write_result('output.txt', 'Множення', result_multiply)
+
+inverse_B = np.linalg.inv(matrix_B)
+result_divide = np.dot(matrix_A, inverse_B)
+write_result('output.txt', 'Ділення', result_divide)
