@@ -25,40 +25,87 @@ def fill_matrix():
         else:
             print("Invalid choice. Please select 1, 2, or 3.")
 
+def task_matrix():
+    matrix = fill_matrix()
+    print(matrix)
+    while True:
+        choice = int(input("Second element\n\t1. Vector\n\t2. Number\n"))
+        if choice == 1:
+            other = fill_matrix()
+            break
+        if choice == 2:
+            other = int(input("Number: "))
+            break
 
-first_matrix = fill_matrix()
-print(first_matrix)
+    while True:
+        result = None
+        operator = int(input("1. Add\n2. Subtraction\n3. Multiplication\n4. Division\n5. Inverse\n0. Cancel\n"))
+        if operator == 1:
+            result = matrix + other
+        elif operator == 2:
+            result = matrix - other
+        elif operator == 3:
+            result = matrix * other
+        elif operator == 4:
+            result = matrix / other
+        elif operator == 5:
+            result = matrix.inverse()
+        else:
+            break
+        print(result)
+def fill_vector():
+    while True:
+        choice = int(input("How to fill a vector\n\t1. From file\n\t2. From random\n\t3. From the keyboard\n\t0. Cancel\n"))
+        if choice == 1:
+            fileName = input("File name: ")
+            return Vector.from_file(fileName)
+        elif choice == 2:
+            size = int(input("Size: "))
+            return Vector.random(size)
+        elif choice == 3:
+            size = int(input("Input size: "))
+
+            vector_np = np.empty((size), dtype=int)
+
+            for i in range(size):
+                vector_np[i] = int(input(f"Element [{i + 1}]: "))
+            return Vector(vector_np)
+        else:
+            break
+
+def task_vector():
+    vector = fill_vector()
+    print(vector)
+    while True:
+        choice = int(input("Second element\n\t1. Vector\n\t2. Number\n"))
+        if choice == 1:
+            other = fill_vector()
+            break
+        if choice == 2:
+            other = int(input("Number: "))
+            break
+
+    while True:
+        result = None
+        operator = int(input("1. add\n2. subtraction\n3. multiplication\n4. division\n0. Cancel\n"))
+        if operator == 1:
+            result = vector + other
+        elif operator == 2:
+            result = vector - other
+        elif operator == 3:
+            result = vector * other
+        elif operator == 4:
+            result = vector / other
+        else:
+            break
+        print(result)
+
+
 while True:
-    choice = int(input("1. Matrix\n2. Number"))
+    choice = int(input("1. Matrix\n2. Vector\n0. Cancel \n"))
     if choice == 1:
-        other = fill_matrix()
-        print(other)
-        break
+        task_matrix()
     elif choice == 2:
-        other = int(input("Number: "))
+        task_vector()
+    else:
         break
-
-while True:
-    operator = input("+\t-\t/\t*\t-1\tend\nOperators: ")
-    if operator == "end":
-        break
-    elif operator == '+':
-        result = first_matrix + other
-    elif operator == '-':
-        result = first_matrix - other
-    elif operator == '*':
-        result = first_matrix * other
-    elif operator == '/':
-        result = first_matrix / other
-    elif operator == "-1":
-        result = first_matrix.inverse()
-    print(result)
-
-
-
-
-
-# vec = Vector.random(10)
-# vec.print()
-# vec.push(12)
-# vec.print()
