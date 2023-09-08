@@ -1,8 +1,8 @@
 import numpy as np
 
 class Matrix:
-    def __init__(self): #конструктор
-        #зберігання матриць як атрибута обєкта :
+    def __init__(self):
+
         self.matrix1 = np.loadtxt("inputMatrix1.txt", dtype='i', delimiter=' ')
         self.matrix2 = np.loadtxt("inputMatrix2.txt", dtype='i', delimiter=' ')
 
@@ -16,8 +16,8 @@ class Matrix:
         elif operation == '/':
             return np.divide(self.matrix1, self.matrix2)
         elif operation == "*'":
-            if np.linalg.det(self.matrix2) != 0: #перевірка чи визначник матриці не 0
-                matrix2T = np.linalg.inv(self.matrix2) #метод шукає матрицю в -1
+            if np.linalg.det(self.matrix2) != 0:
+                matrix2T = np.linalg.inv(self.matrix2)
                 return np.dot(self.matrix1, matrix2T)
             else:
                 print("In the matrix you entered, the determinant is 0, so choose another operation")
@@ -28,7 +28,7 @@ class Matrix:
 
     def save_result(self, result_filename, result):
         if result is not None:
-            np.savetxt(result_filename, result, fmt='%d') # формат тільки цілі числа
+            np.savetxt(result_filename, result, fmt='%d')
 
 
 class Vector:
@@ -51,8 +51,10 @@ class Vector:
 
     def save_result(self, result_filename, result):
         if result is not None:
-            np.savetxt(result_filename, result, fmt='%d')
-def main():
+            np.savetxt(result_filename, result.reshape(1, -1), fmt='%d', delimiter=' ')
+
+
+if __name__ == "__main__":  #відбувається перевірка, чи код виконується  як головний програмний модуль
     choice = input("Matrix or Vector? (M or V):")
     result_filename = "output.txt"
 
@@ -69,5 +71,3 @@ def main():
         vector.save_result(result_filename, result)
     else:
         print("Invalid choice")
-if __name__ == "__main__":  #відбувається перевірка, чи код виконується  як головний програмний модуль
-    main()
