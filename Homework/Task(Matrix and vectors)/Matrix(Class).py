@@ -3,12 +3,11 @@ import numpy as np
 class Matrix:
     def __init__(self, data):
         self.data = data
-
     @staticmethod
     def from_file(filename):
         try:
             with open(filename, 'r') as f:
-                matrix = [[float(num) for num in line.split()] for line in f]
+                matrix = [[int(num) for num in line.split()] for line in f]
             return Matrix(np.array(matrix))
         except FileNotFoundError:
             return f"File '{filename}' not found"
@@ -23,32 +22,36 @@ class Matrix:
         except Exception as e:
             return f"Error writing matrix to '{filename}': {e}"
 
-    @staticmethod
-    def add(A, B):
+    def add(self, B):
         try:
-            return Matrix(np.add(A.data, B.data))
+            if self.data.shape != B.data.shape:
+                raise ValueError("Matrix dimensions must be the same for addition.")
+            return Matrix(np.add(self.data, B.data))
         except ValueError as e:
             return f"ValueError: {e}"
 
-    @staticmethod
-    def subtract(A, B):
+    def subtract(self, B):
         try:
-            return Matrix(np.subtract(A.data, B.data))
+            if self.data.shape != B.data.shape:
+                raise ValueError("Matrix dimensions must be the same for subtraction.")
+            return Matrix(np.subtract(self.data, B.data))
         except ValueError as e:
             return f"ValueError: {e}"
 
-    @staticmethod
-    def multiply(A, B):
+    def multiply(self, B):
         try:
-            return Matrix(np.dot(A.data, B.data))
+            if self.data.shape[1] != B.data.shape[0]:
+                raise ValueError("Number of columns in the first matrix must be equal to the number of rows in the second matrix for multiplication.")
+            return Matrix(np.dot(self.data, B.data))
         except ValueError as e:
             return f"ValueError: {e}"
 
-    @staticmethod
-    def divide(A, B):
+    def divide(self, B):
         try:
+            if self.data.shape[1] != B.data.shape[0]:
+                raise ValueError("Number of columns in the first matrix must be equal to the number of rows in the second matrix for division.")
             inverse_B = np.linalg.inv(B.data)
-            return Matrix(np.dot(A.data, inverse_B))
+            return Matrix(np.dot(self.data, inverse_B))
         except ValueError as e:
             return f"ValueError: {e}"
         except np.linalg.LinAlgError as e:
@@ -61,21 +64,20 @@ if isinstance(MatrixA, str) or isinstance(MatrixB, str):
     print(MatrixA)
     print(MatrixB)
 else:
-    operation = input("Enter operation (add, subtract, multiply, divide): ")
+    operation = input("Enter operation (add, subtract,multiplication, divide): ")
     if operation == 'add':
-        result = Matrix.add(MatrixA, MatrixB)
+        result = MatrixA.add(MatrixB)
     elif operation == 'subtract':
-        result = Matrix.subtract(MatrixA, MatrixB)
+        result = MatrixA.subtract(MatrixB)
     elif operation == 'multiply':
-        result = Matrix.multiply(MatrixA, MatrixB)
+        result = MatrixA.multiply(MatrixB)
     elif operation == 'divide':
-        result = Matrix.divide(MatrixA, MatrixB)
+        result = MatrixA.divide(MatrixB)
     else:
-        result = "Invalid operation"
+        print("Invalid operation")
 
-    print("The result is:")
-    for row in result.data:
-        print(' '.join(['{:0.5g}'.format(x) for x in row]))
-    #print in file
-    result.to_file('result_matrix.txt')
-
+    if result is not None:
+        print("The result is:")
+        for row in result.data:
+            print(' '.join(['{:0.5g}'.format(x) for x in row]))
+        result.to_file('result_matrix.txt')
