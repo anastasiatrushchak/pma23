@@ -21,11 +21,11 @@ with open("matrix2.txt", "r") as lines:
         row = [float(x) for x in line.split()]
         matrix2.append(row)
 
-if len(matrix1)==len(matrix2) and len(matrix1[0])==len(matrix2[0]):
+try:
     matrix_sum=[]
-    for i in range(len(matrix2)):
+    for i in range(max(len(matrix2), len(matrix1))):
         row_matrix_rez=[]
-        for j in range(len(matrix2[0])):
+        for j in range(max(len(matrix2[0]), len(matrix1[0]))):
             row_matrix_rez.append(float(matrix1[i][j]) + float(matrix2[i][j]))
         matrix_sum.append(row_matrix_rez)
 
@@ -47,17 +47,17 @@ if len(matrix1)==len(matrix2) and len(matrix1[0])==len(matrix2[0]):
         for i in matrix_divide:
             file.write(str(i)+'\n')
 
-else:
+except:
     with open("matrix_rez.txt", 'w') as file:
         file.write("Не можливо додати і відняти ці матриці\n")
 
-if len(matrix1[0])==len(matrix2):
+try:
 
     for i in range(len(matrix1)):
         row=[]
         for j in range(len(matrix2[0])):
             number=0
-            for k in range(len(matrix1[0])):
+            for k in range(max(len(matrix1[0]), len(matrix2))):
                 number += int(matrix1[i][k]) * int(matrix2[k][j])
             row.append(number)
         matrix_rez.append(row)
@@ -66,60 +66,60 @@ if len(matrix1[0])==len(matrix2):
         file.write("Множення:\n")
         for i in matrix_rez:
             file.write(str(i)+'\n')
-else:
+except:
     with open("matrix_rez.txt", 'a') as file:
         file.write("Не можливо помножити\n")
 
+try:
+    matrix_rez=[]
+    inverse = []
 
-matrix_rez=[]
-inverse = []
-
-n=len(matrix2)
-for i in range(n):
-    row = []
-    for j in range(n):
-        if i == j:
-            row.append(1)
-        else:
-            row.append(0)
-    inverse.append(row)
-
-for col in range(n):
-    # Знаходимо головний елемент у поточному стовпці
-    max_val = abs(matrix2[col][col])
-    max_row = col
-    for k in range(col + 1, n):
-        if abs(matrix2[k][col]) > max_val:
-            max_val = abs(matrix2[k][col])
-            max_row = k
-
-    # Обмінюємо рядки так, щоб головний елемент був на діагоналі
-    matrix2[col], matrix2[max_row] = matrix2[max_row], matrix2[col]
-    inverse[col], inverse[max_row] = inverse[max_row], inverse[col]
-
-    # Ділимо головний рядок на головний елемент, щоб зробити його 1
-    pivot = matrix2[col][col]
-    for j in range(n):
-        matrix2[col][j] /= pivot
-        inverse[col][j] /= pivot
-
-    # Віднімаємо інші рядки, щоб зробити інші елементи в стовпці нульовими
+    n=len(matrix2)
     for i in range(n):
-        if i != col:
-            factor = matrix2[i][col]
-            for j in range(n):
-                matrix2[i][j] -= factor * matrix2[col][j]
-                inverse[i][j] -= factor * inverse[col][j]
+        row = []
+        for j in range(n):
+            if i == j:
+                row.append(1)
+            else:
+                row.append(0)
+        inverse.append(row)
+
+    for col in range(n):
+        # Знаходимо головний елемент у поточному стовпці
+        max_val = abs(matrix2[col][col])
+        max_row = col
+        for k in range(col + 1, n):
+            if abs(matrix2[k][col]) > max_val:
+                max_val = abs(matrix2[k][col])
+                max_row = k
+
+        # Обмінюємо рядки так, щоб головний елемент був на діагоналі
+        matrix2[col], matrix2[max_row] = matrix2[max_row], matrix2[col]
+        inverse[col], inverse[max_row] = inverse[max_row], inverse[col]
+
+        # Ділимо головний рядок на головний елемент, щоб зробити його 1
+        pivot = matrix2[col][col]
+        for j in range(n):
+            matrix2[col][j] /= pivot
+            inverse[col][j] /= pivot
+
+        # Віднімаємо інші рядки, щоб зробити інші елементи в стовпці нульовими
+        for i in range(n):
+            if i != col:
+                factor = matrix2[i][col]
+                for j in range(n):
+                    matrix2[i][j] -= factor * matrix2[col][j]
+                    inverse[i][j] -= factor * inverse[col][j]
 
 
 
-if len(matrix1[0])==len(inverse):
+
 
     for i in range(len(matrix1)):
         row=[]
         for j in range(len(inverse[0])):
             number=0
-            for k in range(len(matrix1[0])):
+            for k in range(max(len(matrix1[0]), len(inverse))):
                 number += float(matrix1[i][k]) * float(inverse[k][j])
             row.append(number)
         matrix_rez.append(row)
@@ -128,7 +128,7 @@ if len(matrix1[0])==len(inverse):
         file.write("Ділення:\n")
         for i in matrix_rez:
             file.write(str(i)+'\n')
-else:
+except:
     with open("matrix_rez.txt", 'a') as file:
         file.write("Не можливо поділити матриці\n")
 
