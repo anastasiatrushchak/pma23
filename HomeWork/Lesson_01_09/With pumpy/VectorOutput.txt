@@ -1,0 +1,8 @@
+Vector Summ:
+[5 8 9 8 5]
+Vector Subtract:
+[-4 -2  0  2  4]
+Vector Multiplication:
+[5 8 9 8 5]
+Vector Division:
+[0.2 0.5 1.  2.  5. ]
