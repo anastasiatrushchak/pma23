@@ -28,6 +28,7 @@ def add(matrix_a, matrix_b):
             result[i].append(matrix_a[i][j] + matrix_b[i][j])
     with open(constants.OUTPUT_FILE, 'w') as file:
         file.write(str(result))
+    return result
 
 
 def subtract(matrix_a, matrix_b):
@@ -38,6 +39,7 @@ def subtract(matrix_a, matrix_b):
             result[i].append(matrix_a[i][j] - matrix_b[i][j])
     with open(constants.OUTPUT_FILE, 'w') as file:
         file.write(str(result))
+    return result
 
 
 def multiply(matrix_a, matrix_b):
@@ -64,17 +66,13 @@ def divide(matrix_a, matrix_b):
         inverse.append([])
         for j in range(len(transposed[0])):
             inverse[i].append(transposed[j][i] / det)
-    print(inverse)
-    with open(constants.OUTPUT_FILE, 'w') as file:
-        file.write(str(multiply(matrix_a, inverse)))
-
-
+    return multiply(matrix_a, inverse)
 
 
 print(matrix_a)
 print(matrix_b)
 
-print("Choose operation(+,-,*,/):", end=' ')
+'''print("Choose operation(+,-,*,/):", end=' ')
 
 match input():
     case '+':
@@ -85,3 +83,10 @@ match input():
         multiply(matrix_a, matrix_b)
     case '/':
         divide(matrix_a, matrix_b)
+'''
+
+with open(constants.OUTPUT_FILE, 'w') as file:
+    file.writelines("Addition:\n" + str(add(matrix_a, matrix_b)) + '\n')
+    file.writelines("Subtraction:\n" + str(subtract(matrix_a, matrix_b)) + '\n')
+    file.writelines("Multiplication:\n" + str(multiply(matrix_a, matrix_b)) + '\n')
+    file.writelines("Division:\n" + str(divide(matrix_a, matrix_b)) + '\n')
