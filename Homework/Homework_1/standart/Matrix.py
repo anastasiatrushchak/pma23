@@ -76,7 +76,7 @@ class Matrix:
             return result
     def __truediv__(self, other):
         if isinstance(other, Matrix):
-            return Matrix(self * other.inverse())
+            return self * other.inverse()
         elif isinstance(other, (int, float)):
             return Matrix(self.matrix/other)
 
@@ -92,20 +92,17 @@ class Matrix:
             det += ((-1) ** j) * matrix[0][j] * submatrix_det
         return det
 
-
-    def transpose(matrix):
-        rows, cols = len(matrix), len(matrix[0])
-        transpose = [[0] * rows for _ in range(cols)]
-
-        for i in range(rows):
-            for j in range(cols):
-                transpose[j][i] = matrix[i][j]
-
-        return transpose
-
+    # @staticmethod
+    # def transpose(matrix):
+    #     rows, cols = len(matrix), len(matrix[0])
+    #     transpose = [[0] * rows for _ in range(cols)]
+    #     for i in range(rows):
+    #         for j in range(cols):
+    #             transpose[j][i] = matrix[i][j]
+    #     return transpose
 
     def minor(self, row, col):
-        minor = []
+        minor = [[0 for _ in range(col - 1)] for _ in range(row - 1)]
         for i in range(row):
             if i != row:
                 minor_row = []
@@ -115,19 +112,16 @@ class Matrix:
                 minor.append(minor_row)
         return minor
     def inverse(self):
-        if(self.row != self.column):
+        if self.row != self.column:
             return None
         determinant = Matrix.det(self.matrix)
         if determinant == 0:
             return None
-
-        self.row, self.column = len(self.matrix), len(self.matrix[0])
         temp = [[0] * self.column for _ in range(self.row)]
-
         for i in range(self.row):
             for j in range(self.column):
-                cofactor = ((-1) ** (i + j)) * Matrix.det(self.minor(i, j))
-                temp[j][i] = cofactor
-
+                temp[j][i] = ((-1) ** (i + j)) * Matrix.det(self.minor(i, j))
         inverse = [[value / determinant for value in row] for row in temp]
         return Matrix(inverse)
+
+

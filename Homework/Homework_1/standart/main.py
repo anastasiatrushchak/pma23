@@ -15,7 +15,7 @@ def fill_matrix():
             row = int(input("Input row: "))
             column = int(input("Input column: "))
 
-            matrix = []
+            matrix = [[0 for _ in range(column)] for _ in range(row)]
 
             for i in range(row):
                 for j in range(column):
