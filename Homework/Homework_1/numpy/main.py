@@ -103,7 +103,6 @@ def task_vector():
         print(result)
         result.str_to_file()
 
-
 while True:
     choice = int(input("1. Matrix\n2. Vector\n0. Cancel \n"))
     if choice == 1:
