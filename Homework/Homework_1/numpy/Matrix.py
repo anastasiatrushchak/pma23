@@ -14,9 +14,9 @@ class Matrix:
     def from_file(cls, file_name):
         matrix = np.loadtxt(file_name, dtype=int, delimiter=" ")
         return cls(matrix)
-    # def print(self):
-    #     for i in range(self.row):
-    #         print(self.matrix[i])
+    def str_to_file(self, file_name="result.txt"):
+        with open(file_name, 'w') as writeFile:
+            writeFile.write(str(self))
     def __str__(self):
         matrix_str = ""
         for row in self.matrix:

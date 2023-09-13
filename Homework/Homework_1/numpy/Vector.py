@@ -39,3 +39,6 @@ class Vector:
                 return Vector(self.vector / other.vector)
         elif isinstance(other, (int, float)):
             return Vector(self.vector / other)
+    def str_to_file(self, file_name="result.txt"):
+        with open(file_name, 'w') as writeFile:
+            writeFile.write(str(self))

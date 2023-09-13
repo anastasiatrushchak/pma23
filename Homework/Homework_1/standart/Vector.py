@@ -9,14 +9,18 @@ class Vector:
 
         return cls(vector)
     @classmethod
-    def from_file(cls, file_name):
+    def from_file(cls, file_name, separator=" "):
         with open(file_name, 'r') as readFile:
             line = readFile.readline()
 
-        vector = line.split(" ")
+        vector = line.split(separator)
+        vector = [float(i) for i in vector if i.isdigit()]
         return cls(vector)
     def __str__(self):
-        return self.vector.__str__();
+        return self.vector.__str__()
+    def str_to_file(self, file_name="result.txt"):
+        with open(file_name, 'w') as writeFile:
+            writeFile.write(str(self))
     def append(self, new_element):
         self.vector.append(new_element)
         self.size+=1

@@ -37,7 +37,6 @@ def task_matrix():
             break
     print(other)
     while True:
-        result = None
         operator = int(input("1. Add\n2. Subtraction\n3. Multiplication\n4. Division\n5. Inverse\n0. Cancel\n"))
         if operator == 1:
             result = matrix + other
@@ -52,6 +51,7 @@ def task_matrix():
         else:
             break
         print(result)
+        result.str_to_file()
 def fill_vector():
     while True:
         choice = int(input("How to fill a vector\n\t1. From file\n\t2. From random\n\t3. From the keyboard\n\t0. Cancel\n"))
@@ -97,7 +97,7 @@ def task_vector():
         else:
             break
         print(result)
-
+        result.str_to_file()
 
 while True:
     choice = int(input("1. Matrix\n2. Vector\n0. Cancel \n"))

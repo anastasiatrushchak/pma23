@@ -19,7 +19,9 @@ class Matrix:
             matrix_temp = [int(element) for element in line.split(" ")]
             matrix.append(matrix_temp)
         return cls(matrix)
-
+    def str_to_file(self, file_name="result.txt"):
+        with open(file_name, 'w') as writeFile:
+            writeFile.write(str(self))
     def __str__(self):
         matrix_str = ""
         for row in self.matrix:
@@ -80,17 +82,17 @@ class Matrix:
         elif isinstance(other, (int, float)):
             return Matrix(self.matrix/other)
 
-    @staticmethod
-    def det(matrix):
-        size = len(matrix)
-        if size == 2:
-            return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
-        det = 0
-        for j in range(size):
-            submatrix = [[matrix[i][k] for k in range(size) if k != j] for i in range(1, size)]
-            submatrix_det = Matrix.det(submatrix)
-            det += ((-1) ** j) * matrix[0][j] * submatrix_det
-        return det
+    # @staticmethod
+    # def det(matrix):
+    #     size = len(matrix)
+    #     if size == 2:
+    #         return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+    #     det = 0
+    #     for j in range(size):
+    #         submatrix = [[matrix[i][k] for k in range(size) if k != j] for i in range(1, size)]
+    #         submatrix_det = Matrix.det(submatrix)
+    #         det += ((-1) ** j) * matrix[0][j] * submatrix_det
+    #     return det
 
     # @staticmethod
     # def transpose(matrix):
@@ -101,27 +103,42 @@ class Matrix:
     #             transpose[j][i] = matrix[i][j]
     #     return transpose
 
-    def minor(self, row, col):
-        minor = [[0 for _ in range(col - 1)] for _ in range(row - 1)]
-        for i in range(row):
-            if i != row:
-                minor_row = []
-                for j in range(self.column):
-                    if j != col:
-                        minor_row.append(self.matrix[i][j])
-                minor.append(minor_row)
-        return minor
+    # def minor(self, row, col):
+    #     minor = [[0 for _ in range(col - 1)] for _ in range(row - 1)]
+    #     for i in range(row):
+    #         if i != row:
+    #             minor_row = []
+    #             for j in range(self.column):
+    #                 if j != col:
+    #                     minor_row.append(self.matrix[i][j])
+    #             minor.append(minor_row)
+    #     return minor
     def inverse(self):
         if self.row != self.column:
             return None
-        determinant = Matrix.det(self.matrix)
-        if determinant == 0:
-            return None
-        temp = [[0] * self.column for _ in range(self.row)]
+
+        identity_matrix = [[0] * self.column for _ in range(self.row)]
         for i in range(self.row):
+            identity_matrix[i][i] = 1
+
+        matrix_copy = [row[:] for row in self.matrix]
+        identity_copy = [row[:] for row in identity_matrix]
+
+        for i in range(self.row):
+            pivot = matrix_copy[i][i]
+            if pivot == 0:
+                raise ValueError("Матриця не має оберненої матриці (головний елемент нульовий).")
+
+
             for j in range(self.column):
-                temp[j][i] = ((-1) ** (i + j)) * Matrix.det(self.minor(i, j))
-        inverse = [[value / determinant for value in row] for row in temp]
-        return Matrix(inverse)
+                matrix_copy[i][j] /= pivot
+                identity_copy[i][j] /= pivot
 
+            for k in range(self.row):
+                if k != i:
+                    factor = matrix_copy[k][i]
+                    for j in range(self.column):
+                        matrix_copy[k][j] -= factor * matrix_copy[i][j]
+                        identity_copy[k][j] -= factor * identity_copy[i][j]
 
+        return Matrix(identity_copy)
