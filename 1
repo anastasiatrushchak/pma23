@@ -7,7 +7,7 @@ with open('steps.txt', 'r') as steps_file:
 
 first_number, second_number = map(int, input_data)
 
-fibonacci_sequence = [first_number, second_number]# перші 2 елементи ряду
+fibonacci_sequence = [first_number, second_number]
 
 while len(fibonacci_sequence) < num_steps:
     next_number = fibonacci_sequence[-1] + fibonacci_sequence[-2]
