@@ -38,6 +38,23 @@ class LinkedList:
                 self.size -= 1
             this_value = this_value.next_val
             element += 1
+    def add_by_index(self, index, new_element):
+        this_value = self.first
+        element = 0
+        while this_value:
+            if element == index:
+                previous_value = this_value.previous_val
+                new_node = Node(new_element)
+
+                previous_value.next_val = new_node
+                this_value.previous_val = new_node
+
+                new_node.next_val = this_value
+                new_node.previous_val = previous_value
+                self.size += 1
+            this_value = this_value.next_val
+            element += 1
+
     def __str__(self):
         result = ""
         this_value = self.first
