@@ -18,11 +18,26 @@ class LinkedList:
             self.last.previous_val = self.first
             self.first.next_val = self.last
         else:
-            temp = Node(new_element)
-            self.last.nextval = temp
-            self.last = temp
-            return True
+            new_node = Node(new_element)
+            self.last.next_val = new_node
+            temp = self.last
+            self.last = new_node
+            self.last.previous_val = temp
+        self.size += 1
 
+    def remove_by_index(self, index):
+        this_value = self.first
+        element = 0
+        while this_value:
+            if element == index:
+                previous_value = this_value.previous_val
+                next_value = this_value.next_val
+
+                previous_value.next_val = next_value
+                next_value.previous_val = previous_value
+                self.size -= 1
+            this_value = this_value.next_val
+            element += 1
     def __str__(self):
         result = ""
         this_value = self.first
@@ -38,4 +53,6 @@ linked_list.add(10)
 linked_list.add(9)
 linked_list.add(8)
 
+print(linked_list)
+linked_list.remove_by_index(2)
 print(linked_list)
