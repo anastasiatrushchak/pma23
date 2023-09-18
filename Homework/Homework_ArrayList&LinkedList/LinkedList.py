@@ -7,12 +7,11 @@ class Node:
         return self.data_val.__str__()
 class LinkedList:
     def __init__(self):
-        self.first = Node()
-        self.last = Node()
         self.size = 0
     def add(self,new_element):
         if self.size == 0:
-            self.first.data_val = new_element
+            self.first = Node(new_element)
+            self.last = Node()
         elif self.size == 1:
             self.last.data_val = new_element
             self.last.previous_val = self.first
@@ -75,4 +74,5 @@ linked_list.add(8)
 
 print(linked_list)
 linked_list.remove_by_index(2)
+linked_list.add_by_index(2, 11)
 print(linked_list)
