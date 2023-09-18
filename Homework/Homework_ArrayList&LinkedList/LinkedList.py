@@ -3,7 +3,7 @@ class Node:
         self.dataval = dataval
         self.nextval = None
     def __str__(self):
-        return self.dataval.__str__
+        return self.dataval.__str__()
 class LinkedList:
     def __init__(self):
         self.first = Node()
@@ -21,18 +21,12 @@ class LinkedList:
             return True
 
     def __str__(self):
-        str = ""
-        thisvalue = self.first
-        while thisvalue:
-            str += thisvalue.__str__()
-            thisvalue = thisvalue.nextval
-        return str
-    def print(self):
-        thisvalue = self.first
-        while thisvalue:
-            print(thisvalue.dataval)
-            thisvalue = thisvalue.nextval
-
+        result = ""
+        this_value = self.first
+        while this_value:
+            result += this_value.__str__() + " "
+            this_value = this_value.nextval
+        return "[ " + result +" ]"
 linked_list = LinkedList()
 linked_list.add(12)
 linked_list.add(11)
