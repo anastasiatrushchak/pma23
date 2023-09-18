@@ -62,7 +62,10 @@ class LinkedList:
             result += this_value.__str__() + " "
             this_value = this_value.next_val
         return "[ " + result +" ]"
-
+    def delete(self):
+        self.first = None
+        self.last = None
+        self.size = 0
 linked_list = LinkedList()
 linked_list.add(12)
 linked_list.add(11)
