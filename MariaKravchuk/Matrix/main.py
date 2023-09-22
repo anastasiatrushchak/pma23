@@ -9,7 +9,7 @@ def input_matrix_file(name_file):
         print(f"Error: File '{name_file}' not found.")
         return None
 
-    return matrix  # Return the loaded matrix
+    return matrix  
 
 def result_in_file(matrix, file_name, label):
     with open(file_name, 'a') as file:
@@ -55,13 +55,10 @@ def multiply_matrices(first_matrix, second_matrix):
     return result
 
 def inverse_matrix(matrix):
-    # Determine the size of the matrix
     n = len(matrix)
 
-    # Create an augmented matrix that combines the original matrix and an identity matrix
     augmented_matrix = [row + [1 if i == j else 0 for j in range(n)] for i, row in enumerate(matrix)]
 
-    # Perform row operations to transform the left part of the matrix into an identity matrix
     for i in range(n):
         divisor = augmented_matrix[i][i]
         for j in range(2 * n):
@@ -93,15 +90,12 @@ first_matrix = input_matrix_file('matrix1.txt')
 second_matrix = input_matrix_file('matrix2.txt')
 
 if first_matrix is not None and second_matrix is not None:
-    # Clean up the output file before writing
     with open("output.txt", 'w') as file:
         file.write("")
 
-    # Output the original matrices
     result_in_file(first_matrix, "output.txt", "Matrix 1")
     result_in_file(second_matrix, "output.txt", "Matrix 2")
 
-    # Perform matrix operations and output the results
     result_matrix = multiply_matrices(first_matrix, second_matrix)
     if result_matrix is not None:
         result_in_file(result_matrix, "output.txt", "Multiplication")
