@@ -76,10 +76,14 @@ class Vector:
             self.vector.append(0)
 
     def save_result(self, vector1, vector2):
-        summ = self.addition(vector1, vector2)
-        subtraction = self.subtraction(vector1, vector2)
-        multiplication = self.multiplication(vector1, vector2)
-        division = self.division(vector1, vector2)
+        # summ = self.addition(vector1, vector2)
+        # subtraction = self.subtraction(vector1, vector2)
+        # multiplication = self.multiplication(vector1, vector2)
+        # division = self.division(vector1, vector2)
+        summ = a+b
+        subtraction = a-b
+        multiplication = a*b
+        division = a/b
         output_string = (f"Сума:\n{summ}\n\n"
                          f"Різниця:\n{subtraction}"
                          f"\n\nДобуток:\n{multiplication}\n\n"
@@ -96,4 +100,5 @@ b.load_vector()
 result = Vector()
 result.form_zero_vector(a)
 result.save_result(a, b)
-print("\n", a / b)
+# print("\n", a / b)
+
