@@ -1,0 +1,8 @@
+Addition:
+[5.0, 7.0, 9.0]
+Subtraction:
+[-3.0, -3.0, -3.0]
+Multiplication:
+[4.0, 10.0, 18.0]
+Division:
+[0.25, 0.4, 0.5]
