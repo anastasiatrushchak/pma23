@@ -1,5 +1,5 @@
 import random
-from RostyslavPasternak.Homework.Homework_1.Exception import InvalidSize, InvalidType
+from RostyslavPasternak.Homework.Vector_Matrix.Exception import InvalidSize, InvalidType
 class Vector:
     def __init__(self, vector):
         self.vector = vector

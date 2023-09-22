@@ -1,7 +1,7 @@
 import random
 
 
-from RostyslavPasternak.Homework.Homework_1.Exception import InvalidSize, InvalidMatrixInverse, InvalidType
+from RostyslavPasternak.Homework.Vector_Matrix.Exception import InvalidSize, InvalidMatrixInverse, InvalidType
 
 class Matrix:
     def __init__(self, matrix):
