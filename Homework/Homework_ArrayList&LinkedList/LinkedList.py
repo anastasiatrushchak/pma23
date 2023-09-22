@@ -24,11 +24,11 @@ class LinkedList:
             self.last.previous_val = temp
         self.size += 1
 
-    def remove_by_index(self, index):
+    def remove_by_index(self, index: int):
         this_value = self.first
-        element = 0
+        element_index = 0
         while this_value:
-            if element == index:
+            if element_index ==  index:
                 previous_value = this_value.previous_val
                 next_value = this_value.next_val
 
@@ -36,7 +36,7 @@ class LinkedList:
                 next_value.previous_val = previous_value
                 self.size -= 1
             this_value = this_value.next_val
-            element += 1
+            element_index += 1
     def add_by_index(self, index, new_element):
         this_value = self.first
         element = 0
