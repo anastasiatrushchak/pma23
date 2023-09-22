@@ -1,7 +1,9 @@
 from Shape import Shape
 from math import pi
+from RostyslavPasternak.Homework.Abstract_class.Color import Color
 class Circle(Shape):
-    def __init__(self,radius: float):
+    def __init__(self,radius: float, color: Color):
+        super().__init__(color)
         self.radius = radius
 
     def __str__(self):

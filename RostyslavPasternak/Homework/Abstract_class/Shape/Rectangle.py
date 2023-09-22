@@ -1,6 +1,9 @@
 from Shape import Shape
+from RostyslavPasternak.Homework.Abstract_class.Color import Color
+
 class Rectangle(Shape):
-    def __init__(self, first_side: (float, int), second_side: (float, int)):
+    def __init__(self, first_side: (float, int), second_side: (float, int), color: Color):
+        super().__init__(color)
         self.first_side = first_side
         self.second_side = second_side
     def __str__(self)-> str:
