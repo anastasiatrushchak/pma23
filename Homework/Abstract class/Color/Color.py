@@ -6,7 +6,7 @@ class Color(Enum):
     Blue = "blue"
 
 class RGB:
-    def __init__(self, r,b,g):
+    def __init__(self, r, b, g):
         self.red = r
         self.blue = b
         self.green = g
