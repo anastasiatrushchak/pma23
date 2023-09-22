@@ -1,5 +1,6 @@
 from Matrix import Matrix
 from Vector import Vector
+from Homework.Homework_1.Exception import InvalidMatrixSize, InvalidMatrixInverse, InvalidMatrixType
 
 def fill_matrix():
     while True:
@@ -37,21 +38,29 @@ def task_matrix():
             break
     print(other)
     while True:
-        operator = int(input("1. Add\n2. Subtraction\n3. Multiplication\n4. Division\n5. Inverse\n0. Cancel\n"))
-        if operator == 1:
-            result = matrix + other
-        elif operator == 2:
-            result = matrix - other
-        elif operator == 3:
-            result = matrix * other
-        elif operator == 4:
-            result = matrix / other
-        elif operator == 5:
-            result = matrix.inverse()
+        try:
+            operator = int(input("1. Add\n2. Subtraction\n3. Multiplication\n4. Division\n5. Inverse\n0. Cancel\n"))
+            if operator == 1:
+                result = matrix + other
+            elif operator == 2:
+                result = matrix - other
+            elif operator == 3:
+                result = matrix * other
+            elif operator == 4:
+                result = matrix / other
+            elif operator == 5:
+                result = matrix.inverse()
+            else:
+                break
+        except InvalidMatrixSize:
+            print("Size error")
+        except InvalidMatrixType:
+            print("Type error")
+        except InvalidMatrixInverse:
+            print("Inverse error")
         else:
-            break
-        print(result)
-        result.str_to_file()
+            print(result)
+            result.str_to_file()
 def fill_vector():
     while True:
         choice = int(input("How to fill a vector\n\t1. From file\n\t2. From random\n\t3. From the keyboard\n\t0. Cancel\n"))
