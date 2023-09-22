@@ -52,12 +52,12 @@ def task_matrix():
                 result = matrix.inverse()
             else:
                 break
-        except InvalidSize:
-            print("Size error")
-        except InvalidType:
-            print("Type error")
-        except InvalidMatrixInverse:
-            print("Inverse error")
+        except InvalidSize as e:
+            print(e)
+        except InvalidType as e:
+            print(e)
+        except InvalidMatrixInverse as e:
+            print(e)
         else:
             print(result)
             result.str_to_file()
@@ -91,6 +91,7 @@ def task_vector():
         if choice == 2:
             other = int(input("Number: "))
             break
+    print(other)
 
     while True:
         try:

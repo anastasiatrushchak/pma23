@@ -4,21 +4,21 @@ def add(first_vector, second_vector):
         size = len(first_vector)
         result = [first_vector[i] + second_vector[i] for i in range(size)]
         return result
-    raise InvalidSize("Size error")
+    raise InvalidSize()
 
 def sub(first_vector, second_vector):
     if len(first_vector) == len(second_vector):
         size = len(first_vector)
         result = [first_vector[i] - second_vector[i] for i in range(size)]
         return result
-    raise InvalidSize("Size error")
+    raise InvalidSize()
 
 def mul(first_vector, second_vector):
     if len(first_vector) == len(second_vector):
         size = len(first_vector)
         result = [first_vector[i] * second_vector[i] for i in range(size)]
         return result
-    raise InvalidSize("Size error")
+    raise InvalidSize()
 
 
 def div(first_vector, second_vector):
@@ -26,7 +26,7 @@ def div(first_vector, second_vector):
         size = len(first_vector)
         result = [first_vector[i] / second_vector[i] for i in range(size)]
         return result
-    raise InvalidSize("Size error")
+    raise InvalidSize()
 
 def str_to_file(vector,file_name="result.txt"):
     with open(file_name, 'w') as writeFile:

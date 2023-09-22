@@ -86,7 +86,7 @@ class LinkedList:
 linked_list = LinkedList()
 linked_list.add(from_file("array.txt"))
 
-print(linked_list)
+
 linked_list.remove_by_index(2)
 linked_list.add_by_index(2, 11)
 print(linked_list)

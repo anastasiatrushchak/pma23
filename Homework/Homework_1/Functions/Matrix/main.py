@@ -11,7 +11,7 @@ def add(first_matrix, second_matrix):
     second_matrix_row = len(second_matrix)
     second_matrix_column = len(second_matrix[0])
     if first_matrix_row != second_matrix_row | first_matrix_column != second_matrix_column:
-        raise InvalidSize("Size error")
+        raise InvalidSize()
     result = [[0 for _ in range(first_matrix_row)] for _ in range(first_matrix_row)]
     for i in range(0, first_matrix_column):
         for j in range(0, first_matrix_row):
@@ -25,7 +25,7 @@ def sub(first_matrix, second_matrix):
     second_matrix_row = len(second_matrix)
     second_matrix_column = len(second_matrix[0])
     if first_matrix_row != second_matrix_row | first_matrix_column != second_matrix_column:
-        raise InvalidSize("Size error")
+        raise InvalidSize()
     result = [[0 for _ in range(first_matrix_column)] for _ in range(first_matrix_row)]
     for i in range(0, first_matrix_column):
         for j in range(0, first_matrix_row):
@@ -37,7 +37,7 @@ def mul(first_matrix, second_matrix):
     second_matrix_row = len(second_matrix)
     second_matrix_column = len(second_matrix[0])
     if first_matrix_row != second_matrix_column | first_matrix_column != second_matrix_row:
-        raise InvalidSize("Size error")
+        raise InvalidSize()
     result = [[0 for _ in range(first_matrix_column)] for _ in range(first_matrix_row)]
     for i in range(first_matrix_column):
         for j in range(second_matrix_column):
@@ -49,30 +49,29 @@ def inverse(matrix):
     row = len(first_matrix)
     column = len(first_matrix[0])
     if row != column:
-        return None
+         raise InvalidSize()
 
     identity_matrix = [[0] * column for _ in range(row)]
     for i in range(row):
         identity_matrix[i][i] = 1
 
     matrix_copy = [row[:] for row in matrix]
-    identity_copy = [row[:] for row in identity_matrix]
 
     for i in range(row):
         pivot = matrix_copy[i][i]
         if pivot == 0:
-            raise InvalidMatrixInverse("Inverse error")
+            raise InvalidMatrixInverse()
         for j in range(column):
             matrix_copy[i][j] /= pivot
-            identity_copy[i][j] /= pivot
+            identity_matrix[i][j] /= pivot
 
         for k in range(row):
             if k != i:
                 factor = matrix_copy[k][i]
                 for j in range(column):
                     matrix_copy[k][j] -= factor * matrix_copy[i][j]
-                    identity_copy[k][j] -= factor * identity_copy[i][j]
-    return identity_copy
+                    identity_matrix[k][j] -= factor * identity_matrix[i][j]
+    return identity_matrix
 def str_to_file(matrix,file_name="result.txt"):
     with open(file_name, 'w') as writeFile:
         writeFile.write(str_matrix(matrix))
@@ -108,10 +107,10 @@ while True:
             result = inverse(first_matrix)
         else:
             break
-    except InvalidSize:
-        print("Size error")
-    except InvalidMatrixInverse:
-        print("Inverse error")
+    except InvalidSize as e:
+        print(e)
+    except InvalidMatrixInverse as e:
+        print(e)
     else:
-        print(result)
+        print(str_matrix(result))
         str_to_file(result)

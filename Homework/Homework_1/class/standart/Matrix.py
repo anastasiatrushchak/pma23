@@ -34,7 +34,7 @@ class Matrix:
     def __mul__(self, other):
         if isinstance(other, Matrix):
             if self.row != other.column | self.column != other.row != self.column:
-                raise InvalidSize("Size error")
+                raise InvalidSize()
             result = [[0 for _ in range(self.column)] for _ in range(self.row)]
             for i in range(self.column):
                 for j in range(other.row):
@@ -46,12 +46,12 @@ class Matrix:
                 for j in range(0, self.row):
                     result.matrix[i][j] = self.matrix[i][j] * other
             return result
-        raise InvalidType("Type error")
+        raise InvalidType()
 
     def __add__(self, other):
         if isinstance(other, Matrix):
             if self.row != other.row | self.column != other.column:
-                raise InvalidSize("Size error")
+                raise InvalidSize()
             result = [[0 for _ in range(self.column)] for _ in range(self.row)]
             for i in range(0, self.column):
                 for j in range(0, self.row):
@@ -63,11 +63,11 @@ class Matrix:
                 for j in range(0, self.row):
                     result.matrix[i][j] = self.matrix[i][j] + other
             return result
-        raise InvalidType("Type error")
+        raise InvalidType()
     def __sub__(self, other):
         if isinstance(other, Matrix):
             if self.row != other.row | self.column != other.column:
-                raise InvalidSize("Size error")
+                raise InvalidSize()
             result = [[0 for _ in range(self.column)] for _ in range(self.row)]
             for i in range(0, self.column):
                 for j in range(0, self.row):
@@ -86,7 +86,7 @@ class Matrix:
             return Matrix(self.matrix/other)
     def inverse(self):
         if self.row != self.column:
-            raise InvalidSize("Size error")
+            raise InvalidSize()
         identity_matrix = [[0] * self.column for _ in range(self.row)]
         for i in range(self.row):
             identity_matrix[i][i] = 1
@@ -97,7 +97,7 @@ class Matrix:
         for i in range(self.row):
             pivot = matrix_copy[i][i]
             if pivot == 0:
-                raise InvalidMatrixInverse("Inverse error")
+                raise InvalidMatrixInverse()
             for j in range(self.column):
                 matrix_copy[i][j] /= pivot
                 identity_copy[i][j] /= pivot

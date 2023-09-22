@@ -1,9 +1,9 @@
 class InvalidSize(ValueError):
-    def __init__(self, message):
-        super().__init__(message)
+    def __init__(self):
+        super().__init__("Size error")
 class InvalidType(ValueError):
-    def __init__(self, message):
-        super().__init__(message)
+    def __init__(self):
+        super().__init__("type error")
 class InvalidMatrixInverse(ValueError):
-    def __init__(self, message):
-        super().__init__(message)
+    def __init__(self):
+        super().__init__("Inverse error")
