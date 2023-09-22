@@ -1,30 +1,48 @@
-vector1=[]
-vector2=[]
+VECTOR_FIRST_FILE = 'VectorFirst.txt'
+VECTOR_SECOND_FILE = 'VectorSecond.txt'
+VECTOR_FILE_RESULT = 'VectorResult.txt'
+mode = 'r'
+separate = ','
 
-with open('vector1.txt', 'r') as file:
-    line1=file.readline()
-    for i in line1.split():
-        vector1.append(float(i))
-with open('vector2.txt', 'r') as file:
-    line2 = file.readline()
-    for i in line2.split():
-        vector2.append(float(i))
 try:
-    sum=[]
-    multipliation=[]
-    difference=[]
-    divide=[]
-    for i in range(max(len(vector1), len(vector2))):
-        sum.append(vector1[i]+vector2[i])
-        difference.append(vector1[i]-vector2[i])
-        multipliation.append(vector1[i]*vector2[i])
-        divide.append(vector1[i]/vector2[i])
-    with open("vector_rez.txt",'w') as file:
-        file.write("Додавання:\n"+ str(sum)+'\n')
+    with open(VECTOR_FIRST_FILE, mode) as file:
+        vector_first = file.readline().split(separate)
+        vector_first = [float(i) for i in vector_first]
+
+
+except FileNotFoundError:
+    print("Файл " + VECTOR_FIRST_FILE + " не зайдено.")
+    exit(-1)
+
+try:
+    with open(VECTOR_SECOND_FILE, mode) as file:
+        vector_second = file.readline().split(separate)
+        vector_second = [float(i) for i in vector_second]
+except FileNotFoundError:
+    print("Файл " + VECTOR_SECOND_FILE + " не зайдено.")
+    exit(-1)
+
+
+try:
+    sum = []
+    multipliation = []
+    difference = []
+    divide = []
+    for i in range(max(len(vector_first), len(vector_second))):
+        sum.append(vector_first[i] + vector_second[i])
+        difference.append(vector_first[i] - vector_second[i])
+        multipliation.append(vector_first[i] * vector_second[i])
+        divide.append(vector_first[i] / vector_second[i])
+
+    with open(VECTOR_FILE_RESULT, 'w') as file:
+        file.write("Додавання:\n" + str(sum)+'\n')
         file.write("Віднімання:\n" + str(difference)+'\n')
         file.write("Множення:\n" + str(multipliation) + '\n')
         file.write("Ділення:\n" + str(divide) + '\n')
-except:
-    with open("vector_rez.txt", 'w') as file:
-        file.write("Неможливо виконати дії з векторами")
+except IndexError:
+
+    print("Неможливо додати вектори розмірів " + str(len(vector_first)) + " і " + str(len(vector_second)))
+    exit(-1)
+except ZeroDivisionError:
+    print("Неможливо ділити на нуль")
 
