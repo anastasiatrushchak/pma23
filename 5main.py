@@ -67,7 +67,16 @@ class MatrixCalculator:
         with open(file_name, 'w') as file:
             for operation in self.operations:
                 file.write(str(operation) + '\n')
-
+                
+def truediv(self, scalar):
+        if scalar == 0:
+            raise ValueError("Ділення на нуль")
+        result = Matrix(self.rows, self.columns)
+        for i in range(self.rows):
+            for j in range(self.columns):
+                result.set_element(i, j, self.get_element(i, j) / scalar)
+        return result
+    
 # Функція для зчитування матриці з файлу
 def read_matrix_from_file(file_name):
     with open(file_name, 'r') as file:
@@ -99,7 +108,7 @@ matrix_calculator = MatrixCalculator()
 matrix_calculator.add_operation(lambda: matrix1 + matrix2)
 matrix_calculator.add_operation(lambda: matrix1 - matrix2)
 matrix_calculator.add_operation(lambda: matrix1 * 2)
-
+matrix_calculator.add_operation(lambda: matrix1 / 2)
 # Виконуємо операції та зберігаємо результати в файл
 results = matrix_calculator.execute_operations()
 for i, result in enumerate(results):
