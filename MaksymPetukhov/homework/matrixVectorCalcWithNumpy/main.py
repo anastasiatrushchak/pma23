@@ -2,7 +2,10 @@ import numpy as np
 
 # TODO: Матриці. Дії: додавання, віднімання, множення , ділення( множення на матрицю в -1 степені)
 '''matrix_a = np.random.randint(10, size=(3, 3))
-matrix_b = np.random.randint(10, size=(3, 3))
+matrix_b = np.random.randint(10, size=(3, 3))'''
+
+matrix_a = [[1,2,3],[4,5,6],[7,8,10]]
+matrix_b = [[1,3,3],[4,7,6],[7,8,9]]
 
 print("Matrix A:\n%s\n\nMatrix B:\n%s\n"%(matrix_a, matrix_b))
 
@@ -16,7 +19,7 @@ match input():
     case '/':
         print(np.matmul(matrix_a, np.linalg.inv(matrix_b)))
     case '*':
-        print(np.matmul(matrix_a, matrix_b))'''
+        print(np.matmul(matrix_a, matrix_b))
 
 # TODO: Вектор. Ті ж дії. Ділення вектора - ділення поелементно
 '''vector_a = np.random.randint(10, size=6)
@@ -69,7 +72,7 @@ print(matrix_a.add(matrix_b))'''
 
 
 # TODO: Вектор клас. Аналогічно
-class Vector:
+'''class Vector:
     def __init__(self, size):
         self.vector = np.zeros(size)
         self.input()
@@ -97,3 +100,4 @@ vector_a = Vector(7)
 vector_b = Vector(7)
 
 print(vector_a.add(vector_b))
+'''

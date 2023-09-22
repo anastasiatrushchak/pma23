@@ -7,8 +7,7 @@ with open(constants.INPUT_FILE, 'r') as rf:
 
 array = line.split(constants.SEPARATOR)
 
-for i in range(len(array)):
-    array[i] = int(array[i])
+line = [float(i) for i in line if i.isdigit()]
 
 for i in range(0, 10):
     array.append(array[i] + array[i + 1])
