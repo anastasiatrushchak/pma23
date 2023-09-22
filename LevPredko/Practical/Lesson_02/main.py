@@ -12,7 +12,8 @@ class FibonacciCalculator:
                 current_sequence.append(0)
                 return self.fibonacci_recursive(current_sequence)
             elif current_sequence[-1] + current_sequence[-2] < self.final_number:
-                current_sequence.append(current_sequence[-1] + current_sequence[-2])
+                number = lambda num: num[-1] + num[-2]
+                current_sequence.append(number(current_sequence))
                 return self.fibonacci_recursive(current_sequence)
             else:
                 return current_sequence[2:]
@@ -60,7 +61,5 @@ class FibonacciCalculator:
             self.calculate_fibonacci_sequence()
             self.write_result_to_file()
 
-
 calculator = FibonacciCalculator()
 calculator.run()
-b = " "
