@@ -1,4 +1,4 @@
-from Homework.Homework_1.Exception import InvalidSize, InvalidMatrixInverse
+from RostyslavPasternak.Homework.Homework_1.Exception import InvalidSize, InvalidMatrixInverse
 def str_matrix(matrix):
     matrix_str = ""
     for row in matrix:

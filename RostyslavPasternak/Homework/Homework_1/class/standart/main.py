@@ -1,6 +1,6 @@
 from Matrix import Matrix
 from Vector import Vector
-from Homework.Homework_1.Exception import InvalidSize, InvalidMatrixInverse, InvalidType
+from RostyslavPasternak.Homework.Homework_1.Exception import InvalidSize, InvalidMatrixInverse, InvalidType
 
 def fill_matrix():
     while True:
