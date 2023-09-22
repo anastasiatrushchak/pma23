@@ -1,3 +1,3 @@
 input = 'input.txt'
-output = 'output.txt'
+output = 'output2.txt'
 space = " "
