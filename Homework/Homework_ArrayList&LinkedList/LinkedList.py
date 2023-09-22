@@ -1,3 +1,13 @@
+def from_file(file_name: str, separator=" "):
+    with open(file_name, 'r') as readFile:
+        line = readFile.readline()
+
+    array = line.split(separator)
+    array = [float(i) for i in array if i.isdigit()]
+    for i in range(0, 8):
+        array.append(array[i] + array[i + 1])
+        return array
+
 class Node:
     def __init__(self, data_val=None):
         self.previous_val = None
@@ -8,21 +18,25 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.size = 0
-    def add(self,new_element):
-        if self.size == 0:
-            self.first = Node(new_element)
-            self.last = Node()
-        elif self.size == 1:
-            self.last.data_val = new_element
-            self.last.previous_val = self.first
-            self.first.next_val = self.last
+    def add(self, new_element):
+        if isinstance(new_element, (tuple, list)):
+            for element in new_element:
+                self.add(element)
         else:
-            new_node = Node(new_element)
-            self.last.next_val = new_node
-            temp = self.last
-            self.last = new_node
-            self.last.previous_val = temp
-        self.size += 1
+            if self.size == 0:
+                self.first = Node(new_element)
+                self.last = Node()
+            elif self.size == 1:
+                self.last.data_val = new_element
+                self.last.previous_val = self.first
+                self.first.next_val = self.last
+            else:
+                new_node = Node(new_element)
+                self.last.next_val = new_node
+                temp = self.last
+                self.last = new_node
+                self.last.previous_val = temp
+            self.size += 1
 
     def remove_by_index(self, index: int):
         this_value = self.first
@@ -65,12 +79,12 @@ class LinkedList:
         self.first = None
         self.last = None
         self.size = 0
+
+
+
+
 linked_list = LinkedList()
-linked_list.add(12)
-linked_list.add(11)
-linked_list.add(10)
-linked_list.add(9)
-linked_list.add(8)
+linked_list.add(from_file("array.txt"))
 
 print(linked_list)
 linked_list.remove_by_index(2)
