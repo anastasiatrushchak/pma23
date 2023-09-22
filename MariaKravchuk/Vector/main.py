@@ -61,7 +61,7 @@ def divide_vectors(first_vector, second_vector):
                 result_value = first_vector[i][j] / second_vector[i][j]
             except ZeroDivisionError:
                 print("Error: Division by zero encountered.")
-                return None  # Exit the function if division by zero occurs
+                return None  
             row.append(result_value)
         result.append(row)
     return result
@@ -70,36 +70,32 @@ def divide_vectors(first_vector, second_vector):
 first_vector = input_vector_file('first_vector.txt')
 second_vector = input_vector_file('second_vector.txt')
 
-# Clear the output file before writing
 with open("output.txt", 'w') as file:
     file.write("")
 
-# Write the input vectors to the output file
 result_in_file(first_vector, "output.txt", "Vector 1")
 result_in_file(second_vector, "output.txt", "Vector 2")
 
-# Multiply vectors
 result_vector = multiply_vectors(first_vector, second_vector)
 if result_vector is not None:
     result_in_file(result_vector, "output.txt", "Multiplication")
 else:
     print("Multiplication is not possible.")
 
-# Add vectors
 add_vector = add_vectors(first_vector, second_vector)
 if add_vector is not None:
     result_in_file(add_vector, "output.txt", "Addition")
 else:
     print("Addition is not possible.")
 
-# Subtract vectors
+
 sub_vector = sub_vectors(first_vector, second_vector)
 if sub_vector is not None:
     result_in_file(sub_vector, "output.txt", "Subtraction")
 else:
     print("Subtraction is not possible.")
 
-# Divide vectors
+
 div_vector = divide_vectors(first_vector, second_vector)
 if div_vector is not None:
     result_in_file(div_vector, "output.txt", "Division")
