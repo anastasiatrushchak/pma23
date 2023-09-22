@@ -1,0 +1,8 @@
+Addition:
+4 4 4 
+Substraction:
+-2 0 2 
+Multiplication:
+3 4 3 
+Division:
+0.3333333333333333 1.0 3.0 
