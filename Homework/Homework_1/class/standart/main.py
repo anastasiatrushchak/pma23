@@ -1,6 +1,6 @@
 from Matrix import Matrix
 from Vector import Vector
-from Homework.Homework_1.Exception import InvalidMatrixSize, InvalidMatrixInverse, InvalidMatrixType
+from Homework.Homework_1.Exception import InvalidSize, InvalidMatrixInverse, InvalidType
 
 def fill_matrix():
     while True:
@@ -52,9 +52,9 @@ def task_matrix():
                 result = matrix.inverse()
             else:
                 break
-        except InvalidMatrixSize:
+        except InvalidSize:
             print("Size error")
-        except InvalidMatrixType:
+        except InvalidType:
             print("Type error")
         except InvalidMatrixInverse:
             print("Inverse error")
@@ -93,20 +93,28 @@ def task_vector():
             break
 
     while True:
-        result = None
-        operator = int(input("1. add\n2. subtraction\n3. multiplication\n4. division\n0. Cancel\n"))
-        if operator == 1:
-            result = vector + other
-        elif operator == 2:
-            result = vector - other
-        elif operator == 3:
-            result = vector * other
-        elif operator == 4:
-            result = vector / other
+        try:
+            result = None
+            operator = int(input("1. add\n2. subtraction\n3. multiplication\n4. division\n0. Cancel\n"))
+            if operator == 1:
+                result = vector + other
+            elif operator == 2:
+                result = vector - other
+            elif operator == 3:
+                result = vector * other
+            elif operator == 4:
+                result = vector / other
+            else:
+                break
+        except InvalidSize as e:
+            print(e)
+        except InvalidSize as e:
+            print(e)
+        except InvalidSize as e:
+            print(e)
         else:
-            break
-        print(result)
-        result.str_to_file()
+            print(result)
+            result.str_to_file()
 
 while True:
     choice = int(input("1. Matrix\n2. Vector\n0. Cancel \n"))

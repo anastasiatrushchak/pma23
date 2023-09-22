@@ -1,7 +1,7 @@
 import random
 
 
-from Homework.Homework_1.Exception import InvalidMatrixSize, InvalidMatrixInverse, InvalidMatrixType
+from Homework.Homework_1.Exception import InvalidSize, InvalidMatrixInverse, InvalidType
 
 class Matrix:
     def __init__(self, matrix):
@@ -34,7 +34,7 @@ class Matrix:
     def __mul__(self, other):
         if isinstance(other, Matrix):
             if self.row != other.column | self.column != other.row != self.column:
-                raise InvalidMatrixSize("Size error")
+                raise InvalidSize("Size error")
             result = [[0 for _ in range(self.column)] for _ in range(self.row)]
             for i in range(self.column):
                 for j in range(other.row):
@@ -46,12 +46,12 @@ class Matrix:
                 for j in range(0, self.row):
                     result.matrix[i][j] = self.matrix[i][j] * other
             return result
-        raise InvalidMatrixSize("Type error")
+        raise InvalidType("Type error")
 
     def __add__(self, other):
         if isinstance(other, Matrix):
             if self.row != other.row | self.column != other.column:
-                raise InvalidMatrixSize("Size error")
+                raise InvalidSize("Size error")
             result = [[0 for _ in range(self.column)] for _ in range(self.row)]
             for i in range(0, self.column):
                 for j in range(0, self.row):
@@ -63,11 +63,11 @@ class Matrix:
                 for j in range(0, self.row):
                     result.matrix[i][j] = self.matrix[i][j] + other
             return result
-        raise InvalidMatrixSize("Type error")
+        raise InvalidType("Type error")
     def __sub__(self, other):
         if isinstance(other, Matrix):
             if self.row != other.row | self.column != other.column:
-                raise InvalidMatrixSize("Size error")
+                raise InvalidSize("Size error")
             result = [[0 for _ in range(self.column)] for _ in range(self.row)]
             for i in range(0, self.column):
                 for j in range(0, self.row):
@@ -86,7 +86,7 @@ class Matrix:
             return Matrix(self.matrix/other)
     def inverse(self):
         if self.row != self.column:
-            raise InvalidMatrixSize("Size error")
+            raise InvalidSize("Size error")
         identity_matrix = [[0] * self.column for _ in range(self.row)]
         for i in range(self.row):
             identity_matrix[i][i] = 1

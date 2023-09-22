@@ -1,4 +1,4 @@
-from Homework.Homework_1.Exception import InvalidMatrixSize, InvalidMatrixInverse
+from Homework.Homework_1.Exception import InvalidSize, InvalidMatrixInverse
 def str_matrix(matrix):
     matrix_str = ""
     for row in matrix:
@@ -11,7 +11,7 @@ def add(first_matrix, second_matrix):
     second_matrix_row = len(second_matrix)
     second_matrix_column = len(second_matrix[0])
     if first_matrix_row != second_matrix_row | first_matrix_column != second_matrix_column:
-        raise InvalidMatrixSize("Size error")
+        raise InvalidSize("Size error")
     result = [[0 for _ in range(first_matrix_row)] for _ in range(first_matrix_row)]
     for i in range(0, first_matrix_column):
         for j in range(0, first_matrix_row):
@@ -25,7 +25,7 @@ def sub(first_matrix, second_matrix):
     second_matrix_row = len(second_matrix)
     second_matrix_column = len(second_matrix[0])
     if first_matrix_row != second_matrix_row | first_matrix_column != second_matrix_column:
-        raise InvalidMatrixSize("Size error")
+        raise InvalidSize("Size error")
     result = [[0 for _ in range(first_matrix_column)] for _ in range(first_matrix_row)]
     for i in range(0, first_matrix_column):
         for j in range(0, first_matrix_row):
@@ -37,7 +37,7 @@ def mul(first_matrix, second_matrix):
     second_matrix_row = len(second_matrix)
     second_matrix_column = len(second_matrix[0])
     if first_matrix_row != second_matrix_column | first_matrix_column != second_matrix_row:
-        raise InvalidMatrixSize("Size error")
+        raise InvalidSize("Size error")
     result = [[0 for _ in range(first_matrix_column)] for _ in range(first_matrix_row)]
     for i in range(first_matrix_column):
         for j in range(second_matrix_column):
@@ -108,7 +108,7 @@ while True:
             result = inverse(first_matrix)
         else:
             break
-    except InvalidMatrixSize:
+    except InvalidSize:
         print("Size error")
     except InvalidMatrixInverse:
         print("Inverse error")

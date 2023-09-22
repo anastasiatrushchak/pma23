@@ -1,4 +1,5 @@
 import random
+from Homework.Homework_1.Exception import InvalidSize, InvalidType
 class Vector:
     def __init__(self, vector):
         self.vector = vector
@@ -23,37 +24,45 @@ class Vector:
             writeFile.write(str(self))
     def append(self, new_element):
         self.vector.append(new_element)
-        self.size+=1
+        self.size += 1
     def __add__(self, other):
         if isinstance(other, Vector):
-            if self.size == other.size:
-                result = [self.vector[i] + other.vector for i in range(self.size)]
-                return Vector(result)
+            if self.size != other.size:
+                raise InvalidSize
+            result = [self.vector[i] + other.vector for i in range(self.size)]
+            return Vector(result)
         elif isinstance(other, (int, float)):
             result = [self.vector[i] + other for i in range(self.size)]
             return Vector(result)
+        raise InvalidType("Type error")
 
     def __sub__(self, other):
         if isinstance(other, Vector):
-            if self.size == other.size:
-                result = [self.vector[i] - other.vector for i in range(self.size)]
-                return Vector(result)
+            if self.size != other.size:
+                raise InvalidSize
+            result = [self.vector[i] - other.vector for i in range(self.size)]
+            return Vector(result)
         elif isinstance(other, (int, float)):
             result = [self.vector[i] - other for i in range(self.size)]
             return Vector(result)
+        raise InvalidType("Type error")
     def __mul__(self, other):
         if isinstance(other, Vector):
-            if self.size == other.size:
-                result = [self.vector[i] * other.vector for i in range(self.size)]
-                return Vector(result)
+            if self.size != other.size:
+                raise InvalidSize
+            result = [self.vector[i] * other.vector for i in range(self.size)]
+            return Vector(result)
         elif isinstance(other, (int, float)):
             result = [self.vector[i] * other for i in range(self.size)]
             return Vector(result)
+        raise InvalidType("Type error")
     def __truediv__(self, other):
         if isinstance(other, Vector):
-            if self.size == other.size:
-                result = [self.vector[i] / other.vector for i in range(self.size)]
-                return Vector(result)
+            if self.size != other.size:
+                raise InvalidSize
+            result = [self.vector[i] / other.vector for i in range(self.size)]
+            return Vector(result)
         elif isinstance(other, (int, float)):
             result = [self.vector[i] / other for i in range(self.size)]
             return Vector(result)
+        raise InvalidType("Type error")
