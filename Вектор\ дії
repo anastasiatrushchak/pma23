@@ -1,0 +1,59 @@
+try:
+    f = open('input.txt')
+except FileNotFoundError:
+    print('Input file does not exist')
+
+try:
+    f = open('output.txt')
+except FileNotFoundError:
+    print('Output file does not exist')
+
+with open('input.txt', 'r') as input_file:
+    try:
+        if input_file.stat('example.txt').st_size == 0:
+            print('The file is empty')
+    except:
+            print('The file is not empty')
+    a = []
+    b = []
+    current = a
+    for line in input_file.readlines():
+        if ',' not in line:
+            current = b
+        else:
+            current.append([])
+            for x in line.split(','):
+                current[len(current) - 1].append(int(x))
+
+with open('output.txt', 'w') as op:
+    def add(m, n):
+        result = [m[i] + n[i] for i in range(len(m))]
+        op.write(f"{m} + {n} = {result}\n")
+        return result
+
+
+    def subtract(m, n):
+        result = [m[i] - n[i] for i in range(len(m))]
+        op.write(f"{m} - {n} = {result}\n")
+        return result
+
+
+    def multiply(m, n):
+        result = [m[i] * n[i] for i in range(len(m))]
+        op.write(f"{m} * {n} = {result}\n")
+        return result
+
+
+    def divide(m, n):
+        result = [m[i] / n[i] for i in range(len(m))]
+        op.write(f"{m} / {n} = {result}\n")
+        return result
+
+
+    a = [elem for sublist in a for elem in sublist]
+    b = [elem for sublist in b for elem in sublist]
+
+    add(a, b)
+    subtract(a, b)
+    multiply(a, b)
+    divide(a, b)
