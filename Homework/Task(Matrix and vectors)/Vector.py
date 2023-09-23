@@ -1,11 +1,9 @@
-import numpy as np
-
 
 def read_vectors(filename):
     try:
         with open(filename, 'r') as f:
-            vectorA = np.array([float(num) for num in f.readline().split(',')])
-            vectorB = np.array([float(num) for num in f.readline().split(',')])
+            vectorA = [float(num) for num in f.readline().split(',')]
+            vectorB = [float(num) for num in f.readline().split(',')]
         return vectorA, vectorB
     except Exception as e:
         print(f"Error reading vectors from file: {e}")
@@ -21,20 +19,20 @@ def write_vector(filename, vector):
 
 
 def vector_add(A, B):
-    return A + B
+    return [A[i] + B[i] for i in range(len(A))]
 
 
 def vector_subtract(A, B):
-    return A - B
+    return [A[i] - B[i] for i in range(len(A))]
 
 
 def vector_multiply(A, B):
-    return A * B
+    return [A[i] * B[i] for i in range(len(A))]
 
 
 def vector_divide(A, B):
     try:
-        return A / B
+        return [A[i] / B[i] for i in range(len(A))]
     except ZeroDivisionError:
         print("Error: Division by zero is not allowed.")
         return None
