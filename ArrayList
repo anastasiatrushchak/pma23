@@ -1,0 +1,80 @@
+class ArrayList:
+
+    def __init__(self, size):
+        self.array = [None] * size
+        self.next_index=0
+
+    def len(self):
+        try:
+            return len(self.array)
+        except:
+            print("Error: Unable to determine the length of the array.")
+            return 0
+
+    def print_array(self):
+        try:
+            for element in self.array:
+                print(element, end=" ")
+        except:
+            print("Error: Unable to print the array.")
+
+    def append(self, value):
+        try:
+            if self.next_index >= len(self.array):
+                self.change_size()
+            self.array[self.next_index] = value
+            self.next_index += 1
+        except:
+            print("Error: Unable to append the value to the array.")
+
+    def search(self, value):
+        try:
+            pos = -1
+            for index, element in enumerate(self.array):
+                if element == value:
+                    pos = index
+            return pos
+        except:
+            print("Error: Unable to search for the value in the array.")
+            return -1
+
+    def delete(self, value):
+        try:
+            pos = self.search(value)
+            self.array[pos] = None
+        except:
+            print("Error: Unable to delete the value from the array.")
+
+    def new_capacity(self):
+        return int(len(self.array) * 1.5 + 1)
+
+    def change_size(self):
+        try:
+            new_capacity = self.new_capacity()
+            new_data = [None] * new_capacity
+            for i in range(len(self.array)):
+                new_data[i] = self.array[i]
+            self.array = new_data
+        except:
+            print("Error: Unable to change the size of the array.")
+
+
+a = ArrayList(4)
+print(a.len())
+try:
+   input_file = open('array.txt', 'r')
+   b = []
+   current = b
+   for line in input_file.readlines():
+      current.append([])
+      for x in line.split(','):
+          current[len(current) - 1].append(int(x))
+   b = [elem for sublist in b for elem in sublist]
+   for num in range(len(b)):
+      a.append(b[num])
+except FileNotFoundError:
+    print("Error: 'array.txt' file not found.")
+except Exception as e:
+    print(f"Error: An unexpected error occurred - {e}")
+print(a.len())
+a.print_array()
