@@ -19,7 +19,7 @@ class LinkedList:
     def __init__(self):
         self.size = 0
     def add(self, new_element):
-        if isinstance(new_element, (tuple, list)):
+        if isinstance(new_element, list):
             for element in new_element:
                 self.add(element)
         else:
