@@ -1,0 +1,8 @@
+with open('datafile.txt','r') as file_input:
+    numbers = file_input.readline().strip().split(' ')
+numbers =[int(number) for number in numbers]
+with open ('output.txt','w') as file_output:
+    file_output.write(str(numbers[0]) + '\n' + str(numbers[1]) + '\n')
+    for number in range(2,10):
+        numbers.append(numbers[number-2]+numbers[number-1])
+        file_output.write(str(numbers[number])+'\n')
