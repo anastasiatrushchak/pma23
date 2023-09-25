@@ -24,7 +24,7 @@ class LinkedList:
         self.size = 0
 
     def add(self, new_element):
-        if isinstance(new_element, list | tuple | set):
+        if isinstance(new_element, list | set):
             for element in new_element:
                 self.add(element)
         else:
