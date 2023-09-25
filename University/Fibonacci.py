@@ -10,3 +10,4 @@ for i in range(2, 10):
 CONST = 'output.txt'
 with open (CONST, 'w') as file:
     file.write(str(array))
+# Hi my name is Bot
