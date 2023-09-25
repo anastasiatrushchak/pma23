@@ -1,4 +1,4 @@
-from HomeWork.Lesson_2_Matrix_Clas.Task_Vector import Vector
+from Vasylyshyn_Dmytro.HomeWork.Lesson_2_Matrix_Clas.Task_Vector import Vector
 from typing import Final
 
 name_input_numbers_first_file: Final[str] = 'first_vector.txt'

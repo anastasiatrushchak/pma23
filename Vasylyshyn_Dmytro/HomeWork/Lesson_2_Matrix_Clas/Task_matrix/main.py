@@ -1,8 +1,8 @@
-from HomeWork.Lesson_2_Matrix_Clas.Task_matrix import Matrix
+from Vasylyshyn_Dmytro.HomeWork.Lesson_2_Matrix_Clas.Task_matrix import Matrix
 from typing import Final
-name_of_file_for_first_matrix:Final[str]='first_matrix.txt'
-name_of_file_for_second_matrix:Final[str]='second_maitrix.txt'
-name_output_file:Final[str]='output_matrix.txt'
+name_of_file_for_first_matrix:Final[str]= 'first_matrix.txt'
+name_of_file_for_second_matrix:Final[str]= 'second_maitrix.txt'
+name_output_file:Final[str]= 'output_matrix.txt'
 def read_data(file_name):
     try:
         first_matrix = []
