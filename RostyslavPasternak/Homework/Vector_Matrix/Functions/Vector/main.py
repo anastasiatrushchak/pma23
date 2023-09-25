@@ -1,4 +1,4 @@
-from RostyslavPasternak.Homework.Homework_1.Exception import InvalidSize
+from RostyslavPasternak.Homework.Vector_Matrix.Exception import InvalidSize
 def add(first_vector, second_vector):
     if len(first_vector) == len(second_vector):
         size = len(first_vector)
