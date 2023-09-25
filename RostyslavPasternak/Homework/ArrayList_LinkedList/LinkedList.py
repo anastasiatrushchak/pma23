@@ -8,16 +8,21 @@ def from_file(file_name: str, separator=" "):
         array.append(array[i] + array[i + 1])
         return array
 
+
 class Node:
     def __init__(self, data_val=None):
         self.previous_val = None
         self.data_val = data_val
         self.next_val = None
+
     def __str__(self):
         return self.data_val.__str__()
+
+
 class LinkedList:
     def __init__(self):
         self.size = 0
+
     def add(self, new_element):
         if isinstance(new_element, list | set):
             for element in new_element:
@@ -25,24 +30,20 @@ class LinkedList:
         else:
             if self.size == 0:
                 self.first = Node(new_element)
-                self.last = Node()
-            elif self.size == 1:
-                self.last.data_val = new_element
-                self.last.previous_val = self.first
-                self.first.next_val = self.last
+                self.last = self.first
             else:
                 new_node = Node(new_element)
                 self.last.next_val = new_node
-                temp = self.last
+                new_node.previous_val = self.last
                 self.last = new_node
-                self.last.previous_val = temp
+
             self.size += 1
 
     def remove_by_index(self, index: int):
         this_value = self.first
         element_index = 0
         while this_value:
-            if element_index ==  index:
+            if element_index == index:
                 previous_value = this_value.previous_val
                 next_value = this_value.next_val
 
@@ -51,6 +52,7 @@ class LinkedList:
                 self.size -= 1
             this_value = this_value.next_val
             element_index += 1
+
     def add_by_index(self, index, new_element):
         this_value = self.first
         element = 0
@@ -74,7 +76,8 @@ class LinkedList:
         while this_value:
             result += this_value.__str__() + " "
             this_value = this_value.next_val
-        return "[ " + result +" ]"
+        return "[ " + result + " ]"
+
     def delete(self):
         self.first = None
         self.last = None
@@ -83,8 +86,8 @@ class LinkedList:
 
 linked_list = LinkedList()
 linked_list.add(from_file("array.txt"))
-
-
+linked_list.add([12, 32, 23, 4])
+linked_list.add(12)
 linked_list.remove_by_index(2)
 linked_list.add_by_index(2, 11)
 print(linked_list)
