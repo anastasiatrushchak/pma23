@@ -1,0 +1,5 @@
+
+Sum of vectors: [6.0, 5.0, 7.0]
+Difference of vectors: [6.0, 5.0, 7.0]
+Multiplication of vectors: [5.0, 6.0, 12.0]
+Division of vectors: [0.2, 0.6666666666666666, 0.75]
