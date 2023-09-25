@@ -1,0 +1,10 @@
+Condition = "ConditionFile.txt" 
+ Result = "TextFile2.txt" 
+ with open(Condition) as file_condition: 
+     line = file_condition.readline() 
+ array = line.split() 
+ array = [int(i) for i in array if i.isdigit] 
+ for i in range(3, 10): 
+     array.append(array[-1]+array[-2]) 
+ with open(Result, "w") as file_result: 
+     file_result.write(str(array))
