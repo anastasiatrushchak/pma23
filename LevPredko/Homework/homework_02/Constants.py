@@ -1,1 +1,0 @@
-ARRAYLISTFILE = "ArrayList.txt"
