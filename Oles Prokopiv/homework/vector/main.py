@@ -1,6 +1,6 @@
-INPUT_FILE = "in8put.txt"
+INPUT_FILE = "input.txt"
 INPUT_FILE_SECOND = "input_second.txt"
-OUTPUT_FILE = "output.file"
+OUTPUT_FILE = "output.txt"
 
 A_vector = [float]
 B_vector = [float]
