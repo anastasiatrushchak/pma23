@@ -1,9 +1,0 @@
-Addition:
-None
-Subtraction:
-0.0 0.0
-1.0 1.0
-Multiplication:
-None
-Division:
-None
