@@ -1,0 +1,9 @@
+Sum Result:
+1 6 11
+6 8 12
+6 12 17
+
+Subtraction Result:
+1 0 -3
+4 4 2
+0 -4 -1
