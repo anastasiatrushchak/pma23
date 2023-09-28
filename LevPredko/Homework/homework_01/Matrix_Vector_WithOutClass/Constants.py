@@ -1,5 +1,0 @@
-Input_Matrix_1 = "Matrix1read.txt"
-Input_Matrix_2 = "Matrix2read.txt"
-Input_Vector_1 = "Vector1read.txt"
-Input_Vector_2 = "Vector2read.txt"
-SEPARATOR = " "

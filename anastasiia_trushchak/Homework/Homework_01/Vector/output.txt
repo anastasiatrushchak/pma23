@@ -1,8 +1,0 @@
-Sum Result:
-5 7 9
-Subtraction Result:
--3 -3 -3
-Multiplication Result:
-4 10 18
-Division Result:
-0.25 0.4 0.5
