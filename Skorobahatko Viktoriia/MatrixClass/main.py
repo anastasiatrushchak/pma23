@@ -15,8 +15,8 @@ class MatrixApp:
 
             for i in range(3, 5):
                 row = [int(x) for x in lines[i].strip().split()]
-                matrix_b.append(row)  # Fixed indentation here, and removed "return" to read both matrices
-            return matrix_a, matrix_b  # Moved the return statement here
+                matrix_b.append(row) 
+            return matrix_a, matrix_b 
 
     @staticmethod
     def write_matrix(filename, result_addition, result_subtraction, result_multiplication, result_division):
