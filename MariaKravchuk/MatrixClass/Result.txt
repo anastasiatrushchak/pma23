@@ -1,0 +1,25 @@
+First Matrix:
+9	8	3
+6	2	4
+8	5	7
+
+Second Matrix:
+0	0	0
+0	0	0
+0	0	0
+
+Sum:
+9	8	3
+6	2	4
+8	5	7
+
+Difference :
+9	8	3
+6	2	4
+8	5	7
+
+Multiplication:
+0	0	0
+0	0	0
+0	0	0
+
