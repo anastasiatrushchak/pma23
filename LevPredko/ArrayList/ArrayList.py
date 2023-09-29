@@ -1,6 +1,5 @@
 import Constants
 
-
 class ArrayList:
 
     def __init__(self):
@@ -35,9 +34,7 @@ my_list = ArrayList()
 
 my_list.read_from_file(Constants.ARRAYLISTFILE)
 
-my_list.add(1)
-my_list.add(2)
-my_list.add(3)
+my_list.add(100)
 print(my_list)
 
 my_list.remove(2)
