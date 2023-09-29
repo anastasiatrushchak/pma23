@@ -135,7 +135,7 @@ class Matrix:
 # Your existing code
 filename1 = 'FMatrix.txt'
 filename2 = 'SMatrix.txt'
-output_filename = 'OutputMatrix.txt'
+output_filename = '../Matrix/OutputMatrix.txt'
 
 matrix_ops1 = Matrix(filename1)
 matrix_ops1.load_matrix()
