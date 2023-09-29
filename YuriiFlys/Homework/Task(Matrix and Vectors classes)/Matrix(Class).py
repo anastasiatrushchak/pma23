@@ -123,8 +123,8 @@ class Matrix:
         return result
 
 result = None
-MatrixA = Matrix.from_file('matrix_A.txt')
-MatrixB = Matrix.from_file('matrix_B.txt')
+MatrixA = Matrix.from_file('../Task(Matrix and vectors)/matrix_A.txt')
+MatrixB = Matrix.from_file('../Task(Matrix and vectors)/matrix_B.txt')
 try:
     operation = input("Enter operation (add, subtract, multiply, divide): ")
     if operation == 'add':

@@ -48,9 +48,9 @@ class Vector:
             return None
 
 
-vector = Vector.from_file('vectors.txt')
-other_vector = Vector.from_file('other_vector.txt')
-other_vector1= Vector.from_file('other_vector1.txt')
+vector = Vector.from_file('../Task(Matrix and vectors)/vectors.txt')
+other_vector = Vector.from_file('../Task(Matrix and vectors)/other_vector.txt')
+other_vector1= Vector.from_file('../Task(Matrix and vectors)/other_vector1.txt')
 if vector is not None:
     operation = input("Enter operation (add, subtract, multiply, divide): ")
 
