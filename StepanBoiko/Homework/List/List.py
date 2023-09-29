@@ -28,12 +28,15 @@ class Linked_List:
         return self.__list[index]
 
     def delete(self, index):
-        del self.__list[index]
-        set_nodes(self.__list)
+        try:
+            del self.__list[index]
+            set_nodes(self.__list)
+        except IndexError:
+            print("Index out of range. Cannot delete element.")
 
     def add(self, value):
-        temp = Node(value)
-        self.__list.append(temp)
+        node = Node(value)
+        self.__list.append(node)
         set_nodes(self.__list)
 
     def insert(self, index, value):
@@ -41,15 +44,18 @@ class Linked_List:
             if index < 0 or index > len(self):
                 raise IndexError
             else:
-                temp = Node(value)
-                self.__list.insert(index, temp)
+                node = Node(value)
+                self.__list.insert(index, node)
         except IndexError:
             print("Wrong insert index!")
         set_nodes(self.__list)
 
     def clear_element(self, index):
-        self[index].this_item = None
-        set_nodes(self.__list)
+        try:
+            self[index].this_item = None
+            set_nodes(self.__list)
+        except IndexError:
+            print("Index out of range. Cannot clear element.")
 
     def clear(self):
         self.__list = []
@@ -79,6 +85,8 @@ my_list.add(103)
 my_list.add(14)
 my_list.add(10)
 my_list.add(666)
+print(my_list)
+my_list.clear_element(3)
 print(my_list)
 my_list.delete(1)
 print(my_list)
