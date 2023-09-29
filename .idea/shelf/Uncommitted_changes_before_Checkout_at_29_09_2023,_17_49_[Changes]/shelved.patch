@@ -1,0 +1,242 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"18f36932-bddb-4fef-9d0a-66952707bca3\" name=\"Changes\" comment=\"Added template_method.py\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/OlexandrMozil/Practicals/Practical4 (29.09.23)/template_method.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/OlexandrMozil/Practicals/Practical4 (29.09.23)/template_method.py\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Python Script\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 6\n}</component>\n  <component name=\"ProjectId\" id=\"2Ukcywl2oRFACneKOKiKCx9LFEt\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"git-widget-placeholder\": \"OlexandrMozil\",\n    \"last_opened_file_path\": \"/Users/mozya/Desktop/CodesUniver/Practicals/Practical2(15.08.23)\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"settings.editor.selected.configurable\": \"reference.settings.ide.settings.new.ui\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/Practicals/Practical2(15.08.23)\" />\n      <recent name=\"$PROJECT_DIR$/Homeworks/Homework 1.3/Vector class\" />\n      <recent name=\"$PROJECT_DIR$/Homeworks/Homework 1.2/Matrix class\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/OlexandrMozil\" />\n      <recent name=\"$PROJECT_DIR$/Homeworks/Homework 1.3\" />\n      <recent name=\"$PROJECT_DIR$/Homeworks/Homework 1.2/Matrices without classes\" />\n      <recent name=\"$PROJECT_DIR$/Homeworks/Homework 1.2\" />\n      <recent name=\"$PROJECT_DIR$/Homeworks/Homework 1.2/Vectors without classes\" />\n    </key>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"18f36932-bddb-4fef-9d0a-66952707bca3\" name=\"Changes\" comment=\"\" />\n      <created>1693487277377</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1693487277377</updated>\n      <workItem from=\"1693487278404\" duration=\"1084000\" />\n      <workItem from=\"1693569725772\" duration=\"28002000\" />\n      <workItem from=\"1693705583664\" duration=\"669000\" />\n      <workItem from=\"1693747249355\" duration=\"34000\" />\n      <workItem from=\"1693747289247\" duration=\"1094000\" />\n      <workItem from=\"1693748412112\" duration=\"18000\" />\n      <workItem from=\"1693748434557\" duration=\"170000\" />\n      <workItem from=\"1693748609931\" duration=\"598000\" />\n      <workItem from=\"1693749955825\" duration=\"810000\" />\n      <workItem from=\"1693897551754\" duration=\"2179000\" />\n      <workItem from=\"1694031128559\" duration=\"122000\" />\n      <workItem from=\"1694031898884\" duration=\"34587000\" />\n      <workItem from=\"1694703364153\" duration=\"12220000\" />\n      <workItem from=\"1694716983434\" duration=\"10000\" />\n      <workItem from=\"1694779747769\" duration=\"9810000\" />\n      <workItem from=\"1695202522400\" duration=\"42722000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Added Practical1 task.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1693578203226</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1693578203226</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Added .gitignore. Refactored folders. Added Homework 1 (matrices and vectors)\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1693704658151</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1693704658151</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Added Homework 1.2 with vectors and matrices calculator from file\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1694113891277</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1694113891277</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Added homeworks and Fibonacci practical tasks.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1694971408214</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1694971408214</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Folder refactor.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1695386271485</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1695386271485</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Folder refactor.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1695990266584</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1695990266584</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Added ArrayList, LinkedList and BridgePattern homeworks.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1695990713909</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1695990713909</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"Copied from main.\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1695990918420</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1695990918420</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"Added template_method.py\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1695997380813</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1695997380813</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"10\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Added Practical1 task.\" />\n    <MESSAGE value=\"Added .gitignore. Refactored folders. Added Homework 1 (matrices and vectors)\" />\n    <MESSAGE value=\"Added Homework 1.2 with vectors and matrices calculator from file\" />\n    <MESSAGE value=\"Added homeworks and Fibonacci practical tasks.\" />\n    <MESSAGE value=\"Folder refactor.\" />\n    <MESSAGE value=\"Added ArrayList, LinkedList and BridgePattern homeworks.\" />\n    <MESSAGE value=\"Copied from main.\" />\n    <MESSAGE value=\"Added template_method.py\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Added template_method.py\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <default-breakpoints>\n        <breakpoint type=\"python-exception\">\n          <properties notifyOnTerminate=\"true\" exception=\"BaseException\">\n            <option name=\"notifyOnTerminate\" value=\"true\" />\n          </properties>\n        </breakpoint>\n      </default-breakpoints>\n    </breakpoint-manager>\n  </component>\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\n    <SUITE FILE_PATH=\"coverage/CodesUniver$main.coverage\" NAME=\"main Coverage Results\" MODIFIED=\"1693909024379\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Practicals/Practical1 (1.09.23)\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$vector_calculator.coverage\" NAME=\"vector calculator Coverage Results\" MODIFIED=\"1694112698828\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Homeworks/Homework 1.2\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$ArrayList.coverage\" NAME=\"ArrayList Coverage Results\" MODIFIED=\"1695912297178\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/OlexandrMozil/Homeworks/Homework 1.4\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$LinkedList.coverage\" NAME=\"LinkedList Coverage Results\" MODIFIED=\"1695917787640\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/OlexandrMozil/Homeworks/Homework 1.4\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$vectors.coverage\" NAME=\"vectors Coverage Results\" MODIFIED=\"1693749984948\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Homeworks/Homework1\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$fibonachi3.coverage\" NAME=\"fibonachi3 Coverage Results\" MODIFIED=\"1694887336952\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Practicals/Practical2(15.08.23)\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$vecor_calculator.coverage\" NAME=\"vecor_calculator Coverage Results\" MODIFIED=\"1694971659660\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Homeworks/Homework 1.3/Vector class\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$matrix.coverage\" NAME=\"matrix Coverage Results\" MODIFIED=\"1693694050108\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Homeworks/Homework1\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$matrices.coverage\" NAME=\"matrices Coverage Results\" MODIFIED=\"1693750003849\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Homeworks/Homework1\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$template_method.coverage\" NAME=\"template_method Coverage Results\" MODIFIED=\"1695997326305\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/OlexandrMozil/Practicals/Practical4 (29.09.23)\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$fibonachi2.coverage\" NAME=\"fibonachi2 Coverage Results\" MODIFIED=\"1694781993619\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Practicals/Practical2(15.08.23)\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$matrices_functions.coverage\" NAME=\"matrices_functions Coverage Results\" MODIFIED=\"1694785610619\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Homeworks/Homework 1.2/Matrices without classes\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$abstract_factory.coverage\" NAME=\"abstract_factory Coverage Results\" MODIFIED=\"1695997948201\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/OlexandrMozil/Practicals/Practical4 (29.09.23)\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$functions.coverage\" NAME=\"functions Coverage Results\" MODIFIED=\"1693689292829\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Homeworks/Homework1\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$streams.coverage\" NAME=\"streams Coverage Results\" MODIFIED=\"1695850698287\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/OlexandrMozil/Practicals/Practical3 (22.09.23)\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$matrix_calculator.coverage\" NAME=\"matrix_calculator Coverage Results\" MODIFIED=\"1694787535026\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/Homeworks/Homework 1.3/Matrix class\" />\n    <SUITE FILE_PATH=\"coverage/CodesUniver$bridge_pattern.coverage\" NAME=\"bridge_pattern Coverage Results\" MODIFIED=\"1695903872767\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/OlexandrMozil/Homeworks/Homework 1.5\" />\n  </component>\n</project>
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,208 +4,37 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="18f36932-bddb-4fef-9d0a-66952707bca3" name="Changes" comment="Added template_method.py">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/OlexandrMozil/Practicals/Practical4 (29.09.23)/template_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/OlexandrMozil/Practicals/Practical4 (29.09.23)/template_method.py" afterDir="false" />
+-    </list>
++    <list default="true" id="6a7767bf-3290-469c-aa41-8c81e7145258" name="Changes" comment="Added template method.py and abstract factory.py" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="Python Script" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="Git.Settings">
+-    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-      <map>
+-        <entry key="$PROJECT_DIR$" value="main" />
+-      </map>
++  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
++  "lastFilter": {
++    "state": "OPEN",
++    "assignee": "ushh789"
++  }
++}]]></component>
++  <component name="GithubPullRequestsUISettings">
++    <option name="selectedUrlAndAccountId">
++      <UrlAndAccount>
++        <option name="accountId" value="d4d33283-0659-4f4f-82d4-33ffb002e55f" />
++        <option name="url" value="https://github.com/anastasiatrushchak/pma23.git" />
++      </UrlAndAccount>
+     </option>
+-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-  </component>
+-  <component name="MarkdownSettingsMigration">
+-    <option name="stateVersion" value="1" />
+-  </component>
+-  <component name="ProblemsViewState">
+-    <option name="selectedTabId" value="CurrentFile" />
+-  </component>
+-  <component name="ProjectColorInfo">{
+-  &quot;associatedIndex&quot;: 6
+-}</component>
+-  <component name="ProjectId" id="2Ukcywl2oRFACneKOKiKCx9LFEt" />
+-  <component name="ProjectViewState">
+-    <option name="hideEmptyMiddlePackages" value="true" />
+-    <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "git-widget-placeholder": "OlexandrMozil",
+-    "last_opened_file_path": "/Users/mozya/Desktop/CodesUniver/Practicals/Practical2(15.08.23)",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
+-    "vue.rearranger.settings.migration": "true"
++    "git-widget-placeholder": "main"
+   }
+ }]]></component>
+-  <component name="RecentsManager">
+-    <key name="CopyFile.RECENT_KEYS">
+-      <recent name="$PROJECT_DIR$/Practicals/Practical2(15.08.23)" />
+-      <recent name="$PROJECT_DIR$/Homeworks/Homework 1.3/Vector class" />
+-      <recent name="$PROJECT_DIR$/Homeworks/Homework 1.2/Matrix class" />
+-    </key>
+-    <key name="MoveFile.RECENT_KEYS">
+-      <recent name="$PROJECT_DIR$/OlexandrMozil" />
+-      <recent name="$PROJECT_DIR$/Homeworks/Homework 1.3" />
+-      <recent name="$PROJECT_DIR$/Homeworks/Homework 1.2/Matrices without classes" />
+-      <recent name="$PROJECT_DIR$/Homeworks/Homework 1.2" />
+-      <recent name="$PROJECT_DIR$/Homeworks/Homework 1.2/Vectors without classes" />
+-    </key>
+-  </component>
+-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+-    <task active="true" id="Default" summary="Default task">
+-      <changelist id="18f36932-bddb-4fef-9d0a-66952707bca3" name="Changes" comment="" />
+-      <created>1693487277377</created>
+-      <option name="number" value="Default" />
+-      <option name="presentableId" value="Default" />
+-      <updated>1693487277377</updated>
+-      <workItem from="1693487278404" duration="1084000" />
+-      <workItem from="1693569725772" duration="28002000" />
+-      <workItem from="1693705583664" duration="669000" />
+-      <workItem from="1693747249355" duration="34000" />
+-      <workItem from="1693747289247" duration="1094000" />
+-      <workItem from="1693748412112" duration="18000" />
+-      <workItem from="1693748434557" duration="170000" />
+-      <workItem from="1693748609931" duration="598000" />
+-      <workItem from="1693749955825" duration="810000" />
+-      <workItem from="1693897551754" duration="2179000" />
+-      <workItem from="1694031128559" duration="122000" />
+-      <workItem from="1694031898884" duration="34587000" />
+-      <workItem from="1694703364153" duration="12220000" />
+-      <workItem from="1694716983434" duration="10000" />
+-      <workItem from="1694779747769" duration="9810000" />
+-      <workItem from="1695202522400" duration="42722000" />
+-    </task>
+-    <task id="LOCAL-00001" summary="Added Practical1 task.">
+-      <option name="closed" value="true" />
+-      <created>1693578203226</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1693578203226</updated>
+-    </task>
+-    <task id="LOCAL-00002" summary="Added .gitignore. Refactored folders. Added Homework 1 (matrices and vectors)">
+-      <option name="closed" value="true" />
+-      <created>1693704658151</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1693704658151</updated>
+-    </task>
+-    <task id="LOCAL-00003" summary="Added Homework 1.2 with vectors and matrices calculator from file">
+-      <option name="closed" value="true" />
+-      <created>1694113891277</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1694113891277</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="Added homeworks and Fibonacci practical tasks.">
+-      <option name="closed" value="true" />
+-      <created>1694971408214</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1694971408214</updated>
+-    </task>
+-    <task id="LOCAL-00005" summary="Folder refactor.">
+-      <option name="closed" value="true" />
+-      <created>1695386271485</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1695386271485</updated>
+-    </task>
+-    <task id="LOCAL-00006" summary="Folder refactor.">
+-      <option name="closed" value="true" />
+-      <created>1695990266584</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1695990266584</updated>
+-    </task>
+-    <task id="LOCAL-00007" summary="Added ArrayList, LinkedList and BridgePattern homeworks.">
+-      <option name="closed" value="true" />
+-      <created>1695990713909</created>
+-      <option name="number" value="00007" />
+-      <option name="presentableId" value="LOCAL-00007" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1695990713909</updated>
+-    </task>
+-    <task id="LOCAL-00008" summary="Copied from main.">
+-      <option name="closed" value="true" />
+-      <created>1695990918420</created>
+-      <option name="number" value="00008" />
+-      <option name="presentableId" value="LOCAL-00008" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1695990918420</updated>
+-    </task>
+-    <task id="LOCAL-00009" summary="Added template_method.py">
+-      <option name="closed" value="true" />
+-      <created>1695997380813</created>
+-      <option name="number" value="00009" />
+-      <option name="presentableId" value="LOCAL-00009" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1695997380813</updated>
+-    </task>
+-    <option name="localTasksCounter" value="10" />
+     <servers />
+   </component>
+-  <component name="TypeScriptGeneratedFilesManager">
+-    <option name="version" value="3" />
+-  </component>
+-  <component name="Vcs.Log.Tabs.Properties">
+-    <option name="TAB_STATES">
+-      <map>
+-        <entry key="MAIN">
+-          <value>
+-            <State />
+-          </value>
+-        </entry>
+-      </map>
+-    </option>
+-  </component>
+   <component name="VcsManagerConfiguration">
+-    <MESSAGE value="Added Practical1 task." />
+-    <MESSAGE value="Added .gitignore. Refactored folders. Added Homework 1 (matrices and vectors)" />
+-    <MESSAGE value="Added Homework 1.2 with vectors and matrices calculator from file" />
+-    <MESSAGE value="Added homeworks and Fibonacci practical tasks." />
+-    <MESSAGE value="Folder refactor." />
+-    <MESSAGE value="Added ArrayList, LinkedList and BridgePattern homeworks." />
+-    <MESSAGE value="Copied from main." />
+-    <MESSAGE value="Added template_method.py" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Added template_method.py" />
+-  </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <default-breakpoints>
+-        <breakpoint type="python-exception">
+-          <properties notifyOnTerminate="true" exception="BaseException">
+-            <option name="notifyOnTerminate" value="true" />
+-          </properties>
+-        </breakpoint>
+-      </default-breakpoints>
+-    </breakpoint-manager>
++    <MESSAGE value="Added template method.py and abstract factory.py" />
++    <option name="LAST_COMMIT_MESSAGE" value="Added template method.py and abstract factory.py" />
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+     <SUITE FILE_PATH="coverage/CodesUniver$main.coverage" NAME="main Coverage Results" MODIFIED="1693909024379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicals/Practical1 (1.09.23)" />
+@@ -220,7 +49,7 @@
+     <SUITE FILE_PATH="coverage/CodesUniver$template_method.coverage" NAME="template_method Coverage Results" MODIFIED="1695997326305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OlexandrMozil/Practicals/Practical4 (29.09.23)" />
+     <SUITE FILE_PATH="coverage/CodesUniver$fibonachi2.coverage" NAME="fibonachi2 Coverage Results" MODIFIED="1694781993619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Practicals/Practical2(15.08.23)" />
+     <SUITE FILE_PATH="coverage/CodesUniver$matrices_functions.coverage" NAME="matrices_functions Coverage Results" MODIFIED="1694785610619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Homeworks/Homework 1.2/Matrices without classes" />
+-    <SUITE FILE_PATH="coverage/CodesUniver$abstract_factory.coverage" NAME="abstract_factory Coverage Results" MODIFIED="1695997948201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OlexandrMozil/Practicals/Practical4 (29.09.23)" />
++    <SUITE FILE_PATH="coverage/CodesUniver$abstract_factory.coverage" NAME="abstract_factory Coverage Results" MODIFIED="1695998250177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OlexandrMozil/Practicals/Practical4 (29.09.23)" />
+     <SUITE FILE_PATH="coverage/CodesUniver$functions.coverage" NAME="functions Coverage Results" MODIFIED="1693689292829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Homeworks/Homework1" />
+     <SUITE FILE_PATH="coverage/CodesUniver$streams.coverage" NAME="streams Coverage Results" MODIFIED="1695850698287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OlexandrMozil/Practicals/Practical3 (22.09.23)" />
+     <SUITE FILE_PATH="coverage/CodesUniver$matrix_calculator.coverage" NAME="matrix_calculator Coverage Results" MODIFIED="1694787535026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Homeworks/Homework 1.3/Matrix class" />
