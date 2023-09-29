@@ -72,12 +72,12 @@ class MatrixApp:
             raise ValueError("Determinant is 0.")
 
         inverse_det = 1.0 / det
-        result = [[0, 0], [0, 0]]
-        result[0][0] = matrix[1][1] * inverse_det
-        result[0][1] = -matrix[0][1] * inverse_det
-        result[1][0] = -matrix[1][0] * inverse_det
-        result[1][1] = matrix[0][0] * inverse_det
-        return result
+    result = [[0, 0], [0, 0]]
+
+    for i in range(2):
+        for j in range(2):
+            result[i][j] = matrix[1 - i][1 - j] * inverse_det
+    return result
 
     @staticmethod
     def divide_matrices(matrix_a, matrix_b):
