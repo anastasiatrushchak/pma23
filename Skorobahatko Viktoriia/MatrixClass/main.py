@@ -5,18 +5,21 @@ class MatrixApp:
 
     @staticmethod
     def read_matrix(filename):
-        with open(filename, "r") as file:
-            lines = file.readlines()
-            matrix_a = []
-            matrix_b = []
-            for i in range(2):
-                row = [int(x) for x in lines[i].strip().split()]
-                matrix_a.append(row)
+         try:
+            with open(filename, "r") as file:
+                lines = file.readlines()
+                matrix_a = []
+                matrix_b = []
+                for i in range(2):
+                    row = [int(x) for x in lines[i].strip().split()]
+                    matrix_a.append(row)
 
-            for i in range(3, 5):
-                row = [int(x) for x in lines[i].strip().split()]
-                matrix_b.append(row) 
-            return matrix_a, matrix_b 
+                for i in range(3, 5):
+                    row = [int(x) for x in lines[i].strip().split()]
+                    matrix_b.append(row)
+                return matrix_a, matrix_b
+        except FileNotFoundError:
+            print("file not found")
 
     @staticmethod
     def write_matrix(filename, result_addition, result_subtraction, result_multiplication, result_division):
