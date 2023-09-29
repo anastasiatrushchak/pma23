@@ -39,19 +39,22 @@ def divide_matrices(matrix_a, matrix_b):
     result = multiply_matrices(matrix_a, inverse_b)
     return result
 
-with open("input.txt", "r") as file:
-    lines = file.readlines()
+try:
+    with open("input.txt", "r") as file:
+        lines = file.readlines()
 
-matrix_a = []
-matrix_b = []
+    matrix_a = []
+    matrix_b = []
 
-for i in range(2):
-    row = [int(x) for x in lines[i].strip().split()]
-    matrix_a.append(row)
+    for i in range(2):
+        row = [int(x) for x in lines[i].strip().split()]
+        matrix_a.append(row)
 
-for i in range(3, 5):
-    row = [int(x) for x in lines[i].strip().split()]
-    matrix_b.append(row)
+    for i in range(3, 5):
+        row = [int(x) for x in lines[i].strip().split()]
+        matrix_b.append(row)
+except FileNotFoundError:
+    print("file not found")
 
 result_addition = add_matrices(matrix_a, matrix_b)
 result_subtraction = subtract_matrices(matrix_a, matrix_b)
