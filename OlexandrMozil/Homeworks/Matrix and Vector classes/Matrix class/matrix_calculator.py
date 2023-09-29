@@ -1,6 +1,6 @@
 import os
 import exceptions as exc
-import additional_func as adfunc
+import additional_functions as adfunc
 
 
 class Matrix:
