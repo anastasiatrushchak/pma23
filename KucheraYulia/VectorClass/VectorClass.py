@@ -43,10 +43,12 @@ class Vector:
 
     def __truediv__(self, other):
         if len(self.values) == len(other.values):
-            for i in other.values:
-                if i == 0 or i == "0":
-                    raise ZeroDivisionError("Ділення на 0 неможливе")
-            result_values = [x / y for x, y in zip(self.values, other.values)]
+            result_values = []
+            for x, y in zip(self.values, other.values):
+                if y == 0 or y == "0":
+                     result_values = ["ZeroDivisionError"]
+                else:
+                    result_values.append(x / y)
             return Vector(result_values)
         else:
             raise ValueError("Вектори мають бути однакової довжини для віднімання")
