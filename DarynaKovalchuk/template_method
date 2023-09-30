@@ -1,0 +1,34 @@
+class factory:
+    def build(self):
+        pass
+    def clean(self):
+        pass
+
+    def create(self):
+        pass
+    def workday(self):
+        self.build()
+        self.clean()
+        self.create()
+
+class worker(factory):
+    def build(self):
+        print("worker has built a new building")
+    def clean(self):
+        print("worker has cleaned the building")
+
+
+class main_worker(factory):
+    def build(self):
+        print("main worker gave task to build a new house")
+    def clean(self):
+        print("main worker gave task to clean a new house")
+    def create(self):
+        print("main worker gave created task for worker")
+
+
+if name== "main":
+    day1=worker()
+    day1.workday()
+    day2=main_worker()
+    day2.workday()
