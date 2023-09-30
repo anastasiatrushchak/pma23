@@ -1,0 +1,75 @@
+import abc
+
+class ClothingFactory(metaclass=abc.ABCMeta):
+    @abc.abstractmethod
+    def create_shirt(self):
+        pass
+
+    @abc.abstractmethod
+    def create_pants(self):
+        pass
+
+
+class CottonClothingFactory(ClothingFactory):
+    def create_shirt(self):
+        return CottonShirt()
+
+    def create_pants(self):
+        return CottonPants()
+
+
+class SyntheticClothingFactory(ClothingFactory):
+    def create_shirt(self):
+        return SyntheticShirt()
+
+    def create_pants(self):
+        return SyntheticPants()
+
+
+class Shirt(metaclass=abc.ABCMeta):
+    @abc.abstractmethod
+    def wear(self):
+        pass
+
+
+class CottonShirt(Shirt):
+    def wear(self):
+        print("сорочка з бавовни")
+
+
+class SyntheticShirt(Shirt):
+    def wear(self):
+        print("сорочка з синтетики")
+
+
+class Pants(metaclass=abc.ABCMeta):
+    @abc.abstractmethod
+    def put_on(self):
+        pass
+
+
+class CottonPants(Pants):
+    def put_on(self):
+        print("штани з бавовни")
+
+
+class SyntheticPants(Pants):
+    def put_on(self):
+        print("штани з синтетики")
+
+
+def interact_with_clothing(factory):
+    shirt = factory.create_shirt()
+    pants = factory.create_pants()
+
+    shirt.wear()
+    pants.put_on()
+
+if name == "main":
+    print("одяг з бавовни:")
+    cotton_factory = CottonClothingFactory()
+    interact_with_clothing(cotton_factory)
+
+    print("\nодяг з синтетики:")
+    synthetic_factory = SyntheticClothingFactory()
+    interact_with_clothing(synthetic_factory)
