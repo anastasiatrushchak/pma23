@@ -18,22 +18,36 @@ class Vector:
 
     @staticmethod
     def divide(vec1, vec2):
-        return Vector(vec1.x / vec2.x, vec1.y / vec2.y, vec1.z / vec2.z)
+        try:
+            return Vector(vec1.x / vec2.x, vec1.y / vec2.y, vec1.z / vec2.z)
+        except ZeroDivisionError:
+            print("Error: Division by zero.")
+            return Vector(0, 0, 0)
 
     def __str__(self):
         return f"({self.x},{self.y},{self.z})"
 
     @staticmethod
     def read_from_file(filename):
-        with open(filename, 'r') as file:
-            line = file.readline().strip()
-            x, y, z = map(int, line.split(','))
-        return Vector(x, y, z)
+        try:
+            with open(filename, 'r') as file:
+                line = file.readline().strip()
+                x, y, z = map(int, line.split(','))
+            return Vector(x, y, z)
+        except FileNotFoundError:
+            print(f"Error: File {filename} not found.")
+            return Vector(0, 0, 0)
+        except ValueError:
+            print(f"Error: Invalid data format in {filename}.")
+            return Vector(0, 0, 0)
 
     @staticmethod
     def write_to_file(filename, vector):
-        with open(filename, 'a') as file:
-            file.write(str(vector) + '\n')
+        try:
+            with open(filename, 'a') as file:
+                file.write(str(vector) + '\n')
+        except Exception as e:
+            print(f"Error writing to file {filename}: {e}")
 
 
 vectorA = Vector.read_from_file('vectorA.txt')
