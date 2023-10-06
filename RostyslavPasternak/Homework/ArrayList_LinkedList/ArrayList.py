@@ -1,4 +1,3 @@
-
 class ArrayList:
     def __init__(self, size=10):
         self.array = [None] * size
@@ -16,7 +15,6 @@ class ArrayList:
         self.size = 1.5 * self.size + 1
         self.array = [None] * int(self.size)
         self.add(temp)
-
 
 
 list = list()
