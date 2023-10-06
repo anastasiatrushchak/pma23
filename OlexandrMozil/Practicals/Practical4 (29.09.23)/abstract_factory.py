@@ -3,53 +3,75 @@ from abc import ABC, abstractmethod
 
 class Factory(ABC):
     @abstractmethod
-    def create_phone(self, model):
+    def create_phone(self):
         pass
 
     @abstractmethod
-    def create_computer(self, model):
+    def create_computer(self):
         pass
 
 
-class SamsungPhone:
-    def __init__(self, model):
-        self.model = model
-
-    def __str__(self):
-        return self.model
+class AbstractPhone(ABC):
+    @abstractmethod
+    def make_phone(self):
+        pass
 
 
-class DellComputer:
-    def __init__(self, model):
-        self.model = model
-
-    def __str__(self):
-        return self.model
+class AbstractComputer(ABC):
+    @abstractmethod
+    def make_computer(self):
+        pass
 
 
-class SamsungFactory(Factory):
-    def create_phone(self, model):
-        return SamsungPhone(model)
-
-    def create_computer(self, model):
-        return DellComputer(model)
+class ConcreteIphone(AbstractPhone):
+    def make_phone(self):
+        return "We made concrete Iphone"
 
 
-class DellFactory(Factory):
-    def create_phone(self, model):
-        return SamsungPhone(model)
-
-    def create_computer(self, model):
-        return DellComputer(model)
+class ConcreteRedmi(AbstractPhone):
+    def make_phone(self):
+        return "We made concrete Redmi"
 
 
-samsung_factory = SamsungFactory()
-samsung_phone = samsung_factory.create_phone("Samsung Phone")
-samsung_computer = samsung_factory.create_computer("Samsung Computer")
+class ConcreteMacbook(AbstractComputer):
+    def make_computer(self):
+        return "We made concrete Macbook"
 
-dell_factory = DellFactory()
-dell_phone = dell_factory.create_phone("Dell Phone")
-dell_computer = dell_factory.create_computer("Dell Computer")
 
-print(f"Samsung Factory: {samsung_phone} and {samsung_computer}")
-print(f"Dell Factory: {dell_phone} and {dell_computer}")
+class ConcreteXiaomiLaptop(AbstractComputer):
+    def make_computer(self):
+        return "We made concrete Xiaomi Laptop"
+
+
+class Apple(Factory):
+    def create_phone(self):
+        return ConcreteIphone()
+
+    def create_computer(self):
+        return ConcreteMacbook()
+
+
+class Xiaomi(Factory):
+    def create_phone(self):
+        return ConcreteRedmi()
+
+    def create_computer(self):
+        return ConcreteXiaomiLaptop()
+
+
+def create_product(fabric):
+    phone = fabric.create_phone()
+    computer = fabric.create_computer()
+
+    const_phone = phone.make_phone()
+    const_computer = computer.make_computer()
+
+    return const_phone + "\n" + const_computer
+
+
+print("Apple Factory:")
+fabric1 = Apple()
+print(create_product(fabric1))
+print("\nXiaomi Factory:")
+fabric2 = Xiaomi()
+print(create_product(fabric2))

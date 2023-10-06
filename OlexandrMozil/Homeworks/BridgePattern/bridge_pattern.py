@@ -15,20 +15,6 @@ class Shape(ABC):
         pass
 
 
-class Square(Shape):
-    def __init__(self, side):
-        self.side = side
-
-    def calculate_area(self):
-        return self.side * self.side
-
-    def calculate_perimeter(self):
-        return self.side * 4
-
-    def __str__(self):
-        return "Square"
-
-
 class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
@@ -56,6 +42,21 @@ class Rectangle(Shape):
 
     def __str__(self):
         return "Rectangle"
+
+
+class Square(Rectangle):
+    def __init__(self, side):
+        super().__init__(side, side)
+        self.side = side
+
+    def calculate_area(self):
+        return self.side * self.side
+
+    def calculate_perimeter(self):
+        return self.side * 4
+
+    def __str__(self):
+        return "Square"
 
 
 class Color(ABC):
@@ -121,7 +122,6 @@ red_square = Bridge(sq, bl)
 rect = Rectangle(4, 6)
 yell = Yellow()
 yellow_rectangle = Bridge(rect, yell)
-
 
 print(red_square.info())
 print(yellow_rectangle.info())

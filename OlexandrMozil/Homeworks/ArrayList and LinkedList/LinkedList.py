@@ -87,6 +87,7 @@ class Node:
         return str(self.this_item)
 
 
+some_list = [1, 2, 3, 4]
 a = LinkedList()
 a.append(13)
 a.append(23)

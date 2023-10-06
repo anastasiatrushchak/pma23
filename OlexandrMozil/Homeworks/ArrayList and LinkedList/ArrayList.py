@@ -1,7 +1,8 @@
 class ArrayList:
-    def __init__(self):
-        self.__list = [None]
-        self.__capacity = 1
+    def __init__(self, created_list):
+        self.__list = created_list
+        self.__capacity = len(created_list)
+        self.__increase_size()
 
     def __len__(self):
         return len(self.__list) - self.__list.count(None)
@@ -73,7 +74,8 @@ class ArrayList:
         return self.__capacity
 
 
-a = ArrayList()
+some_list = [1, 2, 3, 4,2,3,4,5,6,7,8,9,5,4,32,45,7,6]
+a = ArrayList(some_list)
 a[0] = 'a'
 print(a)
 a.append('b')
