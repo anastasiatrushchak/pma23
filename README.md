@@ -9,8 +9,5 @@ This repository is managed by the students of group PMA23 at Lviv National Unive
 3. Work on your Python tasks and projects in this folder.
 4. Push your changes to your branch regularly.
 5. When you have completed your Python tasks, make sure to merge them into the main branch.
-
-## License
-
-This repository is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the contents of this repository for educational and non-commercial purposes.
+   
 # pma23
