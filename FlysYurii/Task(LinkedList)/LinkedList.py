@@ -1,3 +1,4 @@
+
 class Node:
     def __init__(self, data=None):
         self.data = data
@@ -5,17 +6,24 @@ class Node:
         self.prev = None
 
 class LinkedList:
-    def __init__(self):
+    def __init__(self, nodes=None):
         self.head = None
+        if nodes is not None:
+            node = Node(data=nodes.pop(0))
+            self.head = node
+            for elem in nodes:
+                node.next = Node(data=elem)
+                node.next.prev = node
+                node = node.next
 
     def append(self, data):
         if not self.head:
-            self.head = Node(data)
+            self.head = Node(data=data)
         else:
             node = self.head
             while node.next:
                 node = node.next
-            new_node = Node(data)
+            new_node = Node(data=data)
             node.next = new_node
             new_node.prev = node
 
@@ -34,25 +42,29 @@ class LinkedList:
         raise ValueError("Елемент не знайдено в списку")
 
     def insert(self, index, data):
-        if index == 0:
-            new_node = Node(data)
-            new_node.next = self.head
-            self.head.prev = new_node
-            self.head = new_node
-        else:
-            node = self.head
-            for _ in range(index - 1):
+        try:
+            if index == 0:
+                new_node = Node(data)
+                new_node.next = self.head
+                self.head.prev = new_node
+                self.head = new_node
+            else:
+                node = self.head
+                for _ in range(index - 1):
+                    if not node:
+                        raise IndexError("Невірний індекс")
+
+                    node = node.next
                 if not node:
-                    return False
-                node = node.next
-            if not node:
-                return False
-            new_node = Node(data)
-            new_node.next = node.next
-            new_node.prev = node
-            if node.next:
-                node.next.prev = new_node
-            node.next = new_node
+                    raise IndexError("Невірний індекс")
+                new_node = Node(data)
+                new_node.next = node.next
+                new_node.prev = node
+                if node.next:
+                    node.next.prev = new_node
+                node.next = new_node
+        except IndexError as e:
+            print(e)
 
     def clear(self):
         self.head = None
@@ -65,40 +77,8 @@ class LinkedList:
             node = node.next
         return elements
 
-llist = LinkedList()
-llist.append("A")
-llist.append("B")
-llist.append("C")
-while True:
-    try:
-        print("1. Додати елемент в кінець списку")
-        print("2. Видалити елемент зі списку")
-        print("3. Вставити елемент за індексом")
-        print("4. Очистити список")
-        print("5. Показати список")
-        print("6. Вийти")
-
-        choice = int(input("Введіть ваш вибір: "))
-
-        if choice == 1:
-            data = input("Введіть дані: ")
-            llist.append(data)
-        elif choice == 2:
-            data = input("Введіть дані для видалення: ")
-            llist.remove(data)
-        elif choice == 3:
-            index = int(input("Введіть індекс: "))
-            data = input("Введіть дані: ")
-            llist.insert(index, data)
-        elif choice == 4:
-            llist.clear()
-        elif choice == 5:
-            print(llist.display())
-        elif choice == 6:
-            break
-        else:
-            raise ValueError("Невірний вибір. Будь ласка, введіть число від 1 до 6.")
-    except ValueError as ve:
-        print(f"Помилка вводу або елемент не знайдено: {ve}")
-    except Exception as e:
-        print(f"Сталася помилка: {e}")
+llist = LinkedList(["A", "B", "C", "D", 1])
+l = LinkedList([1, 2, 3, 4, 5])
+str(l)
+l.insert(3,6)
+print(l.display())

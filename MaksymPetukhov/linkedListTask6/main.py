@@ -1,3 +1,6 @@
+import constants
+
+
 class OutOfListBound(Exception):
     def __init__(self):
         self.message = "Index is out of list size!"
@@ -132,6 +135,13 @@ llist.push(18)
 llist.push(29)
 llist.push(31)
 llist.push(78)
+
+# with open(constants.INPUT_FILE, 'r') as file:
+#     lines = file.readlines()
+#     for line in lines:
+#         llist.push(int(line))
+
+print(llist);
 
 llist.print()
 print("\nDelete element:")

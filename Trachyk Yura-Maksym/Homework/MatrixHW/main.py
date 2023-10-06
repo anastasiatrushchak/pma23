@@ -1,0 +1,55 @@
+MATRIX_FIRST_INPUT = 'inputMatrix.txt'
+MATRIX_SECOND_INPUT = 'inputMatrixSecond.txt'
+MATRIX_RESULT = 'output.txt'
+
+matrix1 = []
+matrix2 = []
+
+try:
+    with open(MATRIX_FIRST_INPUT, "r") as lines:
+        lines = lines.readlines()
+
+        for line in lines:
+            row = [float(x) for x in line.split()]
+            matrix1.append(row)
+except FileNotFoundError:
+    print("File " + MATRIX_FIRST_INPUT + " not found")
+    exit(-1)
+
+try:
+    with open(MATRIX_SECOND_INPUT, "r") as lines:
+        lines = lines.readlines()
+        for line in lines:
+            row = [float(x) for x in line.split()]
+            matrix2.append(row)
+
+except FileNotFoundError:
+    print("File " + MATRIX_SECOND_INPUT + " not found")
+    exit(-1)
+
+try:
+    matrix_sum = []
+    for i in range(max(len(matrix2), len(matrix1))):
+        row_matrix_rez = []
+        for j in range(max(len(matrix2[0]), len(matrix1[0]))):
+            row_matrix_rez.append(float(matrix1[i][j]) + float(matrix2[i][j]))
+        matrix_sum.append(row_matrix_rez)
+
+    matrix_difference = []
+    for i in range(len(matrix2)):
+        row_matrix_rez = []
+        for j in range(len(matrix2[0])):
+            row_matrix_rez.append(int(matrix1[i][j])-int(matrix2[i][j]))
+        matrix_difference.append(row_matrix_rez)
+
+    with open(MATRIX_RESULT, 'w') as file:
+        file.write("addition:\n")
+        for i in matrix_sum:
+            file.write(str(i)+'\n')
+
+        file.write("subtraction:\n")
+        for i in matrix_difference:
+            file.write(str(i)+'\n')
+
+except IndexError:
+    print("can not add and subtract")

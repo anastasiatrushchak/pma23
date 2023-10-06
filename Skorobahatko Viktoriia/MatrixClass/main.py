@@ -5,18 +5,21 @@ class MatrixApp:
 
     @staticmethod
     def read_matrix(filename):
-        with open(filename, "r") as file:
-            lines = file.readlines()
-            matrix_a = []
-            matrix_b = []
-            for i in range(2):
-                row = [int(x) for x in lines[i].strip().split()]
-                matrix_a.append(row)
+         try:
+            with open(filename, "r") as file:
+                lines = file.readlines()
+                matrix_a = []
+                matrix_b = []
+                for i in range(2):
+                    row = [int(x) for x in lines[i].strip().split()]
+                    matrix_a.append(row)
 
-            for i in range(3, 5):
-                row = [int(x) for x in lines[i].strip().split()]
-                matrix_b.append(row)  # Fixed indentation here, and removed "return" to read both matrices
-            return matrix_a, matrix_b  # Moved the return statement here
+                for i in range(3, 5):
+                    row = [int(x) for x in lines[i].strip().split()]
+                    matrix_b.append(row)
+                return matrix_a, matrix_b
+        except FileNotFoundError:
+            print("file not found")
 
     @staticmethod
     def write_matrix(filename, result_addition, result_subtraction, result_multiplication, result_division):
@@ -69,12 +72,12 @@ class MatrixApp:
             raise ValueError("Determinant is 0.")
 
         inverse_det = 1.0 / det
-        result = [[0, 0], [0, 0]]
-        result[0][0] = matrix[1][1] * inverse_det
-        result[0][1] = -matrix[0][1] * inverse_det
-        result[1][0] = -matrix[1][0] * inverse_det
-        result[1][1] = matrix[0][0] * inverse_det
-        return result
+    result = [[0, 0], [0, 0]]
+
+    for i in range(2):
+        for j in range(2):
+            result[i][j] = matrix[1 - i][1 - j] * inverse_det
+    return result
 
     @staticmethod
     def divide_matrices(matrix_a, matrix_b):
