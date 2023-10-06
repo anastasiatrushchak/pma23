@@ -1,23 +1,22 @@
-def set_nodes(linked_list):
-    length = len(linked_list)
-    i = 0
-
-    for node in linked_list:
-        node.previous_item = linked_list[i - 1] if i > 0 else None
-        node.next_item = linked_list[i + 1] if i < length - 1 else None
-        i += 1
-
 class Linked_List:
-    def __init__(self):
-        self.__list = []
+    def __init__(self, node=None):
+        self.head = node
+        self.tail = self.head
 
     def __len__(self):
-        return len(self.__list)
+        length = 0
+        current = self.head.next_item
+        while current:
+            length += 1
+            current = current.next_item
+        return length
 
     def __str__(self):
         result = 'Linked list: '
-        for i in self.__list:
-            result += str(i) + ", "
+        current = self.head.next_item
+        while current:
+            result += str(current) + ", "
+            current = current.next_item
         if len(self) != 0:
             result = result[:-2]
         else:
@@ -25,40 +24,54 @@ class Linked_List:
         return result
 
     def __getitem__(self, index):
-        return self.__list[index]
+        if index < 0 or index >= len(self):
+            raise IndexError("Index out of range")
+        current = self.head.next_item
+        for i in range(index):
+            current = current.next_item
+        return current
+
 
     def delete(self, index):
         try:
-            del self.__list[index]
-            set_nodes(self.__list)
+            if index < 0 or index >= len(self):
+                raise IndexError("Index out of range")
+            current = self.head
+            for _ in range(index):
+                current = current.next_item
+            current.next_item = current.next_item.next_item
         except IndexError:
             print("Index out of range. Cannot delete element.")
 
+
     def add(self, value):
         node = Node(value)
-        self.__list.append(node)
-        set_nodes(self.__list)
+        if not self.head:
+            self.head = node
+        else:
+            self.tail.next_item = node
+        self.tail = node
+
+
 
     def insert(self, index, value):
         try:
             if index < 0 or index > len(self):
-                raise IndexError
-            else:
-                node = Node(value)
-                self.__list.insert(index, node)
+                raise IndexError("Wrong insert index!")
+            current = self.head
+            for _ in range(index):
+                current = current.next_item
+            node = Node(value)
+            node.next_item = current.next_item
+            current.next_item = node
         except IndexError:
             print("Wrong insert index!")
-        set_nodes(self.__list)
 
-    def clear_element(self, index):
-        try:
-            self[index].this_item = None
-            set_nodes(self.__list)
-        except IndexError:
-            print("Index out of range. Cannot clear element.")
+
 
     def clear(self):
-        self.__list = []
+        self.head.next_item = None
+        self.tail = self.head
 
 
 class Node:
@@ -85,11 +98,12 @@ my_list.add(103)
 my_list.add(14)
 my_list.add(10)
 my_list.add(666)
-print(my_list)
-my_list.clear_element(3)
+
+
 print(my_list)
 my_list.delete(1)
+
 print(my_list)
-my_list.insert(5, 2007)
+my_list.insert(2, 4)
 print(my_list)
 
