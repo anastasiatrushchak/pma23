@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 
 class Beverage(ABC):
-    def init(self, name):
+    def __init__(self, name):
         self.name = name
 
     def display(self):
