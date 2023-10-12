@@ -1,4 +1,4 @@
-class Node:
+class CustomNode:
     def __init__(self, value, prev_node, next_node):
         self.value = value
         self.prev_node = prev_node

@@ -1,7 +1,7 @@
-from node import Node
+from node import CustomNode
 
 
-class LinkedList:
+class CustomLinkedList:
     def __init__(self, first):
         self.first = first
 
@@ -9,10 +9,10 @@ class LinkedList:
         current = self.first
         while current.has_next():
             current = current.next_node
-        current.next_node = Node(value, current, None)
+        current.next_node = CustomNode(value, current, None)
 
     def add_at_begin(self, value):
-        new_node = Node(value, None, self.first)
+        new_node = CustomNode(value, None, self.first)
         self.first.prev_node = new_node
         self.first = new_node
 
@@ -23,7 +23,7 @@ class LinkedList:
             i += 1
             current = current.next_node
         if i == index:
-            new_node = Node(value, current.prev_node, current)
+            new_node = CustomNode(value, current.prev_node, current)
             current.prev_node.next_node = new_node
             current.prev_node = new_node
 

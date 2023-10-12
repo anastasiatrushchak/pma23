@@ -1,7 +1,7 @@
-from node import Node
-from yuliamalynovska.homework.LinkedList.linked_list import LinkedList
+from node import CustomNode
+from linked_list import CustomLinkedList
 
-linkedlist = LinkedList(Node(10, None, None))
+linkedlist = CustomLinkedList(CustomNode(10, None, None))
 linkedlist.add_at_end(7)
 linkedlist.add_at_begin(10)
 linkedlist.add_at_end(5)
