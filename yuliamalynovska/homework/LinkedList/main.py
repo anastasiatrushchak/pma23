@@ -1,5 +1,5 @@
-from Node import Node
-from LinkedList import LinkedList
+from node import Node
+from yuliamalynovska.homework.LinkedList.linked_list import LinkedList
 
 linkedlist = LinkedList(Node(10, None, None))
 linkedlist.add_at_end(7)
@@ -7,6 +7,7 @@ linkedlist.add_at_begin(10)
 linkedlist.add_at_end(5)
 linkedlist.add_at_end(2)
 linkedlist.add_at_begin(0)
+
 print(linkedlist)
 linkedlist.remove(5)
 print(linkedlist)

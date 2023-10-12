@@ -6,4 +6,3 @@ class Node:
 
     def has_next(self):
         return self.next_node is not None
-
