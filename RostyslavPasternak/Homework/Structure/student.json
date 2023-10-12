@@ -1,0 +1,21 @@
+[
+  {
+    "Name": "Max",
+    "Surname": "Franko",
+    "Date_of_Birth": "2004-05-15",
+    "Grades": [90, 80, 50, 80, 71]
+  },
+  {
+    "Name": "Oleg",
+    "Surname": "Ivanov",
+    "Date_of_Birth": "2005-04-25",
+    "Grades": [51, 52, 60, 80, 90]
+  },
+  {
+  "Name": "Olga",
+  "Surname": "Jonsonuk",
+  "Date_of_Birth": "1999-10-05",
+  "Grades": [12, 40, 10, 23, 90]
+}
+
+]
