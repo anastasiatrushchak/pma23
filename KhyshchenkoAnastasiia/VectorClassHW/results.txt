@@ -1,0 +1,5 @@
+Addition: [5, 7, 9]
+Subtraction: [-3, -3, -3]
+Scalar Multiplication: [2, 4, 6]
+Elementwise Multiplication: [4, 10, 18]
+Scalar Division: [0.5, 1.0, 1.5]

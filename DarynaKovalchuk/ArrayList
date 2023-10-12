@@ -1,0 +1,91 @@
+class NegativeIndexError(Exception):
+    pass
+
+class ArrayList:
+    def __init__(self, input_array=None):
+        self.array = [None] * 10
+        self.size = 0
+
+        if input_array is not None:
+            if len(input_array) > 10:
+                self.array = input_array[:10]
+                self.size = 10
+            else:
+                self.array[:len(input_array)] = input_array
+                self.size = len(input_array)
+        else:
+            self.read_from_file("array.txt")
+
+    def __str__(self):
+        if self.size < 10:
+            return str(self.array[:self.size] + [None] * (10 - self.size))
+        else:
+            return str(self.array[:self.size])
+
+    def __len__(self):
+        return self.size
+
+    def read_from_file(self, filename):
+        try:
+            with open(filename, "r") as file:
+                for line in file:
+                    values = line.strip().split()
+                    if len(values) == 2:
+                        index, element = map(int, values)
+                        self.insert(index, element)
+        except FileNotFoundError:
+            print(f"file '{filename}' not found.")
+        except Exception as e:
+            print("error:", e)
+
+    def append(self, element):
+        if self.size == len(self.array):
+            self._resize()
+        self.array[self.size] = element
+        self.size += 1
+
+    def remove(self, element):
+        if element in self.array:
+            index = self.array.index(element)
+            if index < 0:
+                raise NegativeIndexError("negative index is not allowed.")
+            self._remove_at(index)
+
+    def _remove_at(self, index):
+        if 0 <= index < self.size:
+            for i in range(index, self.size - 1):
+                self.array[i] = self.array[i + 1]
+            self.array[self.size - 1] = None
+            self.size -= 1
+
+    def insert(self, index, element):
+        if index < 0:
+            raise NegativeIndexError("negative index is not allowed.")
+        if 0 <= index <= self.size:
+            if self.size == len(self.array):
+                self._resize()
+            for i in range(self.size, index, -1):
+                self.array[i] = self.array[i - 1]
+            self.array[index] = element
+            self.size += 1
+
+    def clear(self):
+        self.array = [None] * 10
+        self.size = 0
+
+    def _resize(self):
+        new_size = int(1.5 * len(self.array) + 1)
+        new_array = [None] * new_size
+        for i in range(self.size):
+            new_array[i] = self.array[i]
+        self.array = new_array
+
+
+my_list = ArrayList()
+
+print(my_list)
+print(f"number of elements: {len(my_list)}")
+if len(my_list) < 10:
+    print(f"less by {10 - len(my_list)} elements")
+elif len(my_list) > 10:
+    print(f"more by {len(my_list) - 10} elements")
