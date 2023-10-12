@@ -8,6 +8,7 @@ class Student:
     def has_failed(self):
         return any(grade < 3 for grade in self.grades)
 
+
 def read_students_from_file(file_path):
     students = []
     with open(file_path, 'r') as file:
@@ -22,10 +23,12 @@ def read_students_from_file(file_path):
             students.append(student)
     return students
 
+
 def print_students_who_failed(students):
     for student in students:
         if student.has_failed():
             print(f"Студент {student.first_name} {student.last_name} не склав сесію.")
+
 
 students = read_students_from_file('students.txt')
 print_students_who_failed(students)
