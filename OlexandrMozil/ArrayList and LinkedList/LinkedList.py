@@ -87,7 +87,7 @@ class Node:
         return str(self.this_item)
 
 
-some_list = [1, 2, 3, 4]
+# some_list = [1, 2, 3, 4]
 a = LinkedList()
 a.append(13)
 a.append(23)
@@ -98,7 +98,7 @@ a.append(55)
 a.append(63)
 a.append(73)
 print(a)
-a.insert(2, 14)
+a.insert(-2, 14)
 a.clear(5)
 print(a)
 a.clear_list()
