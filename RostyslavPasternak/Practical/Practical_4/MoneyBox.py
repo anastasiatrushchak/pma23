@@ -5,7 +5,7 @@ class MoneyBox:
         self.capacity = 0
         self.add(capacity)
     def add(self,new_coin=1):
-        if (self.capacity + new_coin)>self.__max:
+        if (self.capacity + new_coin) > self.__max or (self.capacity + new_coin) < self.capacity:
             return False
         else:
             self.capacity += new_coin
@@ -17,5 +17,7 @@ class MoneyBox:
 box = MoneyBox(capacity=10)
 print(box)
 
-box.add(-90)
+print(box.add(90))
 print(box)
+
+
