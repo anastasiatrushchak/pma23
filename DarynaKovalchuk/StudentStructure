@@ -1,0 +1,39 @@
+class Student:
+    def __init__(self, first_name, last_name, birth, grades):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.birth = birth
+        self.grades = grades
+
+def talon(student_list):
+    all_passed = all(all(grade >= 51 for grade in student.grades) for student in student_list)
+    if all_passed:
+        print("everybody passed the session.")
+    else:
+        for student in student_list:
+            if any(grade < 51 for grade in student.grades):
+                print(f"{student.first_name} {student.last_name} didnt pass the session.")
+
+def read(file_name):
+    student_list = []
+    try:
+        with open(file_name, 'r') as file:
+            lines = file.readlines()
+            if not lines:
+                print("file is empty.")
+                return student_list
+            for line in lines:
+                data = line.strip().split(',')
+                first_name = data[0]
+                last_name = data[1]
+                birth = data[2]
+                grades = [int(grade) for grade in data[3:]]
+                student = Student(first_name, last_name, birth, grades)
+                student_list.append(student)
+    except FileNotFoundError:
+        print("file doesnt exist.")
+    return student_list
+
+file_name = 'students.txt'
+students = read(file_name)
+talon(students)
