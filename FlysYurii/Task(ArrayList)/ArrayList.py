@@ -20,7 +20,7 @@ class ArrayList:
         self.data[index] = value
 
     def __str__(self):
-        return f'ArrayList: {self.data}, Size: {len(self)}, Capacity: {self.capacity}'
+        return f'ArrayList: {self.data}, Size: {len(self)}, Capacity: {self.capacity+1}'
 
     def raise_size(self):
         new_size=self.capacity
@@ -59,20 +59,19 @@ class ArrayList:
                     self.raise_size()
                 self.data.insert(index, item)
         except IndexError:
-            print("Неправильний індекс!")
+            print("Введіть невід'ємний індекс!")
 
     def remove(self, index):
         try:
-            if index < 0 or index > len(self):
+            if index < 0 or index > self.capacity:
                 raise IndexError
             else:
-                for i in range(index,len(self.data)-1):
+                for i in range(index,self.capacity-1):
                     self.data[i]=self.data[i+1]
                 self.data.pop()
                 self.capacity -= 1
         except IndexError:
             print("Неправильний індекс!")
-
 
     def clear(self):
         self.data = [None]
@@ -85,4 +84,5 @@ my_list.append('b')
 my_list.append('c')
 print(my_list)
 my_list.insert(12, 'd')
+my_list.remove(1)
 print(my_list)
