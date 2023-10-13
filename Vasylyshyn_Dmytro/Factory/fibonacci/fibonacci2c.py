@@ -1,6 +1,5 @@
 from typing import Final
 
-from Vasylyshyn_Dmytro.TasksFromLessons.Lesson_2_15_09.Fibonaci import Fibonacci
 
 name_input_limit_file: Final[str] = 'fileLimit.txt'
 name_input_numbers_file: Final[str] = 'file.txt'
