@@ -23,7 +23,6 @@ class MoneyBox:
     def add(self, v):
         if self.can_add(v):
             self.current += v
-            self.capacity -= v
             return True
         else:
             return False
