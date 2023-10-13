@@ -38,10 +38,16 @@ class Circle(Figure):
         self.radius = radius
 
     def calculate_area(self):
-        return 3.14 * self.radius * self.radius
+        if self.radius > 0:
+            return 3.14 * self.radius * self.radius
+        else:
+            print("radius < 0")
 
     def calculate_perimeter(self):
-        return 2 * 3.14 * self.radius
+        if self.radius > 0:
+            return 2 * 3.14 * self.radius
+        else:
+            print("radius < 0")
 
 
 class Rectangle(Figure):
@@ -51,10 +57,17 @@ class Rectangle(Figure):
         self.width = width
 
     def calculate_area(self):
-        return self.length * self.width
+        if self.length > 0 & self.width > 0:
+            return self.length * self.width
+        else:
+            print("length or width < 0")
+
 
     def calculate_perimeter(self):
-        return 2 * (self.length + self.width)
+        if self.length > 0 & self.width > 0:
+            return 2 * (self.length + self.width)
+        else:
+            print("length or width < 0")
 
 
 class Square(Figure):
@@ -63,16 +76,25 @@ class Square(Figure):
         self.side_length = side_length
 
     def calculate_area(self):
-        return self.side_length * self.side_length
+        if self.side_length:
+            return self.side_length * self.side_length
+        else:
+            print("length < 0")
+
+
 
     def calculate_perimeter(self):
-        return 4 * self.side_length
+        if self.side_length:
+            return 4 * self.side_length
+        else:
+            print("length < 0")
+
 
 
 red = RedColor()
 green = GreenColor()
 
-circle = Circle(red, 5)
+circle = Circle(red, -5)
 print(f"Circle area: {circle.calculate_area()}, perimeter: {circle.calculate_perimeter()}, color: {circle.color.name}")
 
 square = Square(green, 4)
