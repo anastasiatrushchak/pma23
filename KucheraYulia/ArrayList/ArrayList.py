@@ -55,13 +55,13 @@ class ArrayList:
             self.array[index] = value
 
 
-l = ArrayList([21, 74, 4, 19, 109, 69, 14, 88, 52, 25])
-l.append(5)
-l.append(7)
-print(l.array)
-l.append(5)
-l.remove(5)
-l.insert(1, 9)
-print(l.array)
-l.clear()
-print(l.array)
+masiv = ArrayList([21, 74, 4, 19, 109, 69, 14, 88, 52, 25])
+masiv.append(5)
+masiv.append(7)
+print(masiv.array)
+masiv.append(5)
+masiv.remove(5)
+masiv.insert(1, 9)
+print(masiv.array)
+masiv.clear()
+print(masiv.array)
