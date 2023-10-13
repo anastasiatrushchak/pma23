@@ -14,24 +14,21 @@ class MoneyBox:
         else:
             raise ValueError("Cannot add more coins, capacity exceeded")
 
-
 try:
     n = int(input("Введіть місткість скарбнички: "))
     m = int(input("Скільки монет вже в скарбничці: "))
     k = int(input("Скільки монет ви хочете додати: "))
 
+    if k < 0 or m<0 or n<0:
+        raise ValueError("Кількість монет не може бути від'ємною")
+
     box = MoneyBox(n)
 
-    if m > n:
-        raise ValueError("Кількість монет вже в скарбничці більша, ніж її місткість")
-
-    if box.can_add(k):
+    if  m + k > n:
+        print("False")
+    else:
         box.add(k)
         print("True")
-    else:
-        print("False")
 
 except ValueError as e:
     print(f"Помилка: {e}")
-except KeyboardInterrupt:
-    print("\nВведення перервано користувачем.")
