@@ -17,20 +17,28 @@ class Node:
 
 class LinkedList:
 
-    def __init__(self):
+    def __init__(self, arr=None):
         self.size = 0
         self.head = None
+        self.end = None
+
+        if arr is not None:
+            for i in range(len(arr)):
+                self.push(arr[i])
 
     def push(self, new_data):
         self.size += 1
         new_node = Node(new_data)
-        new_node.next = self.head
-        new_node.prev = None
 
-        if self.head is not None:
-            self.head.prev = new_node
+        if self.head is None:
+            self.head = new_node
+            self.end = new_node
+            return
 
-        self.head = new_node
+        new_node.next = None
+        new_node.prev = self.end
+        self.end.next = new_node
+        self.end = new_node
 
     def delete(self, index):
         try:
@@ -128,27 +136,41 @@ class LinkedList:
         self.size = 0
 
 
-llist = LinkedList()
-llist.push(13)
-llist.push(21)
-llist.push(18)
-llist.push(29)
-llist.push(31)
-llist.push(78)
+values = [13, 21, 18, 29, 31, 78]
+values = [1, 2, 3, 4, 5]
+# llist = LinkedList('Hello', 1, 4 ,6)
+llist = LinkedList(values)
+# llist = LinkedList()
+#
+# llist.push(13)
+# llist.push(21)
+# llist.push(18)
+# llist.push(29)
+# llist.push(31)
+# llist.push(78)
 
 # with open(constants.INPUT_FILE, 'r') as file:
 #     lines = file.readlines()
 #     for line in lines:
 #         llist.push(int(line))
 
-print(llist);
+# values = []
+# with open(constants.INPUT_FILE, 'r') as file:
+#     lines = file.readlines()
+#     for line in lines:
+#         values.append(int(line))
+#
+# llist = LinkedList(values)
 
 llist.print()
 print("\nDelete element:")
-llist.delete(0)
+llist.delete(3)
 llist.print()
 print("\nInsert value:")
-llist.insert(100, 100)
+llist.insert(3, 6)
+llist.print()
+print("\nInsert none:")
+llist.insert(0, None)
 llist.print()
 print("\nErase value:")
 llist.erase(2)

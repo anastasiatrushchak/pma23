@@ -4,13 +4,10 @@ This repository is managed by the students of group PMA23 at Lviv National Unive
 
 ### Working on Your Python Tasks
 
-1. Create a new branch using the format: `name_lastname` from starting_branch.
+1. Create a new branch using the format: `name_lastname` from `starting_branch`.
 2. In this branch, create your own folder with your name and surname.
 3. Work on your Python tasks and projects in this folder.
 4. Push your changes to your branch regularly.
 5. When you have completed your Python tasks, make sure to merge them into the main branch.
-
-## License
-
-This repository is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the contents of this repository for educational and non-commercial purposes.
+   
 # pma23

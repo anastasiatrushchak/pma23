@@ -1,43 +1,24 @@
 class MatrixApp:
-    def __init__(self, input_file, output_file):
-        self.input_file = input_file
-        self.output_file = output_file
+    def __init__(self, matrix_a, matrix_b):
+        self.matrix_a = matrix_a
+        self.matrix_b = matrix_b
 
     @staticmethod
     def read_matrix(filename):
-         try:
+        try:
             with open(filename, "r") as file:
                 lines = file.readlines()
-                matrix_a = []
-                matrix_b = []
-                for i in range(2):
-                    row = [int(x) for x in lines[i].strip().split()]
-                    matrix_a.append(row)
-
-                for i in range(3, 5):
-                    row = [int(x) for x in lines[i].strip().split()]
-                    matrix_b.append(row)
+                matrix_a = [list(map(int, lines[i].strip().split())) for i in range(2)]
+                matrix_b = [list(map(int, lines[i].strip().split())) for i in range(3, 5)]
                 return matrix_a, matrix_b
         except FileNotFoundError:
-            print("file not found")
+            print("File not found")
 
     @staticmethod
-    def write_matrix(filename, result_addition, result_subtraction, result_multiplication, result_division):
+    def write_matrix(filename, operation, result):
         with open(filename, "a") as file:
-            file.write("addition:\n")
-            for row in result_addition:
-                file.write(" ".join(map(str, row)) + "\n")
-
-            file.write("\nsubtraction:\n")
-            for row in result_subtraction:
-                file.write(" ".join(map(str, row)) + "\n")
-
-            file.write("\nmultiplication:\n")
-            for row in result_multiplication:
-                file.write(" ".join(map(str, row)) + "\n")
-
-            file.write("\ndivision:\n")
-            for row in result_division:
+            file.write(f"{operation}:\n")
+            for row in result:
                 file.write(" ".join(map(str, row)) + "\n")
 
     @staticmethod
@@ -72,37 +53,49 @@ class MatrixApp:
             raise ValueError("Determinant is 0.")
 
         inverse_det = 1.0 / det
-    result = [[0, 0], [0, 0]]
+        result = [[0, 0], [0, 0]]
 
-    for i in range(2):
-        for j in range(2):
-            result[i][j] = matrix[1 - i][1 - j] * inverse_det
-    return result
+        for i in range(2):
+            for j in range(2):
+                result[i][j] = matrix[1 - i][1 - j] * inverse_det
+        return result
 
     @staticmethod
     def divide_matrices(matrix_a, matrix_b):
-        inverse_b = MatrixApp.inverse_matrix(matrix_b)
-        result = MatrixApp.multiply_matrices(matrix_a, inverse_b)
-        return result
+        try:
+            inverse_b = MatrixApp.inverse_matrix(matrix_b)
+        except ValueError as e:
+            print(f"Error: {str(e)}")
+            inverse_b = None
 
-    def process_matrix(self):
-        matrix_a, matrix_b = self.read_matrix(self.input_file)
-        result_addition = self.add_matrices(matrix_a, matrix_b)
-        result_subtraction = self.subtract_matrices(matrix_a, matrix_b)
-        result_multiplication = self.multiply_matrices(matrix_a, matrix_b)
-        result_division = self.divide_matrices(matrix_a, matrix_b)
+        if inverse_b:
+            result = MatrixApp.multiply_matrices(matrix_a, inverse_b)
+            return result
+        else:
+            return None
 
-        with open(self.output_file, 'w') as file:
-            self.write_matrix(self.output_file, result_addition, result_subtraction, result_multiplication, result_division)
+    def process_matrix(self, output_file):
+        result_addition = self.add_matrices(self.matrix_a, self.matrix_b)
+        result_subtraction = self.subtract_matrices(self.matrix_a, self.matrix_b)
+        result_multiplication = self.multiply_matrices(self.matrix_a, self.matrix_b)
+        result_division = self.divide_matrices(self.matrix_a, self.matrix_b)
+
+        with open(output_file, 'w') as file:
+            if result_division is not None:
+                self.write_matrix(output_file, "Addition", result_addition)
+                self.write_matrix(output_file, "Subtraction", result_subtraction)
+                self.write_matrix(output_file, "Multiplication", result_multiplication)
+                self.write_matrix(output_file, "Division", result_division)
 
 
 def main():
     input_file = 'input.txt'
     output_file = 'output.txt'
 
-    calculator = MatrixApp(input_file, output_file)
-    calculator.process_matrix()
-
+    matrix_a, matrix_b = MatrixApp.read_matrix(input_file)
+    app = MatrixApp(matrix_a, matrix_b)
+    app.process_matrix(output_file)
 
 if __name__ == "__main__":
     main()
+
