@@ -8,6 +8,15 @@ class ArrayList:
         instance = cls()
         instance.add(arr)
         return instance
+    @classmethod
+    def from_file(cls,file_name,separator=" "):
+        with open(file_name, 'r') as readFile:
+            line = readFile.readline()
+
+        array = line.split(separator)
+        array = [int(i) for i in array if i.isdigit()]
+        return ArrayList.from_list(array)
+
     def add(self,new_element):
         if isinstance(new_element, list):
             for element in new_element:
@@ -40,6 +49,12 @@ class ArrayList:
     def __str__(self):
         return str(self.array[0:self.capacity])
 
+
+
+list1 = ArrayList.from_file("array.txt")
+print(f"Size: {list1.size}")
+print(f"Capacity: {list1.capacity}")
+print(f"Array: {list1}")
 
 print("<--------------------------------Create Array------------------------>")
 list1 = ArrayList.from_list([0,1,2,3,4,5,6,7,8,9])
