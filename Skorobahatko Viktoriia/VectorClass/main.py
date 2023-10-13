@@ -1,15 +1,18 @@
 class VectorCalculator:
-    def __init__(self, input_file, output_file):
-        self.input_file = input_file
-        self.output_file = output_file
+    def __init__(self, vector1, vector2):
+        self.vec1 = vector1
+        self.vec2 = vector2
 
     @staticmethod
     def read_vectors(filename):
-        with open(filename, 'r') as file:
-            lines = file.readlines()
-            vector1 = tuple(map(float, lines[0].strip().split(',')))
-            vector2 = tuple(map(float, lines[1].strip().split(',')))
+        try:
+            with open(filename, 'r') as file:
+                lines = file.readlines()
+                vector1 = tuple(map(float, lines[0].strip().split(',')))
+                vector2 = tuple(map(float, lines[1].strip().split(',')))
             return vector1, vector2
+        except FileNotFoundError:
+           print("file not found")
 
     @staticmethod
     def write_vector(filename, vector, operation=None):
@@ -36,33 +39,31 @@ class VectorCalculator:
 
     @staticmethod
     def divide_vectors(vec1, vec2):
-        result = tuple(x / y for x, y in zip(vec1, vec2))
-        return result
+        if any(x == 0 for x in vec2):
+            return None
+        else:
+            result = tuple(x / y for x, y in zip(vec1, vec2))
+            return result
 
-    def process_vectors(self):
-        vector1, vector2 = self.read_vectors(self.input_file)
+    def process_vectors(self, output_file):
+        result_addition = self.add_vectors(self.vec1, self.vec2)
+        result_multiply = self.multiply_vectors(self.vec1, self.vec2)
+        result_subtract = self.subtract_vectors(self.vec1, self.vec2)
+        result_divide = self.divide_vectors(self.vec1, self.vec2)
 
-        with open(self.output_file, 'w') as file:
-            result = self.add_vectors(vector1, vector2)
-            self.write_vector(self.output_file, result, '+')
-
-            result = self.subtract_vectors(vector1, vector2)
-            self.write_vector(self.output_file, result, '-')
-
-            result = self.multiply_vectors(vector1, vector2)
-            self.write_vector(self.output_file, result, '*')
-
-            result = self.divide_vectors(vector1, vector2)
-            self.write_vector(self.output_file, result, '/')
-
+        with open(output_file, 'w') as file:
+            self.write_vector(output_file, result_addition, 'addition')
+            self.write_vector(output_file, result_subtract, 'subtract')
+            self.write_vector(output_file, result_multiply, 'multiply')
+            self.write_vector(output_file, result_divide, 'divide')
 
 def main():
     input_file = 'input.txt'
     output_file = 'output.txt'
 
-    calculator = VectorCalculator(input_file, output_file)
-    calculator.process_vectors()
-
+    vec1, vec2 = VectorCalculator.read_vectors(input_file)
+    calculator = VectorCalculator(vec1, vec2)
+    calculator.process_vectors(output_file)
 
 if __name__ == "__main__":
     main()
