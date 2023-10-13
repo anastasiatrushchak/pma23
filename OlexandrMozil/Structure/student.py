@@ -41,10 +41,11 @@ def read_from_file(filename):
         quit(9)
 
 
-def check_correct_data(list):
-    for i in list:
-        if i.name in list or i.surname in list or i.birth_date in list or i.marks in list is None:
-            print("!!! WRONG DATA !!!" + "\n" + i)
+def check_correct_data(student_list):
+    for student in student_list:
+        if not student.name or not student.surname or not student.birth_date or not student.marks:
+            print("!!! WRONG DATA !!!")
+            print(f"Name: {student.name}, Surname: {student.surname}, Birth Date: {student.birth_date}, Marks: {student.marks}")
 
 
 students = []
