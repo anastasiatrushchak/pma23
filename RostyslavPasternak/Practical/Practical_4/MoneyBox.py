@@ -2,8 +2,8 @@ class CountError(Exception):
     def __init__(self):
         super().__init__("Count Error")
 class MoneyBox:
-    def __init__(self, count=0, max=50):
-        self.__capacity = max
+    def __init__(self, count=0, capacity=50):
+        self.__capacity = capacity
         self.count = 0
         self.add(count)
     def can_add(self, new_coin):
@@ -21,7 +21,7 @@ class MoneyBox:
         return (f"Max: {self.__capacity}\n"
                 f"Count: {self.count}\n")
 
-box = MoneyBox()
+box = MoneyBox(capacity=15)
 
 n = int(input("First number: "))
 print(box.add(n))
