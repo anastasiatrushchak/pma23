@@ -4,7 +4,7 @@ class MoneyBox:
             raise ValueError("Capacity cannot be negative")
         self.capacity = capacity
         self.coins = 0
-
+#k
     def can_add(self, v):
         return self.coins + v <= self.capacity
 
