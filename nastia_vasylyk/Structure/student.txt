@@ -1,0 +1,13 @@
+3
+Nastia
+Vasylyk
+18.10
+100 99 98
+Sofia
+Markiv
+20.07
+56 67 67
+Marta
+Kohyt
+21.03
+78 65 51
