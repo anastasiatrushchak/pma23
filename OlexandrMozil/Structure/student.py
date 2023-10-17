@@ -18,7 +18,7 @@ class Student:
         marks_sum = 0
         for mark in self.marks:
             marks_sum += mark
-        return (marks_sum / 5) > 51
+        return (marks_sum / 5) < 51
 
 
 def read_from_file(filename):
@@ -40,6 +40,14 @@ def read_from_file(filename):
         print("File is empty!")
         quit(9)
 
+
+def check_correct_data(student_list):
+    for student in student_list:
+        if not student.name or not student.surname or not student.birth_date or not student.marks:
+            print("!!! WRONG DATA !!!")
+            print(f"Name: {student.name}, Surname: {student.surname}, Birth Date: {student.birth_date}, Marks: {student.marks}")
+
+
 students = []
 try:
     students = read_from_file("info_students.json")
@@ -55,3 +63,5 @@ except FileNotFoundError:
 for student in students:
     if student.check_if_passed_exam():
         print(student)
+
+check_correct_data(students)

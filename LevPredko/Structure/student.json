@@ -1,0 +1,57 @@
+{"Students": [{
+      "firstName": "Leo",
+      "secondName": "Predko",
+      "dateOfBirth": "01.08.2005",
+      "grades": {
+        "MathematicalAnalysis": "97",
+        "DiscreteMath": "76",
+        "Programming": "91",
+        "Algebra": "85"
+        }
+      },
+      {
+        "firstName": "Andriy",
+        "secondName": "Ibrahimović",
+        "dateOfBirth": "22.04.2004",
+        "grades": {
+        "MathematicalAnalysis": "51",
+        "DiscreteMath": "80",
+        "Programming": "77",
+        "Algebra": "68"
+        }
+      },
+      {
+        "firstName": "Dima",
+        "secondName": "Seger",
+        "dateOfBirth": "11.01.2005",
+        "grades": {
+        "MathematicalAnalysis": "90",
+        "DiscreteMath": "81",
+        "Programming": "51",
+        "Algebra": "97"
+        }
+      },
+      {
+        "firstName": "Maxim",
+        "secondName": "Napasny",
+        "dateOfBirth": "01.12.2005",
+        "grades": {
+        "MathematicalAnalysis": "70",
+        "DiscreteMath": "64",
+        "Programming": "95",
+        "Algebra": "52"
+        }
+      },
+      {
+        "firstName": "Yura",
+        "secondName": "Serhiychuk",
+        "dateOfBirth": "19.10.2004",
+        "grades": {
+        "MathematicalAnalysis": "49",
+        "DiscreteMath": "60",
+        "Programming": "51",
+        "Algebra": "63"
+        }
+      }
+]
+}
