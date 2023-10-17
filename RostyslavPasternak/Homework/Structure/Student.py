@@ -1,10 +1,29 @@
 import json
+import re
+
+class InvalidData(Exception):
+    def __init__(self):
+        super().__init__("InvalidData")
+def validate_string_format(input_string):
+    pattern = r"^\d{4}-\d{2}-\d{2}$"
+
+    if re.match(pattern, input_string):
+        return False
+    else:
+        return True
+
 class Student:
     def __init__(self, firstname, surname, date, list_of_grades):
         self.firstname = firstname
         self.surname = surname
         self.date = date
         self.list_of_grades = list_of_grades
+        if len(self.firstname) == 0 or len(self.surname) == 0 or len(self.list_of_grades) == 0:
+            raise InvalidData
+        if validate_string_format(self.date):
+            raise InvalidData
+
+
     @classmethod
     def fromJson(cls,json):
         firstname = json["Name"]
@@ -28,8 +47,12 @@ with open('student.json', 'r') as file:
 
 list = []
 for new_element in all_student_json:
-    s = Student.fromJson(new_element)
-    list.append(Student.fromJson(new_element))
+    try:
+        s = Student.fromJson(new_element)
+        list.append(Student.fromJson(new_element))
+    except InvalidData as e:
+        print(e)
+
 print("<--------------------All Student-------------------->")
 for s in list:
     print(s)

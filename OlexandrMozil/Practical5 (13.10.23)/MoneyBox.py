@@ -11,7 +11,7 @@ class MoneyBox:
         self.__coins_counter = 0
 
     def can_add(self, v):
-        return self.__coins_counter + v < self.__capacity
+        return self.__coins_counter + v <= self.__capacity
 
     def add(self, v):
         try:
@@ -23,9 +23,14 @@ class MoneyBox:
             print(f"Not enough space in money box! Can't add {v} coins.")
 
 
-n = int(input("Input capacity: "))
-m = int(input("How many coins put into the money box: "))
-k = int(input("How many coins are you trying to put more: "))
+try:
+    n = int(input("Input capacity: "))
+    m = int(input("How many coins put into the money box: "))
+    k = int(input("How many coins are you trying to put more: "))
+except ValueError:
+    print("ValueError")
+    quit(9)
+
 mb = MoneyBox(n)
 mb.add(m)
 print(mb.can_add(k))
