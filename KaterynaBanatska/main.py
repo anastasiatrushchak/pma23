@@ -1,0 +1,116 @@
+class ArrayList:
+    def __init__(self,array=None):
+      if array is not None:
+        self.array=array[:]
+        self.next_index = len(array)
+      else:
+        self.array = []
+        self.next_index = 0
+
+    def len(self):
+        try:
+            return len(self.array)
+        except:
+            print("Error: Unable to determine the length of the array.")
+            return 0
+
+    def print_array(self):
+        try:
+            for element in self.array:
+                print(element, end=" ")
+            print('\n')
+        except:
+            print("Error: Unable to print the array.")
+
+    def append(self, value):
+        try:
+            if self.next_index >= len(self.array):
+                self.change_size()
+            self.array[self.next_index] = value
+            self.next_index += 1
+        except:
+            print("Error: Unable to append the value to the array.")
+
+    def add(self, index1, index2):
+        a = self.find_value(index1)
+        b = self.find_value(index2)
+        return a + b
+
+    def insert(self, index, value):
+        a = []
+        i = index
+        for num in range(index, len(self.array)):
+            a.append(self.array[i])
+            i += 1
+        while len(self.array) < (index + 1) + len(a):
+            self.change_size()
+        while len(a) <= len(self.array) - index:
+            a.append(None)
+        self.array[index] = value
+        j = 0
+        i2 = index + 1
+        for n in range(index + 1, len(self.array)):
+            self.array[i2] = a[j]
+            j += 1
+            i2 += 1
+
+    def find_value(self, index):
+        try:
+
+            for num, element in enumerate(self.array):
+                if num == index:
+                    value = element
+            return value
+        except:
+            print("Error: Unable to search for the value in the array.")
+            return -1
+
+    def find_index(self, value):
+        try:
+            pos = -1
+            for index, element in enumerate(self.array):
+                if element == value:
+                    pos = index
+            return pos
+        except:
+            print("Error: Unable to search for the value in the array.")
+            return -1
+
+    def delete_value(self, value):
+        try:
+            pos = self.find_index(value)
+            self.array[pos] = None
+        except:
+            print("Error: Unable to delete the value from the array.")
+
+    def delete_index(self, index):
+        try:
+            self.array[index] = None
+        except:
+            print("Error: Unable to delete the index from the array.")
+
+    def clear(self):
+        for element in range(len(self.array)):
+            self.array[element] = None
+
+    def new_capacity(self):
+        return int(len(self.array) * 1.5 + 1)
+
+    def change_size(self):
+        try:
+            new_capacity = self.new_capacity()
+            new_data = [None] * new_capacity
+            for i in range(len(self.array)):
+                new_data[i] = self.array[i]
+            self.array = new_data
+        except:
+            print("Error: Unable to change the size of the array.")
+
+
+a1=[1,2,3,4,5,6]
+a = ArrayList(a1git)
+print(a.len())
+print(a.add(1, 4))
+a.print_array()
+a.insert(3, 2)
+a.print_array()
