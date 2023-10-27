@@ -1,0 +1,52 @@
+{
+  "students": [
+    {
+      "First Name": "Ivan",
+      "Last Name": "Sina",
+      "Date of Birth": "1999-05-15",
+      "Grades": [85, 92, 78, 95, 89]
+    },
+    {
+      "First Name": "Maria",
+      "Last Name": "Duel",
+      "Date of Birth": "2000-08-23",
+      "Grades": [90, 88, 76, 82, 94]
+    },
+    {
+      "First Name": "Oleg",
+      "Last Name": "Smit",
+      "Date of Birth": "1998-03-10",
+      "Grades": [75, 84, 79, 88, 92]
+    },
+    {
+      "First Name": "Jon",
+      "Last Name": "Kovalenko",
+      "Date of Birth": "2001-11-02",
+      "Grades": [45, 38, 56, 49, 60]
+    },
+    {
+      "First Name": "Pet",
+      "Last Name": "Vizli",
+      "Date of Birth": "2002-04-17",
+      "Grades": [40, 55, 42, 46, 38]
+    },
+    {
+      "First Name": "Julia",
+      "Last Name": "Potter",
+      "Date of Birth": "2003-07-20",
+      "Grades": [63, 59, 50, 68, 54]
+    },
+    {
+      "First Name": "Bob",
+      "Last Name": "Carlson",
+      "Date of Birth": "2000-01-08",
+      "Grades": [48, 42, 55, 47, 51]
+    },
+    {
+      "First Name": "Anna",
+      "Last Name": "Hagrid",
+      "Date of Birth": "2001-09-29",
+      "Grades": [65, 73, 79, 72, 68]
+    }
+  ]
+}

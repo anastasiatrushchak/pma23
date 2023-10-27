@@ -1,0 +1,154 @@
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def calculate_area(self):
+        pass
+
+    @abstractmethod
+    def calculate_perimeter(self):
+        pass
+
+    @abstractmethod
+    def __str__(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        if radius <= 0:
+            raise ValueError("від'ємний або нульовий радіус")
+        self.radius = radius
+
+    def calculate_area(self):
+        return 3.14 * self.radius * self.radius
+
+    def calculate_perimeter(self):
+        return 2 * 3.14 * self.radius
+
+    def __str__(self):
+        return "Circle"
+
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        if width <= 0 or height <= 0:
+            raise ValueError("від'ємна або нулова сторони")
+        self.width = width
+        self.height = height
+
+    def calculate_area(self):
+        return self.width * self.height
+
+    def calculate_perimeter(self):
+        return 2 * (self.width + self.height)
+
+    def __str__(self):
+        return "Rectangle"
+
+
+class Square(Shape):
+    def __init__(self, side_length):
+        if side_length <= 0:
+            raise ValueError("від'ємна або нульова сторони")
+        self.side_length = side_length
+
+    def calculate_area(self):
+        return self.side_length * self.side_length
+
+    def calculate_perimeter(self):
+        return 4 * self.side_length
+
+    def __str__(self):
+        return "Square"
+
+
+class Color(ABC):
+    def __init__(self, color):
+        self.color = color
+
+    @abstractmethod
+    def get_color(self):
+        return self.color
+
+    @abstractmethod
+    def color_set(self, color):
+        self.color = color
+
+class Red(Color):
+    def __init__(self):
+        super().__init__('Red')
+
+    def get_color(self):
+        return super().get_color()
+
+    def color_set(self, color):
+        return super().set_color()
+
+class Blue(Color):
+    def __init__(self):
+        super().__init__('Blue')
+
+    def get_color(self):
+        return super().get_color()
+
+    def color_set(self, color):
+        return super().set_color()
+
+class Yellow(Color):
+    def __init__(self):
+        super().__init__('Yellow')
+
+    def get_color(self):
+        return super().get_color()
+
+    def color_set(self, color):
+        return super().set_color()
+
+class Bridge:
+    def __init__(self, shape, color):
+        self.shape = shape
+        self.color = color
+
+    def info(self):
+        return (f"{self.color.get_color()} {self.shape}"
+                f" area = {self.shape.calculate_area()} perimeter = {self.shape.calculate_perimeter()}]")
+
+def read_shapes_from_file(file_name):
+    shapes = []
+    with open(file_name, "r") as file:
+        lines = file.readlines()
+    for line in lines:
+        data = line.strip().split(',')
+        shape_type = data[0]
+        color_type = data[1]
+        try:
+            if shape_type == "Circle":
+                shape = Circle(float(data[2]))
+            elif shape_type == "Rectangle":
+                shape = Rectangle(float(data[2]), float(data[3]))
+            elif shape_type == "Square":
+                shape = Square(float(data[2]))
+            else:
+                print(f"неправильна фігура: {shape_type}")
+                continue
+
+            if color_type == "Red":
+                color = Red()
+            elif color_type == "Blue":
+                color = Blue()
+            elif color_type == "Yellow":
+                color = Yellow()
+            else:
+                print(f"інший колір: {color_type}")
+                continue
+
+            bridge = Bridge(shape, color)
+            shapes.append(bridge)
+        except ValueError as e:
+            print(f"помилка: {e}")
+    return shapes
+
+shapes_from_file = read_shapes_from_file("figures.txt")
+
+for shape in shapes_from_file:
+    print(shape.info())
