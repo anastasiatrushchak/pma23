@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clients>
+    <client>
+        <bank>
+            <balance>
+                <amount>12345.9</amount>
+                <unit>$</unit>
+            </balance>
+            <card>
+                <card_number>1234 5678 9012 3456</card_number>
+                <cvv>123</cvv>
+                <expire_date>12/27</expire_date>
+            </card>
+            <issuance_day>2023-10-13</issuance_day>
+        </bank>
+        <data>
+            <age>18</age>
+            <name>TestName</name>
+            <surname>TestSurname</surname>
+        </data>
+        <id>1</id>
+    </client>
+    <client>
+        <bank>
+            <balance>
+                <amount>12347.9</amount>
+                <unit>$</unit>
+            </balance>
+            <card>
+                <card_number>1234 5678 9012 3456</card_number>
+                <cvv>122</cvv>
+                <expire_date>12/21</expire_date>
+            </card>
+            <issuance_day>2021-10-13</issuance_day>
+        </bank>
+        <data>
+            <age>23</age>
+            <name>TestName1</name>
+            <surname>TestSurname1</surname>
+        </data>
+        <id>1</id>
+    </client>
+</clients>
