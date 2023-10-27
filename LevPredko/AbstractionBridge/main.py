@@ -1,4 +1,7 @@
-from ImitativeClasses import RedColor, BlueColor, YellowColor, Circle, Rectangle, Square
+from Circle import Circle
+from Rectangle import Rectangle
+from Square import Square
+from Color import RedColor, BlueColor, YellowColor
 
 
 def print_shape_info(shape):
