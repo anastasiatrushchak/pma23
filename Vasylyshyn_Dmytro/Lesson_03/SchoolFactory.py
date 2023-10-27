@@ -1,3 +1,6 @@
+from abc import abstractmethod, ABC
+
+
 class SchoolSubjectFactory(ABC):
     @abstractmethod
     def create_subject(self):
