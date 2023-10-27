@@ -42,7 +42,7 @@ class ArrayList:
     def print_list(self):
         print(" ".join(str(elem) for elem in self.array[:self.size]))
 
-# Example usage:
+
 array_list = ArrayList()
 array_list.add(1)
 array_list.add(2)
