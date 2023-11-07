@@ -20,11 +20,11 @@ try:
 except Exception as e:
     print("Елемента нема")
 print("<-----------Добавили елемент----------->")
-dic["Flus"] = 9999
+dic["Flus"] = 99
 tostr(dic)
 print("<-----------Змінили значення----------->")
 
-dic["Mozil"] = 8888
+dic["Mozil"] = 88
 tostr(dic)
 
 
