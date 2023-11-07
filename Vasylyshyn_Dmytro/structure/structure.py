@@ -43,10 +43,10 @@ def read_students_from_file(file_path):
 def students_who_failed(students):
     failed_students = []
     for student in students:
-        average_grade = sum(student.grades) / len(student.grades)
-        if average_grade < 51:
+        if any(grade < 51 for grade in student.grades):
             failed_students.append(student)
     return failed_students
+
 
 students = read_students_from_file("data.json")
 

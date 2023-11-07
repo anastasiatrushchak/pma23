@@ -26,8 +26,9 @@ class Shape(ABC):
 class Circle(Shape):
     def __init__(self, color, radius):
         super().__init__(color)
+        if radius < 0:
+            raise ValueError("Radius must be a non-negative number.")
         self.radius = radius
-
     def calculate_area(self):
         return PI * self.radius * self.radius
 
@@ -37,6 +38,8 @@ class Circle(Shape):
 class Rectangle(Shape):
     def __init__(self, color, width, height):
         super().__init__(color)
+        if width < 0 or height < 0:
+            raise ValueError("Dimensions must be non-negative numbers.")
         self.width = width
         self.height = height
 
@@ -46,13 +49,14 @@ class Rectangle(Shape):
     def calculate_perimeter(self):
         return 2 * (self.width + self.height)
 
-class Square(Shape):
+class Square(Rectangle):
     def __init__(self, color, side_length):
-        super().__init__(color)
-        self.side_length = side_length
+        super().__init__(color, side_length, side_length)
 
     def calculate_area(self):
-        return self.side_length * self.side_length
+        return self.width * self.width
 
     def calculate_perimeter(self):
-        return 4 * self.side_length
+        return 4 * self.width
+
+

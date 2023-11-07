@@ -1,4 +1,4 @@
-from Vasylyshyn_Dmytro.abstraction.Shape import Shape
+from vasylyshyn.Vasylyshyn_Dmytro.abstraction.Shape import Shape
 
 
 class Colabs(Shape):
