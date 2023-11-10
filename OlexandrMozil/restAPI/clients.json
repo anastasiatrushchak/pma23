@@ -1,0 +1,22 @@
+[
+    {
+        "client_id": 1,
+        "name": "John",
+        "surname": "Doe"
+    },
+    {
+        "client_id": 2,
+        "name": "Jane",
+        "surname": "Doe"
+    },
+    {
+        "client_id": 3,
+        "name": "Bill",
+        "surname": "Gates"
+    },
+    {
+        "client_id": 4,
+        "name": "Steve",
+        "surname": "Jobs"
+    }
+]
