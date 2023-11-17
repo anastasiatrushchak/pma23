@@ -1,6 +1,6 @@
 from datetime import datetime
 
-# Структура для опису студента
+
 class Student:
     def __init__(self, first_name, last_name, birth_date, grades):
         self.first_name = first_name
@@ -38,7 +38,7 @@ def print_failed_students(students):
         if not student.has_passed_session():
             print(f"{student.first_name} {student.last_name} (Average Grade: {student.calculate_average_grade()})")
 
-# Приклад використання
-file_path = 'students_data.txt'  # Припустимо, що у вас є файл students_data.txt
+
+file_path = 'students_data.txt'  
 students = read_students_from_file(file_path)
 print_failed_students(students)
