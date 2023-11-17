@@ -1,0 +1,58 @@
+class Student:
+    def __init__(self, name, age, course):
+        self.name = name
+        self.age = age
+        self.course = course
+
+class Decanat:
+    def __init__(self):
+        self.students_dict = {}
+
+    def add_student(self, student_id, name, age, course):
+        student = Student(name, age, course)
+        self.students_dict[student_id] = student
+
+    def update_student_age(self, student_id, new_age):
+        try:
+            if student_id in self.students_dict:
+                self.students_dict[student_id].age = new_age
+                print(f"Information about student with ID {student_id} was updated.")
+            else:
+                print(f"Student with ID {student_id} was not found.")
+        except KeyError as e:
+            print(f"Error while updating student information: {e}")
+
+    def delete_student(self, student_id):
+        try:
+            if student_id in self.students_dict:
+                del self.students_dict[student_id]
+                print(f"Student with ID {student_id} was deleted.")
+            else:
+                raise KeyError(f"Student with ID {student_id} was not found.")
+        except KeyError as e:
+            print(f"Error while deleting student: {e}")
+
+    def display_students(self):
+        print("All students:")
+        print()
+        for student_id, student in self.students_dict.items():
+            print(f"Student's ID: {student_id}")
+            print(f"Name: {student.name}")
+            print(f"Age: {student.age}")
+            print(f"Course: {student.course}")
+            print()
+
+
+decanat = Decanat()
+decanat.add_student('student1', 'Софія', 21, 4)
+decanat.add_student('student2', 'Марія', 20, 3)
+decanat.add_student('student3', 'Ірина', 19, 2)
+
+decanat.display_students()
+
+decanat.update_student_age('student1', 22)
+
+decanat.delete_student('student2')
+
+print("\nNew list of students:")
+decanat.display_students()
