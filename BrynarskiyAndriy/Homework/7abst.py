@@ -1,4 +1,4 @@
-# Абстракція для фігур
+
 class Shape:
     def __init__(self, shape_type, color):
         self.shape_type = shape_type
@@ -13,7 +13,7 @@ class Shape:
     def calculate_perimeter(self):
         pass
 
-# Реалізація для кола
+
 class Circle(Shape):
     def __init__(self, radius, color):
         super().__init__("circle", color)
@@ -25,7 +25,7 @@ class Circle(Shape):
     def calculate_perimeter(self):
         return 2 * 3.14 * self.radius
 
-# Реалізація для прямокутника
+
 class Rectangle(Shape):
     def __init__(self, width, height, color):
         super().__init__("rectangle", color)
@@ -38,7 +38,7 @@ class Rectangle(Shape):
     def calculate_perimeter(self):
         return 2 * (self.width + self.height)
 
-# Реалізація для квадрата
+
 class Square(Shape):
     def __init__(self, side, color):
         super().__init__("square", color)
@@ -50,7 +50,7 @@ class Square(Shape):
     def calculate_perimeter(self):
         return 4 * self.side
 
-# Реалізація для кольорів
+
 class Color:
     def __init__(self, color_name):
         self.color_name = color_name
@@ -58,7 +58,7 @@ class Color:
     def apply_color(self, shape_type):
         return f"Applying {self.color_name} color to {shape_type}"
 
-# Використання
+
 red_color = Color("red")
 green_color = Color("green")
 blue_color = Color("blue")
