@@ -47,56 +47,7 @@ class ArrayList:
         self.capacity = 10
         self.array = [None] * self.capacity
 
-class LinkedList:
-    def __init__(self):
-        self.head = None
-        self.tail = None
 
-    def add(self, element):
-        new_node = Node(element)
-        if self.head is None:
-            self.head = new_node
-            self.tail = new_node
-        else:
-            new_node.prev = self.tail
-            self.tail.next = new_node
-            self.tail = new_node
-
-    def remove(self, element):
-        current = self.head
-        while current:
-            if current.data == element:
-                if current.prev:
-                    current.prev.next = current.next
-                else:
-                    self.head = current.next
-                if current.next:
-                    current.next.prev = current.prev
-                else:
-                    self.tail = current.prev
-                return
-            current = current.next
-
-    def insert(self, index, element):
-        new_node = Node(element)
-        current = self.head
-        for i in range(index):
-            if current:
-                current = current.next
-        if not current:
-            raise IndexError("Index out of bounds")
-        if current.prev:
-            current.prev.next = new_node
-            new_node.prev = current.prev
-        else:
-            self.head = new_node
-        new_node.next = current
-        current.prev = new_node
-
-    def clear(self):
-        self.head = None
-        self.tail = None
-        # Абстракція для фігур
 class Shape:
     def __init__(self, color):
         self.color = color
