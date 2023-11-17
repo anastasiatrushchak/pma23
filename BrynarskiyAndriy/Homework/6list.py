@@ -110,27 +110,27 @@ class Shape:
     def compute_perimeter(self):
         pass
 
-# Реалізація абстракції для кольорів
+
 class Color:
     def fill_color(self):
         pass
 
-# Реалізація кольору - червоний
+
 class RedColor(Color):
     def fill_color(self):
         return "Red"
 
-# Реалізація кольору - зелений
+
 class GreenColor(Color):
     def fill_color(self):
         return "Green"
 
-# Реалізація кольору - синій
+
 class BlueColor(Color):
     def fill_color(self):
         return "Blue"
 
-# Реалізація кола
+
 class Circle(Shape):
     def __init__(self, color, radius):
         super().__init__(color)
@@ -145,7 +145,7 @@ class Circle(Shape):
     def compute_perimeter(self):
         return 2 * 3.14 * self.radius
 
-# Реалізація прямокутника
+
 class Rectangle(Shape):
     def __init__(self, color, width, height):
         super().__init__(color)
@@ -161,7 +161,7 @@ class Rectangle(Shape):
     def compute_perimeter(self):
         return 2 * (self.width + self.height)
 
-# Реалізація квадрата
+
 class Square(Shape):
     def __init__(self, color, side_length):
         super().__init__(color)
@@ -176,7 +176,7 @@ class Square(Shape):
     def compute_perimeter(self):
         return 4 * self.side_length
 
-# Приклад використання
+
 red_color = RedColor()
 green_color = GreenColor()
 
