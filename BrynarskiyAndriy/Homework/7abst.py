@@ -67,17 +67,17 @@ circle = Circle(5, red_color)
 rectangle = Rectangle(4, 6, green_color)
 square = Square(3, blue_color)
 
-print(circle.draw())  # Drawing a red circle
-print(circle.calculate_area())  # 78.5
-print(circle.calculate_perimeter())  # 31.400000000000002
+print(circle.draw())
+print(circle.calculate_area())  
+print(circle.calculate_perimeter()) 
 
-print(rectangle.draw())  # Drawing a green rectangle
-print(rectangle.calculate_area())  # 24
-print(rectangle.calculate_perimeter())  # 20
+print(rectangle.draw())  
+print(rectangle.calculate_area())  
+print(rectangle.calculate_perimeter())  
 
-print(square.draw())  # Drawing a blue square
-print(square.calculate_area())  # 9
-print(square.calculate_perimeter())  # 12
-print(red_color.apply_color("circle"))  # Applying red color to circle
-print(green_color.apply_color("rectangle"))  # Applying green color to rectangle
-print(blue_color.apply_color("square"))  # Applying blue color to square
+print(square.draw())  
+print(square.calculate_area())  
+print(square.calculate_perimeter())  
+print(red_color.apply_color("circle"))  
+print(green_color.apply_color("rectangle")) 
+print(blue_color.apply_color("square")) 
