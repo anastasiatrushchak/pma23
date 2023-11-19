@@ -8,3 +8,4 @@ print("Серіалізовані дані:", serialized_data)
 # Десеріалізація 
 deserialized_data = json.loads(serialized_data)
 print("Десеріалізовані дані:", deserialized_data)
+#
