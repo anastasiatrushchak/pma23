@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Lev",
+        "surname": "Predko",
+        "birth": [
+            "2005",
+            "08",
+            "01"
+        ],
+        "grades": [
+            "9",
+            "77",
+            "52"
+        ]
+    },
+    {
+        "name": "Max",
+        "surname": "Petuhov",
+        "birth": [
+            "2005",
+            "12",
+            "23"
+        ],
+        "grades": [
+            "90",
+            "60",
+            "50"
+        ]
+    },
+    {
+        "name": "Dmitro",
+        "surname": "Vasilishin",
+        "birth": [
+            "2004",
+            "10",
+            "03"
+        ],
+        "grades": [
+            "67",
+            "73",
+            "81"
+        ]
+    }
+]
