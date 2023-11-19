@@ -1,101 +1,84 @@
 import json
 
-class CustomDictionary:
-    def __init__(self, dictionary):
-        self.dictionary = dictionary
+class Key:
+    def __init__(self, name):
+        self.name = name
 
-    def print(self):
-        print(self.dictionary)
+class Value:
+    def __init__(self, data_type, value):
+        self.data_type = data_type
+        self.value = value
 
-    def delete_key(self, key):
-        try:
-            if key in self.dictionary:
-                del self.dictionary[key]
-            else:
-                print(f"Key '{key}' not found in the dictionary.")
-        except Exception as e:
-            print(f"An error occurred: {str(e)}")
+file_path = "data.json"
+try:
+    with open(file_path, 'r') as file:
+        data_dict = json.load(file)
+        print(data_dict)
+except FileNotFoundError:
+    print(f"Error: The file '{file_path}' was not found.")
+    data_dict = {}
+except json.JSONDecodeError:
+    print(f"Error: Invalid JSON format in '{file_path}'.")
+    data_dict = {}
 
-    def add_key_value(self, key, value):
-        try:
-            self.dictionary[key] = value
-        except Exception as e:
-            print(f"An error occurred: {str(e)}")
+keys = {
+    'First Name': Key('First Name'),
+    'Last Name': Key('Last Name'),
+    'Date of Birth': Key('Date of Birth'),
+    'Grades': Key('Grades')
+}
 
-    def pop_delete(self, key):
-        try:
-            self.dictionary.pop(key)
-        except Exception as e:
-            print(f"An error occurred: {str(e)}")
-
-    def change_value(self, key, value):
-        try:
-            self.dictionary[key] = value
-        except Exception as e:
-            print(f"An error occurred: {str(e)}")
-
-    def change_key(self, old_key, new_key):
-        try:
-
-            self.dictionary[new_key] = self.dictionary[old_key]
-            del self.dictionary[old_key]
-
-        except Exception as e:
-            print(f"An error occurred: {str(e)}")
-
-    def remove_all(self):
-        try:
-            self.dictionary.clear()
-        except Exception as e:
-            print(f"An error occurred: {str(e)}")
-
-    def copy_dict(self):
-        try:
-            return self.dictionary.copy()
-        except Exception as e:
-            print(f"An error occurred: {str(e)}")
-
-    def get_values(self):
-        try:
-            return self.dictionary.values()
-        except Exception as e:
-            print(f"An error occurred: {str(e)}")
-
-def read_dict_from_file(file_path):
-    try:
-        with open(file_path, 'r') as file:
-            data = json.load(file)
-            return data
-    except FileNotFoundError:
-        print(f"Error: The file '{file_path}' was not found.")
-        return {}
-    except json.JSONDecodeError:
-        print(f"Error: Invalid JSON format in '{file_path}'.")
-        return {}
+values = {
+    'First Name': Value(str, 'Ivan'),
+    'Last Name': Value(str, 'Sina'),
+    'Date of Birth': Value(str, '1999-05-15'),
+    'Grades': Value(list, [85, 92, 78, 95, 89])
+}
 
 
-data_dict = read_dict_from_file("data.json")
-custom_dict = CustomDictionary(data_dict)
-print("Dictionary: ")
-custom_dict.print()
-print("Copy of dict:")
-copy_dict=custom_dict.copy_dict()
-print(copy_dict)
-print("Change first name to Bobb")
-custom_dict.change_value('First Name', 'Bobb')
-custom_dict.print()
-print("delete first name key")
-key_to_delete ='First Name'
-custom_dict.delete_key(key_to_delete)
-values = custom_dict.get_values()
-print(values)
-print("add a new key and value address")
-custom_dict.add_key_value("address", "lincolna")
-custom_dict.print()
-print("change key ")
-custom_dict.change_key("Grades","points")
-custom_dict.print()
-print("pop delete of copy")
-custom_dict.pop_delete("Last Name")
-custom_dict.print()
+print(values['First Name'].value)
+
+key = keys['First Name']
+if key.name in data_dict:
+    del data_dict[key.name]
+else:
+    print(f"Key '{key.name}' not found in the dictionary.")
+
+key = keys['First Name']
+value = values['First Name'].value
+try:
+    data_dict[key.name] = value
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
+
+key = keys['First Name']
+try:
+    data_dict.pop(key.name)
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
+
+key = keys['First Name']
+value = values['First Name'].value
+try:
+    data_dict[key.name] = value
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
+
+old_key = keys['First Name']
+new_key = Key('New Name')
+try:
+    data_dict[new_key.name] = data_dict[old_key.name]
+    del data_dict[old_key.name]
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
+
+try:
+    copy_dict = data_dict.copy()
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
+
+try:
+    data_dict.clear()
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
 

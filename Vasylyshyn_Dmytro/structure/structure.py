@@ -14,6 +14,8 @@ class Student:
             f"Marks: {self.grades}\n"
         )
 
+    def students_who_failed(self):
+        return filter(lambda grade: grade < 51, self.grades)
 
 def read_students_from_file(file_path):
     try:
@@ -40,28 +42,7 @@ def read_students_from_file(file_path):
 
     return students
 
-def students_who_failed(students):
-    failed_students = []
-    for student in students:
-        if any(grade < 51 for grade in student.grades):
-            failed_students.append(student)
-    return failed_students
-
-
 students = read_students_from_file("data.json")
 
-if not students:
-    print("No valid student data to process.")
-else:
-    for student in students:
-        print(student)
-    failed_students = students_who_failed(students)
-
-    if len(failed_students) == 0:
-        print("All students passed their exams!")
-    else:
-        print("Students who failed:")
-        for student in failed_students:
-            print(f"{student.first_name} {student.last_name}")
-
-
+for student in students:
+    print(f"{student.first_name} {student.last_name}  {list(student.students_who_failed())}")

@@ -1,16 +1,19 @@
-import json
+
 class ArrayList:
     def __init__(self, arr=[]):
         self.__list = arr
         self.__len = len(arr)
-        self.__free_cells = 0
+        self.__free_cells = int(1.5 * self.__len + 1)
 
     def __increase_len(self):
+        initial_capacity = 10
         add = int(1.5 * self.__len + 1)
-        arr = []
-        self.__list += [arr.append(None) for i in range(add)]
+        arr = [None] * (add + initial_capacity)
+        self.__list += arr
         self.__free_cells = add
         self.__len += add
+
+
 
     def push_back(self, element):
         if self.__free_cells == 0:
@@ -24,7 +27,7 @@ class ArrayList:
     def print_elements(self):
         print("arr:", self.__list)
         print("len:", self.__len)
-        print("free cells:", self.__free_cells)#
+        print("free cells:", self.__free_cells)
 
     def delete_element(self, index):
         try:
@@ -70,7 +73,7 @@ try:
 except FileNotFoundError:
     print("Error: The file was not found.")
 
-arr = ArrayList(array)
+arr = ArrayList([1,2,3,4,5,6,7,8,9,10,1,1,1])
 arr.push_back(4)
 arr.print_elements()
 
