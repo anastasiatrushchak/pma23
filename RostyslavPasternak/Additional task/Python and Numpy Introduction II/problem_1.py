@@ -7,10 +7,6 @@ def isolate(*num, pos=3, spaces=5):
     else:
         print(*num[:pos], sep=' ' * spaces, end=' ')
         print(*num[pos:])
-        # result = (' '* spaces).join(map(str, num[:pos])) + ' ' + ' '.join(map(str, num[pos:]))
-        # print(result)
-        # return result
-
 
 try:
     isolate(1, 2, 3, 4, 5)
