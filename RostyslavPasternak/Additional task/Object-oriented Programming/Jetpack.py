@@ -17,7 +17,7 @@ class Jetpack(Backpack):
                    max_size (int, optional): the maximum capacity of the jetpack's storage (default is 2).
                    amount_of_fuel (int, optional): the initial amount of fuel in the jetpack (default is 10).
         """
-        super().__init__(name,color,max_size)
+        super().__init__(name,color,max_size=max_size)
         self.amount_of_fuel = amount_of_fuel
     def fly(self, amount_of_burned_fuel):
         """Simulate flying with the jetpack by burning a specified amount of fuel.
