@@ -60,11 +60,12 @@ if __name__ == "__main__":
    linkedlist.append(1)
    linkedlist.append(2)
    linkedlist.append(3)
-   print(linkedlist)
+   print("Linkedlist: ", linkedlist)
    try:
        find_node = linkedlist.find(2)
-       print(find_node)
        get_node = linkedlist.get(1)
-       print(get_node)
    except Exception as e:
        print(e)
+   else:
+       print("Found Nodе by value: ", find_node)
+       print("Found Node by index: ", get_node)

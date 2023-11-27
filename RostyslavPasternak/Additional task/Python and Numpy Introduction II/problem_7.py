@@ -7,12 +7,13 @@ def row_stochastic_matrix(matrix):
 def column_stochastic_matrix(matrix):
     matrix = np.array(matrix)
     return row_stochastic_matrix(matrix.T).T
-
-matrix = [[3, 4, 5],
-          [3, 4, 3],
-          [4, 2, 2]]
-
-result = row_stochastic_matrix(matrix)
-print(result)
-result = column_stochastic_matrix(matrix)
-print(result)
+if __name__ == "__main__":
+    matrix = [[3, 4, 5],
+              [3, 4, 3],
+              [4, 2, 2]]
+    print("row_stochastic_matrix")
+    result = row_stochastic_matrix(matrix)
+    print(result)
+    print("column_stochastic_matrix")
+    result = column_stochastic_matrix(matrix)
+    print(result)

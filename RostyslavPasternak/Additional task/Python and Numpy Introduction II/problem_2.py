@@ -11,15 +11,16 @@ def backward(list):
         raise InvalidSize
     return list[::-1]
 
+if __name__ == "__main__":
+    try:
+    #first_half
+        print("first_half:")
+        print(first_half([1, 2, 3, 4, 5]))
+        print(first_half("Pasternak"))
 
-
-try:
-#first_half
-    print(first_half([1, 2, 3, 4, 5]))
-    print(first_half("Pasternak"))
-
-#backward
-    print(backward([1, 2, 3, 4, 5]))
-    print(backward("Pasternak"))
-except InvalidSize as e:
-    print(e)
+    #backward
+        print("backward:")
+        print(backward([1, 2, 3, 4, 5]))
+        print(backward("Pasternak"))
+    except InvalidSize as e:
+        print(e)

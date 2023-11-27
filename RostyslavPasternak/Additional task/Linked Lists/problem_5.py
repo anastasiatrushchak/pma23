@@ -107,13 +107,11 @@ class LinkedList:
 if __name__ == "__main__":
     linkedlist = LinkedList()
 
-    linkedlist.append(123)
-    linkedlist.append(1)
-    linkedlist.append(2)
-    linkedlist.append(3)
-    print(linkedlist)
+    linkedlist.append([123, 2, 3, 4])
+
+    print("Linkedlist: ", linkedlist)
     linkedlist.insert(0, 999)
-    print(linkedlist)
+    print("Linkedlist after insertion: ", linkedlist)
 
 
 

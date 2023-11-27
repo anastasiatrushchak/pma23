@@ -16,5 +16,6 @@ def random_walk(max_iters=1e12):
 
 
 if __name__ =="__main__":
+    print("If you stop me, I will tell you where I stopped")
     result = random_walk()
     print("Final position:", result)

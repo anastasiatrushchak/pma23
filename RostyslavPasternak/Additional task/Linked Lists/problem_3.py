@@ -58,6 +58,6 @@ if __name__ == "__main__":
    linkedlist.append(1)
    linkedlist.append(2)
    linkedlist.append(3)
-   print(linkedlist)
+   print("Linkedlist: ", linkedlist)
 
    print("Size: ", len(linkedlist))

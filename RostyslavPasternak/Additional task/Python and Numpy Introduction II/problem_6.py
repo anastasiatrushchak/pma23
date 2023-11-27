@@ -11,23 +11,22 @@ def create_block_matrix(A,B,C):
                              [B, np.zeros((C.shape[0], A.shape[0])), C]])
     return block_matrix
 
+if __name__ == "__main__":
+    A = np.array([[0, 2, 4],
+                  [1, 3, 5]])
 
+    B = np.array([[3, 0, 0],
+                  [3, 3, 0],
+                  [3, 3, 3]])
 
+    C = np.array([[-2, 0, 0],
+                  [0, -2, 0],
+                  [0, 0, -2]])
 
-A = np.array([[0, 2, 4],
-              [1, 3, 5]])
-
-B = np.array([[3, 0, 0],
-              [3, 3, 0],
-              [3, 3, 3]])
-
-C = np.array([[-2, 0, 0],
-              [0, -2, 0],
-              [0, 0, -2]])
-
-try:
-    result_matrix = create_block_matrix(A,B,C)
-    print(result_matrix)
-except InvalidSize as e:
-    print(e)
+    try:
+        result_matrix = create_block_matrix(A,B,C)
+        print("Matrix block:")
+        print(result_matrix)
+    except InvalidSize as e:
+        print(e)
 

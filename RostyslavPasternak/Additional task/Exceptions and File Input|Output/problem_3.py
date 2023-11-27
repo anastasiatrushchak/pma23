@@ -16,6 +16,7 @@ if __name__ =="__main__":
     print("Name:", cf1.name)
     print("Contents:", cf1.contents)
 
+
     cf2 = ContentFilter("not-a-file.txt")
     print("Name:", cf2.name)
     print("Contents:", cf2.contents)

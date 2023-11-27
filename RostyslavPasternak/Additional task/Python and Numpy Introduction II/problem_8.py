@@ -15,5 +15,6 @@ def greatest_product(grid):
 
     return max(max_horizontal, max_vertical, max_diagonal_right, max_diagonal_left)
 
-result = greatest_product("grid.npy")
-print("The greatest product of four adjacent numbers is:", result)
+if __name__ == "__main__":
+    result = greatest_product("grid.npy")
+    print("The greatest product of four adjacent numbers is:", result)

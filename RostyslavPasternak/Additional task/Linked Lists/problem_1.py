@@ -15,3 +15,5 @@ if __name__ == "__main__":
         node3 = Node("sad")
     except Exception as e:
         print(e)
+    else:
+        print("All data has been added successfully")

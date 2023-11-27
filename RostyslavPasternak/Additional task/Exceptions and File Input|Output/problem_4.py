@@ -82,3 +82,4 @@ if __name__ == "__main__":
     cf.reverse("file/reverse1.txt", mode='a', unit="line")
 
     cf.transpose("file/transpose.txt", mode='w')
+    print("All data is written in files (folder file)")

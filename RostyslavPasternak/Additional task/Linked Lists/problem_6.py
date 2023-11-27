@@ -35,10 +35,7 @@ class Deque(LinkedList):
 if __name__ == "__main__":
     deque = Deque()
 
-    deque.append(123)
-    deque.append(1)
-    deque.append(2)
-    deque.append(3)
+    deque.append([123, 2, 3, 4])
     print(deque)
     try:
         deque.pop()
