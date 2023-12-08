@@ -28,5 +28,5 @@ def list_ops():
 
     return my_list
 
-
-print("End result: ", list_ops())
+if __name__ == "__main__":
+    print("End result: ", list_ops())

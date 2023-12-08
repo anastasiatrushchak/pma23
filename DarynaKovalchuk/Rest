@@ -1,0 +1,93 @@
+from flask import Flask, request
+
+app = Flask(__name__)
+
+class ProgramList:
+    def __init__(self):
+        self.programs = []
+
+    def get_programs(self):
+        return str(self.programs)
+
+    def get_program_by_id(self, program_id):
+        for program in self.programs:
+            if program["id"] == program_id:
+                return str(program)
+        return "Program not found", 404
+
+    def add_program(self, new_program):
+        new_program["id"] = len(self.programs) + 1  # Assigning unique IDs
+        self.programs.append(new_program)
+
+    def update_program(self, program_id, updated_program):
+        if 0 <= program_id < len(self.programs):
+            updated_program["id"] = program_id + 1  # Update ID
+            self.programs[program_id] = updated_program
+
+    def delete_program(self, program_id):
+        if 0 <= program_id < len(self.programs):
+            deleted_program = self.programs.pop(program_id)
+            return deleted_program
+        else:
+            return None
+
+class ProgramResource:
+    def __init__(self, program_list):
+        self.program_list = program_list
+
+    def get(self, program_id=None):
+        if program_id is not None:
+            return self.program_list.get_program_by_id(program_id)
+        else:
+            return self.program_list.get_programs()
+
+    def post(self, new_program):
+        self.program_list.add_program(new_program)
+        return f"Program added successfully: {new_program}", 201
+
+    def patch(self, program_id, updated_program):
+        self.program_list.update_program(program_id, updated_program)
+        return f"Program updated successfully: {updated_program}"
+
+    def delete(self, program_id):
+        deleted_program = self.program_list.delete_program(program_id)
+        if deleted_program is not None:
+            return f"Program deleted successfully: {deleted_program}"
+        else:
+            return "Program not found", 404
+
+program_list = ProgramList()
+
+program_list.add_program({"program_name": "Program A", "version": "1.0", "author": "Author A"})
+program_list.add_program({"program_name": "Program B", "version": "2.5", "author": "Author B"})
+program_list.add_program({"program_name": "Program C", "version": "3.2", "author": "Author C"})
+
+program_resource = ProgramResource(program_list)
+
+@app.route('/programs', methods=['GET'])
+def get_programs():
+    program_id = request.args.get('id', type=int)
+    return program_resource.get(program_id)
+
+@app.route('/programs', methods=['POST'])
+def add_program():
+    new_program = request.get_json()
+    program_resource.post(new_program)
+    return f"Program added successfully: {new_program}", 201
+
+@app.route('/programs/<int:program_id>', methods=['GET'])
+def get_program(program_id):
+    return program_resource.get(program_id)
+
+@app.route('/programs/<int:program_id>', methods=['PATCH'])
+def update_program(program_id):
+    updated_program = request.get_json()
+    program_resource.patch(program_id, updated_program)
+    return f"Program updated successfully: {updated_program}"
+
+@app.route('/programs/<int:program_id>', methods=['DELETE'])
+def delete_program(program_id):
+    return program_resource.delete(program_id)
+
+if __name__ == '__main__':
+    app.run(debug=True)
