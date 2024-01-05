@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Ivan",
+    "group": "pma-23",
+    "note": [1,2,3,4,5]
+  },  {
+    "name": "oleg",
+    "group": "pma-23",
+    "note": [1,2,3,4,5]
+  },
+    {
+    "name": "maria",
+    "group": "pma-23",
+    "note": [1,2,3,4,5]
+  },
+    {
+    "name": "ross",
+    "group": "pma-23",
+    "note": [1,5,5,5,5]
+  }
+]

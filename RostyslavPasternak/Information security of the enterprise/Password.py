@@ -19,10 +19,10 @@ def format_execution_time(execution_time):
     return formatted_time
 
 
-def generate_passwords(password):
+def generate_passwords(password, l=3):
     start_time = time.time()
     attempt_count = 0
-    for length in range(8, len(password) + 1):
+    for length in range(l, len(password) + 1):
         combinations = itertools.product(string.ascii_letters + string.digits, repeat=length)
         for combo in combinations:
             attempt = ''.join(combo)
@@ -35,7 +35,7 @@ def generate_passwords(password):
     return None, time.time() - start_time, attempt_count
 
 
-password_to_find = "abcdzdD1"
+password_to_find = "123"
 found_password, elapsed_time, attempt_count = generate_passwords(password_to_find)
 
 if found_password:

@@ -1,0 +1,8 @@
+PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
+1,0,3,Mr. John Doe,male,22,1,0,A/12345,7.25,,S
+2,1,1,Mrs. Jane Doe,female,35,1,0,PC 1234,71.28,C85,C
+3,1,3,Miss Alice Doe,female,18,0,0,SOTON/OQ 5678,8.05,,S
+3,0,1,Miss Alice Doe,female,18,0,0,SOTON/OQ 5678,8.05,,S
+3,0,1,Miss Alice Doe,female,18,0,0,SOTON/OQ 5678,8.05,,S
+3,0,1,Miss Alice Doe,female,18,0,0,SOTON/OQ 5678,8.05,,S
+3,1,3,Miss Alice Doe,female,18,0,0,SOTON/OQ 5678,8.05,,S
